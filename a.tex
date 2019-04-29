@@ -1,0 +1,1394 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+%  Classifying Quaternion Identities
+%  (journal article)
+%  
+%  by Theodore Ehrenborg
+%
+%
+% 
+% Last edited: April 29, 2019
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% pdf settings
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\pdfpagewidth=8.5truein
+\pdfpageheight=11truein
+
+
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\documentclass[12pt]{article}
+%\usepackage{anyfontsize}
+\usepackage{amssymb, amsmath, fullpage, amsthm}
+\usepackage{mathrsfs}
+\usepackage{tikz}
+\usepackage[title]{appendix}
+\usepackage{todonotes}
+\usepackage{mathrsfs}
+\usepackage{ gensymb }
+\usepackage{enumerate}
+\usepackage{caption}
+
+
+\usetikzlibrary{math}
+
+
+
+
+\parskip2mm
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remarks}[theorem]{Remarks}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
+
+
+\hyphenation{Hurwitz}
+
+\font\german = eufm10 scaled\magstep1
+\font\Cp = msbm10
+
+\newcommand{\Ccc}{\hbox{\Cp C}}
+\newcommand{\Fff}{\hbox{\Cp F}}
+\newcommand{\Hhh}{\hbox{\Cp H}}
+\newcommand{\Nnn}{\hbox{\Cp N}}
+\newcommand{\Rrr}{\hbox{\Cp R}}
+\newcommand{\Sss}{\hbox{\Cp S}}
+\newcommand{\Zzz}{\hbox{\Cp Z}}
+
+
+\newcommand{\vanish}[1]{}
+\newcommand{\coveredby}{\prec}
+\newcommand{\divides}{\mid}
+\newcommand{\notdivides}{\nmid}
+\newcommand{\timesdots}{\times \cdots \times}
+
+\numberwithin{equation}{section}
+%\usepackage[bindingoffset=0.2in,
+%            left=1in,right=1in,top=1in,bottom=1in,
+%            footskip=.25in]{geometry}%Sets margins
+%\pagenumbering{gobble}%No page numbers
+
+
+
+
+ 
+
+
+\DeclareMathOperator{\inv}{inv}
+\DeclareMathOperator{\frst}{frst}
+\DeclareMathOperator{\er}{er}
+\DeclareMathOperator{\asc}{asc}
+\DeclareMathOperator{\odd}{odd}
+
+\newcommand{\ascodd}{\asc_{\odd}}
+
+\newcommand{\doubleprime}{\prime\prime}
+
+
+
+
+\newcommand{\SSSS}{\mathfrak{S}}
+
+\newcommand{\Gaussian}[2]{\genfrac{[}{]}{0pt}{}{#1}{#2}_q}
+
+\begin{document}
+%\begin{landscape}
+
+
+\title{Classifying Quaternion Identities}
+
+
+\author{\sc Theodore EHRENBORG%\thanks{Corresponding author:
+%Department of Mathematics,
+%University of Kentucky,
+%Lexington, KY 40506-0027,
+%USA,
+%{\tt theodore.ehrenborg@gmail.com}.}
+%\:\: 
+%\:\:
+}
+
+
+
+\date{}
+%%%\date{Last edited on \today}
+
+\maketitle
+
+
+
+\begin{abstract}
+This number theory project investigates identities found by
+multiplying together quaternions in \( \mathbb{L}[x,y,z,w] \), the
+Lipschitz quaternions \( \mathbb{L} \) adjoined with the
+indeterminates \(x\), \(y\), \(z\), \(w\).  Recall that quaternions
+are \(4\)-dimensional complex numbers.  These identities provide
+solutions to \( \sum_{j = 1}^{p} \tau_j ^ 2 = \left( \sum_{i = 1}^{m}
+x_i ^ 2 \right) ^ n \). We present a rigorous definition that captures
+the intuitive notion of when two such identities are equivalent. This
+definition implies that the true structure of this problem involves the
+group action of the direct product \( \mathfrak{S}_4^\pm \times \mathfrak{S}_4^\pm \).  Using
+two complementary methods, we compute the number of equivalence
+classes for \(n = 1, 2, 3, 4,\) where \(n\) is the number of
+quaternion factors. We move to the case concerning products of complex
+numbers, namely \( \mathbb{Z}[i][x,y] \). Using the fact that the
+Gaussian integers are commutative under multiplication, we
+characterize these equivalence classes, thus also providing an
+enumeration.
+
+
+\end{abstract}
+
+
+
+
+
+\section{Introduction}
+
+\todo[inline]{Define quaternions, Lipschitz quaternions,
+norm of a quaternion and complex numbers, complex numbers}
+
+
+The following groups are an essential part of Definition~\ref{def:general}
+and Definition~\ref{def:2D}.
+\begin{definition}
+The {\em symmetric group} \( \mathfrak{S}_n \) is the 
+set of all permutations \( \pi = \pi_1 \cdots \pi_n \) 
+of the \( n \) element set \( \{ 1, 2, \ldots, n \} \),
+where \( \pi(i) = \pi_i \).
+The {\em signed symmetric group} \( \mathfrak{S}_n^\pm \)
+is the set of all permutations \( \sigma = \sigma_1 \cdots \sigma_n\)
+of the set \( \{ \pm 1, \pm 2, \ldots, \pm n \} \) such that
+\( | \sigma | = | \sigma_1 | \cdots |\sigma_n| \in \mathfrak{S}_n \).
+\end{definition}
+
+\todo[inline]{How to compose two elements in signed symmetric group?}
+
+For a signed permutation \( \pi \in \mathfrak{S}_m^\pm \), let \( \pi \) act on a polynomial in the 
+\(m\) variables \( x_1,x_2, \ldots, x_m \) by sending \( x_j \) to 
+\[
+\pi(x_j) =
+\begin{cases}
+x_{\pi_j} & \text{if } \pi_j > 0 \\
+-x_{-\pi_j} & \text{if } \pi_j < 0
+\end{cases}
+\]
+
+\begin{definition}
+\label{def:general}
+Fix \( p, m \in \mathbb{N} \). 
+Let \( \tau = ( \tau_1, \ldots, \tau_p) \)
+be a tuple of length \( p \) where 
+\( \tau_i \in \mathbb{Z}[x_1,x_2, \ldots, x_m] \), where \( i = 1, \ldots, p \).
+We define an equivalence relation, denoted by \( \simeq \), on \(p\)-tuples
+\( \tau \) 
+by taking the transitive closure of the following three relations:
+\begin{itemize}
+\item
+\( ( \tau_1, \ldots, \tau_p) \simeq ( \tau'_1, \ldots, \tau'_p) \)
+if there exists a signed permutation \( \pi \in \mathfrak{S}_m^\pm \)
+acting on the \( m \) variables such that \( \pi( \tau_i ) = \tau'_i \),
+ where \( i = 1, \ldots, p \).
+\item
+\( ( \tau_1, \ldots, \tau_p) \simeq ( \tau'_1, \ldots, \tau'_p) \)
+if there exists a permutation \( \sigma \in \mathfrak{S}_p \)
+such that \( \tau_{\sigma(i)} = \tau'_i \), where \( i = 1, \ldots, p \).
+\item
+\( ( \tau_1, \ldots, \tau_p) \simeq ( \pm \tau_1, \ldots, \pm \tau_p) \)
+\end{itemize}
+\end{definition}
+
+
+\begin{example}
+Definition~\ref{def:general} implies that the following is true:
+\begin{align*}
+( xz,\: y^2,\: yz )  
+&\simeq ( (-y)(-x),\: z^2,\: z(-x) ) \\
+&\simeq ( (-y)(-x),\: z(-x),\: z^2 ) \\
+&\simeq ( -(-y)(-x),\: z(-x),\: -z^2 ) 
+\end{align*}
+\end{example}
+
+
+
+%Fix \( p \in \mathbb{Z} \). 
+We are interested in counting the number of
+equivalence classes of the set of all tuples \( \tau \) where 
+%the sum of the squares of the elements of \( \tau \) is
+\[
+\sum_{j = 1}^{p}  \tau_j ^ 2  
+= 
+\left( \sum_{i = 1}^{m}  x_i ^ 2  \right) ^ n 
+\] 
+This problem is most easily attacked when we
+view \( \left( \sum_{i = 1}^{m}  x_i ^ 2  \right) ^ n \)
+as the norm of a product of complex numbers or quaternions.
+Thus we will focus on the cases where \( p = m = 2 \) and where \( p = m = 4 \).
+The general problem can also be viewed as finding the disjoint orbits of 
+various tuples, where the group action is \( \mathfrak{S}_p^\pm \times \mathfrak{S}_m^\pm \).
+
+
+
+\begin{example}
+\bf
+Consider the case where \( p = m = 2 \) and \( n = 2\).
+The following two identities are representatives from 
+the two different equivalence classes in this case. These identities
+were generated by a product of complex numbers. 
+
+\noindent
+Identity i:
+\begin{equation*}
+(x + iy)(x + iy) = (x^2 - y^2 ) + i(2xy) 
+\end{equation*}
+Taking norms, this gives the identity:
+\begin{equation*}
+    (x^2 - y^2 )^2 + (2xy)^2 
+    = (x^2 + y^2)^2
+\end{equation*}
+Identity ii:
+\begin{equation*}
+    (x + iy )(x - iy )
+    = (x^2 + y^2 ) + i(0)  
+\end{equation*}
+Taking norms, this gives the identity:
+\begin{equation*}
+    (x^2 + y^2 )^2 + (0)^2
+    = (x^2 + y^2 )^2
+\end{equation*}
+\end{example}
+
+
+
+\begin{example}
+\bf
+Consider the case where \( p = m = 2 \) and \( n = 3\).
+The following two identities are representatives from 
+the two different equivalence classes in this case. These identities
+were generated by a product of complex numbers. 
+
+\noindent
+Identity iii:
+\begin{align*}
+    (x + iy)(x + iy)(x + iy) 
+    = x(x^2 - 3y^2) + i(  y(3x^2 - y^2) )  
+    \end{align*}
+Taking norms, this gives the identity:
+    \begin{align*}
+    (x(x^2 - 3y^2))^2 + (  y(3x^2 - y^2) )^2  
+    = (x^2 + y^2)^3
+    \end{align*}
+Identity iv:
+    \begin{align*}
+    (x + iy )(x + iy)(x - iy ) 
+    = x(x^2 + y^2 ) + i(y(x^2 + y^2))  
+    \end{align*}
+Taking norms, this gives the identity:
+    \begin{align*}
+    ( x(x^2 + y^2) )^2 + ( y(x^2 + y^2) )^2 
+    = (x^2 + y^2 )^3
+    \end{align*}
+\end{example}
+
+
+
+
+
+
+
+\section{The case where \( p = m = 2\)}
+
+
+In the case where \( p = m = 2\), Definition~\ref{def:general} has an alternate form.
+
+
+
+\begin{definition}
+\label{def:2D}
+
+Let \( h(z), h'(z) \in \mathbb{Z} [i][x,y] \),
+where \( z = x + iy \).
+Let \( M \) be the following set of mappings: 
+\[
+M = \{ z \mapsto uz \mid u \in \{ \pm 1, \pm i \} \}  
+\cup \{ z\mapsto u \bar{z} \mid u \in \{ \pm 1, \pm i \} \}  
+\]
+%Write \( f(x,y) + i \cdot g(x,y) \) and \( f'(x,y) + i \cdot g'(x,y) \) as  \( h(z) \) and  \( h'(z) \), respectively.
+We say \( h(z) \simeq h'(z) \) when there exist mappings \( \varphi, \varphi' \in M \)
+such that \( \varphi( h( \varphi'( z ) ) )  = h'(z) \).
+
+%\todo{ Prove that this is an equivalence relation. 
+%That is, it has the reflexive, symmetric, and transitive properties. }
+
+\end{definition}
+
+\begin{lemma}
+\bf
+The relation \( \simeq \) is an equivalence relation.
+\end{lemma}
+
+\begin{proof}
+\bf
+The relation \( \simeq \) satisfies the three conditions of an equivalence relation.
+\begin{enumerate}
+\item Reflexive Property: If we choose \( \mu \) and \( \mu'\) to be the identity map \( z \mapsto z \), 
+then \( h(z) \simeq h(z) \).
+
+\item Symmetric Property: Let  \( h(z) \simeq h'(z) \), that is, there exist mappings 
+\( \mu, \mu' \in M \)
+such that \( \mu( h( \mu'( z ) ) )  = h'(z) \).
+\(M\) is isomorphic to the signed symmetric group \( \mathfrak{S}_2^\pm \), so every mapping in \(M\)
+has an inverse in \(M\). As  \( \mu^{-1}( h'( (\mu')^{-1}( z ) ) )  = h(z) \),
+we have \( h'(z) \simeq h(z) \).
+
+\item Transitive Property: Let \( a(z) \simeq b(z) \) and \( b(z) \simeq c(z) \). By the 
+Symmetric Property, we have \( c(z) \simeq b(z) \). Thus there exist mappings
+\( \mu, \mu', \nu, \nu' \in M \) such that \( \mu( a( \mu'( z ) ) )  = b(z) \) and 
+\( \nu( c( \nu'( z ) ) )  = b(z) \). As a result:
+\[
+\mu( a( \mu'( z ) ) ) = \nu( c( \nu'( z ) ) )  
+\]
+Thus we have: 
+\[
+a(  z  ) = \mu^{-1}( \nu( c( (\mu')^{-1}( \nu'( z ) ) ) ) )
+\]
+This means that \( c(z) \simeq a(z) \) or \( a(z) \simeq c(z) \).
+\end{enumerate}
+\end{proof}
+Recall that given \( f(x,y), g(x,y) \in \mathbb{Z}[x,y] \),
+we can find \( h(z) \in \mathbb{Z} [i][x,y] \)
+such that
+\( z = x + iy \)
+and
+\( h(z) = f(x,y) + i \cdot g(x,y) \). 
+The converse is also true.
+
+
+
+\begin{lemma}
+\bf Let \( h(z) \simeq h'(z) \), where \( h(z), h'(z) \in \mathbb{Z}[i][x,y] \)
+ and \( z = x+ iy \). Suppose \( ( x^2 + y^2 ) ^ u
+    \divides h(z) \), where \( u \in \mathbb{N} \). Then \( ( x^2 + y^2 ) ^ u \divides h'(z) \).
+\end{lemma}
+   
+\begin{proof}
+\bf
+Let \( h(z) = ( x^2 + y^2 ) ^ u  p(z) \), where \( p(z) \in \mathbb{Z} [i][x,y] \). 
+Whatever mappings we apply to \(h\) and \(z\)
+to get \( h'(z) \), we also apply to the factors of \( h(z) \). 
+No mapping will remove the factor of \( ( x^2 + y^2 ) ^ u \).
+
+\end{proof}
+
+\begin{corollary}
+\bf
+Let \( h(z), h'(z) \in \mathbb{Z}[i][x,y] \) with \( z = x+ iy \).
+\[
+h(z) \simeq h'(z) 
+\implies 
+( \forall u \in \mathbb{N} \cup \{ 0 \},  ( x^2 + y^2 ) ^ u \divides h(z)  \iff ( x^2 + y^2 ) ^ u \divides h'(z)  )
+\]
+\end{corollary}
+
+
+
+
+\begin{theorem}
+\bf
+Consider the set of all \(2\)-tuples \( \tau \) where 
+\(
+  \tau_1 ^ 2   +   \tau_2 ^ 2   
+= 
+\left(  x_1 ^ 2 + x_2 ^ 2  \right) ^ n 
+\).
+The number of equivalence classes within this set 
+is exactly  \( \lfloor \frac{n}{2} \rfloor + 1 \). 
+Moreover, each equivalence class contains a tuple
+of the form \( ( \Re( \beta ) , \Im( \beta ) ) \),
+where \( \beta = (x + iy)^j (x -  iy)^{n-j} \),
+with \( j \)
+being one of \( 0, 1, 2, \ldots, \lfloor \frac{n}{2} \rfloor \).
+\end{theorem}
+
+
+
+\begin{proof}
+\bf
+Suppose 
+\[ (x^2 + y^2)^n = f(x,y)^2 + g(x,y)^2 \]
+where \( f(x,y), g(x,y) \in \mathbb{Z}[x,y] \).
+Then  
+\[ (x + iy)^n (x -  iy)^n = ( f(x,y) + i \cdot g(x,y) ) ( f(x,y) - i \cdot g(x,y) ) .\]
+Since \( \mathbb{Z} [i][x,y] \) is a unique factorization domain, 
+\[ f(x,y) + i \cdot g(x,y) = (x + iy)^j (x -  iy)^k ( \pm 1 \text{ or} \pm i ) \]
+and
+\[ f(x,y) - i \cdot g(x,y) = (x + iy)^r (x -  iy)^s ( \pm 1 \text{ or} \mp i ), \]
+where \( j, k, r, s \in \mathbb{N} \cup \{0\} \). 
+We know \( j + r = n \) and \( k + s = n \), as well as (by taking norms) \( j + k = n \) and \( r + s = n \).
+
+Thus \(r = k\) and \(s = j\).
+
+Clearly \( f(x,y) + i \cdot g(x,y) \simeq  f(x,y) - i \cdot g(x,y) \).
+Since 
+\[ 
+f(x,y) + i \cdot g(x,y) = (x + iy)^j (x -  iy)^{n-j} ( \pm 1 \text{ or} \pm i ) 
+\]
+and 
+\[ 
+f(x,y) - i \cdot g(x,y) = (x + iy)^{n-j} (x -  iy)^j ( \pm 1 \text{ or} \mp i ) ,
+\]
+each equivalence class contains a representative with \( j \leq n - j
+\).  As \( 2j \leq n \), we have \( j \leq \frac{n}{2} \), so \( j \)
+is one of \( 0, 1, 2, \ldots, \lfloor \frac{n}{2} \rfloor \). This shows
+that there are at most \( \lfloor \frac{n}{2} \rfloor + 1 \)
+equivalence classes. Now we show that there are at least that many.
+
+
+
+Consider \( (x + iy)^v (x -  iy)^{n-v} \)  and \( (x + iy)^u (x -  iy)^{n-u} \),
+where \( v \neq u \) and \(v,u \leq [ \frac{n}{2} ] \). We have:
+\begin{align*}
+(x + iy)^v (x -  iy)^{n-v} &= (x^2 + y^2)^v (x -  iy)^{n-2v}
+\\
+(x + iy)^u (x -  iy)^{n-u} &= (x^2 + y^2)^u (x -  iy)^{n-2u}
+\end{align*}
+
+Without loss of generality, \( v > u \). 
+Since \( \mathbb{Z} [i][x,y] \) is a unique factorization domain,
+\( (x^2 + y^2) \notdivides (x -  iy)^m \) for \( m \in \mathbb{N} \cup \{ 0 \} \).
+Thus \( (x^2 + y^2)^v \divides (x + iy)^v (x -  iy)^{n-v} \)
+but \( (x^2 + y^2)^v \notdivides (x + iy)^u (x -  iy)^{n-u} \).
+
+Therefore \( (x + iy)^v (x -  iy)^{n-v} \not\simeq (x + iy)^u (x -  iy)^{n-u} \), 
+so the \( \lfloor \frac{n}{2} \rfloor + 1 \) representatives come from
+distinct equivalence classes.
+
+Thus there are \( \lfloor \frac{n}{2} \rfloor + 1 \) equivalence classes, 
+one each for \( v = 0, 1, 2, \ldots,  \lfloor \frac{n}{2} \rfloor \).
+\end{proof}
+
+
+
+
+
+
+
+
+
+\begin{figure}[h]
+\label{fig:2D}
+
+\begin{center}
+\begin{tikzpicture}
+
+\tikzmath{
+\hash = 0.1;
+\height = 6;
+\length = 10;
+\scale = 2;
+}
+
+
+\draw[thick] (0,0) -- (\scale * \length,0);
+\fill (\scale * \length/2, -1) circle (0cm) node[anchor=north] {\Large \( n \) };
+
+\draw[thick] (0,0) -- (0,\scale * \height);
+%\fill (-2, \scale * \height/2 ) circle (0cm) node[rotate=90,anchor=south] {\Large  Number of };
+%\fill (-1, \scale * \height/2 ) circle (0cm) node[rotate=90,anchor=south] {\Large  equivalence classes };
+\fill (-1, \scale * \height/2 ) circle (0cm) node[anchor=east] {\Large  \( \kappa \) };
+
+
+\foreach \y in {1, ..., \height}
+    \draw[thick] ( -\hash, \scale * \y ) node[anchor=east] {\Large \y} -- ( \hash, \scale * \y );
+
+\foreach \x in {1, ..., \length}
+{
+   \draw[thick] ( \scale * \x, -\hash ) node[anchor=north] {\Large \x} -- ( \scale * \x, \hash ) ;
+   \fill (\scale * \x, { \scale *  floor( \x / 2 ) + \scale } ) circle (.1cm);
+}
+  
+
+\end{tikzpicture}
+
+\end{center}
+
+\caption{
+\bf The number of equivalence classes \( \kappa \)
+when \(p = m = 2\) is \( \lfloor \frac{n}{2} \rfloor + 1 \) .
+ }
+\end{figure}
+
+
+
+
+
+\begin{table}[h]
+
+\label{table:4D}
+
+
+\begin{center}
+
+
+\begin{tabular}{ c | c }
+ \( n \) & \( \kappa \) \\
+\hline\hline
+ 1 & 1 \\
+\hline
+ 2 & 8 \\
+\hline
+ 3 & 48 \\
+\hline
+ 4 & 965 
+\end{tabular}
+
+
+
+
+
+\end{center}
+\caption{
+The conjectured number of equivalence
+classes \( \kappa \)  
+in the case where \(p = m = 4\).
+ }
+
+\end{table}
+
+
+
+\section{The case where \(p = m = 4\) and \(n = 2\)}
+
+
+
+
+
+
+
+
+%Consider the following eight expressions, each of which is in
+%\( \mathbb{Z}[i,j,k][x,y,z,w] \).
+The following eight identities are representatives from 
+eight different equivalence classes. These identities
+were generated by a product of quaternions. 
+
+\begin{enumerate}[{Identity} I:]
+\item
+    \begin{align*}
+    &(x + iy + jz + kw)(x + iy + jz + kw) \\
+    &= (x^2 - y^2 - z^2 - w^2 ) + i(2xy) + j(2xz) + k(2xw) 
+    \end{align*}
+Taking norms, this gives the identity:
+    \begin{align*}
+    &(x^2 - y^2 - z^2 - w^2 )^2 + (2xy)^2 + (2xz)^2 + (2xw)^2 \\
+    &= (x^2 + y^2 + z^2 + w^2)^2
+    \end{align*}
+\item
+    \begin{align*}
+    &(x + iy + jz + kw)(x + iy + jz - kw) \\
+    &= (x^2 - y^2 - z^2 + w^2 ) + i(2xy - 2zw) + j(2xz + 2yw) + k(0) 
+    \end{align*}
+Taking norms, this gives the identity:
+    \begin{align*}
+    &(x^2 - y^2 - z^2 + w^2 )^2 + (2xy - 2zw)^2 + (2xz + 2yw)^2 + (0)^2\\ 
+    &= (x^2 + y^2 + z^2 + w^2)^2
+    \end{align*}
+\item
+    \begin{align*}
+    &(x + iy + jz + kw)(x - iy - jz - kw) \\
+    &= (x^2 + y^2 + z^2 + w^2 ) + i(0) + j(0) + k(0) 
+    \end{align*}
+Taking norms, this gives the identity:
+    \begin{align*}
+    &(x^2 + y^2 + z^2 + w^2 )^2 + (0)^2 + (0)^2 + (0)^2 \\
+    &= (x^2 + y^2 + z^2 + w^2)^2
+    \end{align*}
+\item
+    \begin{align*}
+    &(x + iy + jz + kw)(x + iy + jw + kz) \\
+    &= (x^2 - y^2 - 2zw ) + i(2xy + z^2 -w^2) \\
+        &+ j(xz - yz + xw + yw) + k(xz - yz + xw + yw) 
+    \end{align*}
+Taking norms, this gives the identity:
+    \begin{align*}
+    &(x^2 - y^2 - 2zw )^2 + (2xy + z^2 - w^2)^2 \\
+        &+ (xz - yz + xw + yw)^2 + (xz - yz + xw + yw)^2 \\
+    &= (x^2 + y^2 + z^2 + w^2)^2
+    \end{align*}
+\item
+    \begin{align*}
+    &(x + iy + jz + kw)(x + iy + jw - kz) \\
+    &= (x^2 - y^2 ) + i(2xy - z^2 - w^2) \\
+        &+ j(xz + yz + xw + yw) + k(-xz - yz + xw + yw) 
+    \end{align*}
+Taking norms, this gives the identity:
+    \begin{align*}
+    &(x^2 - y^2 )^2 + (2xy - z^2 - w^2)^2 \\
+        &+ (xz + yz + xw + yw)^2 + (-xz - yz + xw + yw)^2 \\ 
+    &= (x^2 + y^2 + z^2 + w^2)^2
+    \end{align*}
+\item
+    \begin{align*}
+    &(x + iy + jz + kw)(x - iy + jw - kz) \\
+    &= (x^2 + y^2 ) + i(- z^2 - w^2) \\
+        &+ j(xz + yz + xw - yw) + k(-xz + yz + xw + yw) 
+    \end{align*}
+Taking norms, this gives the identity:
+    \begin{align*}
+    &(x^2 + y^2 )^2 + (- z^2 - w^2)^2 \\
+        &+ (xz + yz + xw - yw)^2 + (-xz + yz + xw + yw)^2 \\
+    &= (x^2 + y^2 + z^2 + w^2)^2
+    \end{align*}
+\item
+    \begin{align*}
+    &(x + iy + jz + kw)(x + iz + jw + ky) \\
+    &= (x^2 - yz - yw - zw ) + i(xy + xz + yz - w^2) \\
+        &+ j(-y^2 + xz + xw + zw) + k(xy - z^2 + xw + yw) 
+    \end{align*}
+Taking norms, this gives the identity:
+    \begin{align*}
+    &(x^2 - yz - yw - zw )^2 + (xy + xz + yz - w^2)^2 \\
+        &+ (-y^2 + xz + xw + zw)^2 + (xy - z^2 + xw + yw)^2 \\
+    &= (x^2 + y^2 + z^2 + w^2)^2
+    \end{align*}
+\item
+    \begin{align*}
+    &(x + iy + jz + kw)(x + iz + jw - ky) \\
+    &= (x^2 - yz + yw - zw ) + i(xy + xz - yz - w^2) \\
+        &+ j(y^2 + xz + xw + zw) + k(xw - xy - z^2  + yw) 
+    \end{align*}
+Taking norms, this gives the identity:
+    \begin{align*}
+    &(x^2 - yz + yw - zw )^2 + (xy + xz - yz - w^2)^2 \\
+        &+ (y^2 + xz + xw + zw)^2 + (xw - xy - z^2  + yw)^2 \\
+    &= (x^2 + y^2 + z^2 + w^2)^2
+    \end{align*}
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+\section{Conclusion}
+
+
+
+The original
+goal of this project was to find a parameterization, preferably a polynomial one,  of 
+Pythagorean~quintuples in four parameters.
+Such a parameterization of quintuples
+has been done using $12$ parameters~\cite{Polynomial_parametrization},
+but the method involved a
+specific case of sextuples, not a direct relationship between 
+quintuples and quaternions. 
+This project has shown that a
+direct relationship is not trivial.
+
+
+
+There are several paths
+ for future research:
+\begin{enumerate}
+
+%Not true
+%\item
+%{ The Hurwitz integers have
+% 24 units, so it may be possible to represent any Pythagorean 
+%quintuple as a product of two quaternions and a unit. 
+%}
+
+%
+%\item 
+%{ Why can almost every 
+%quintuple be generated
+%in a multiple of 12 times? I suspect that this is an artifact
+%of my program. 
+%}
+
+
+\item
+{Conway and Smith have developed connections between the
+ quaternions and 
+orthogonal groups (rotations of space). 
+Once I understand
+ more group theory, their ideas may provide an important
+ geometrical interpretation. 
+}
+
+
+\item
+{ Perhaps the obvious geometrical analogue of Pythagorean quintuples
+  --- the volumes of the facets of what we will call a
+  tetrarectangular 4-dimensional simplex --- has a deeper meaning.  }
+
+
+%\item
+%{ Perhaps the obvious geometrical
+%analogue of Pythagorean quintuples --- sections of a 4-dimensional
+% rectangular prism, just as a right triangle is a section of
+% a rectangle --- has deeper meaning.   
+%}
+
+\item
+
+{In the 1930s, B.\ Berggren \cite{Swedish_Tree} discovered a set of
+transformations that iteratively generate all primitive Pythagorean
+triples.  F.\ J.\ M.\ Barning \cite{Dutch_Tree} independently found
+this method and reformulated it into a set of matrices, and Conrad 
+\cite{Conrad} provided a geometric interpretation.  Notably,
+these transformations can be shown as the Barning-Hall tree, which
+contains all primitive Pythagorean triples.  This approach is 
+completely different from the methods in this paper, but
+I plan to explore this path.}
+
+%Berggren was not just republishing a result by H. Rath.  Rath appears
+%to have compiled every known result on Pythagorean triples and not
+%cited his sources.  https://hdl.handle.net/2027/mdp.39015036980533
+
+%This paper seems like real math, but is not related enough to my
+%project. It has a correct overview of the topic: A Discussion on
+%Primitive Pythagorean Triples and Primitive Pythagorean Primes
+%Duvvuri Surya Rahul and Snehanshu Saha
+
+
+\end{enumerate}
+
+
+
+
+\begin{appendices}
+%%\appendix
+
+\section{Detailed Analysis of a Pythagorean Quintuple That Does Not Arise from
+Theorem~\ref{theorem_as_products}}
+\label{appendix_A}
+
+
+
+Consider the Pythagorean quintuple
+$1^2 + 2^2 + 8^2 + 10^2 = 13^2$.
+It
+cannot be represented as in
+Theorem~\ref{theorem_as_products}.
+If it could, it would use one of the following generating lists.
+The
+coefficients are the only Hurwitz integers to have a modulus of 13:
+
+
+
+\begin{enumerate}
+
+\item $ \frac{7}{2},\frac{1}{2}, \frac{1}{2}, \frac{1}{2}  $\\
+How could this list create the 1?
+The terms that could add to 1 are
+\begin{itemize}
+\item $ \pm\frac{49}{4},\pm\frac{1}{4}, \pm\frac{1}{4}, \pm\frac{1}{4}  $  
+\item or $ \pm\frac{7}{4},\pm\frac{7}{4}, \pm\frac{1}{4}, \pm\frac{1}{4}  $. 
+\end{itemize}
+Neither of these possibilities work.
+
+
+\item $3,2,0,0$\\
+How could this list create the 10?
+The terms that could add to 10 are
+\begin{itemize}
+\item$ \pm9,\pm4, 0, 0  $,
+\item$ \pm6,\pm6, 0, 0  $,
+\item$ \pm6,0, 0, 0  $,
+\item$ \pm4,0, 0, 0  $,
+\item$ 0,0, 0, 0  $,
+\item or $ \pm9,0, 0, 0  $.
+\end{itemize}
+None of these possibilities work.
+
+
+\item $ \frac{5}{2},\frac{3}{2}, \frac{3}{2}, \frac{3}{2}  $\\
+How could this list create the 1?
+The terms that could add to 1 are
+\begin{itemize}
+\item$ \pm\frac{25}{4},\pm\frac{9}{4}, \pm\frac{9}{4}, \pm\frac{9}{4}  $  
+\item or $ \pm\frac{15}{4},\pm\frac{15}{4}, \pm\frac{9}{4}, \pm\frac{9}{4}  $. 
+\end{itemize}
+Neither of these possibilities work.
+
+
+
+\item $ \frac{5}{2},\frac{5}{2}, \frac{1}{2}, \frac{1}{2}  $\\
+How could this list create the 1?
+The terms that could add to 1 are
+\begin{itemize}
+\item$ \pm\frac{25}{4},\pm\frac{25}{4}, \pm\frac{1}{4}, \pm\frac{1}{4}  $,
+\item$ \pm\frac{25}{4},\pm\frac{5}{4}, \pm\frac{5}{4}, \pm\frac{1}{4}  $,
+\item or $ \pm\frac{5}{4},\pm\frac{5}{4}, \pm\frac{5}{4}, \pm\frac{5}{4}  $. 
+\end{itemize}
+None of these possibilities work.
+
+v\item $2,2,2,1$\\
+How could this list create the 10?
+The terms that could add to 10 are
+\begin{itemize}
+\item$ \pm4,\pm4, \pm4, \pm1  $  
+\item or $ \pm4,\pm4, \pm2, \pm2  $.
+\end{itemize}
+Neither of these possibilities work.
+
+
+\end {enumerate}
+
+
+\section{An Elementary Way to Generate Pythagorean Quintuples}
+\label{appendix_B}
+
+This method was inspired by the method used in \cite{New_Path}, which 
+dealt with Pythagorean Quadruples. I strongly suspect that this concept
+is a consequence of \cite{Formalized_New_Path}.
+
+
+Choose 3 nonnegative integers $a$, $b$, and $c$, excluding the case 
+where two of them are odd and one is even.
+
+
+
+
+
+Choose integers $p$ and $q$ that obey the following 
+conditions:
+
+
+\begin{itemize}
+\item[(i)]
+$p|(a^2 + b^2 + c^2)$ 
+
+
+\item[(ii)]
+$pq = a^2 + b^2 + c^2$ 
+
+
+
+\item[(iii)]
+$p \equiv q \pmod 2$
+
+
+
+\end{itemize}
+
+
+
+
+Let $d$ = $\frac{p-q}{2}$ and
+$e$ = $\frac{p+q}{2}$. 
+Note that if $p \not\equiv q \pmod 2$, then $d$ and $e$
+would not be integers.
+
+Then $a^2 + b^2 + c^2 + d^2 = e^2$. All Pythagorean quintuples can 
+be generated in this way.
+
+
+\section{Testing the formulas from Theorem~\ref{theorem_as_products}}
+\label{appendix_C}
+
+
+
+
+
+
+The author wrote
+a Python program
+to test how many Pythagorean quintuples does Theorem~\ref{theorem_as_products}
+represent.
+This program found all primitive Pythagorean 
+quintuples with all legs less than or equal to $20$.
+The program then takes a form, applies it
+to a set of four integers or half integers, and records the resulting 
+Pythagorean quintuple.   
+
+
+\begin{example}
+Example of a generating list: 
+$$ 4, 4, 0, 1
+$$ 
+Example of a form:
+$$
+     (x+yi+zj+wk)(y+zi+wj-xk)
+$$
+The program applies the form: 
+$$
+     (4+4i+0j+1k)(4+0i+1j-4k)=20+15i+20j-8k
+$$
+The result:
+$$
+       8, 15, 20, 20
+$$
+The result is always a Pythagorean quintuple: 
+$$8^2+ 15^2+ 20^2+ 20^2= 33^2$$
+\end{example}
+
+
+
+
+
+
+
+
+
+The author then
+analyzed the forms to
+see if they
+capture all of the test set of primitive Pythagorean quintuples.
+To select the forms in Figure~\ref{figure_57}
+the author began with the quaternion
+$(x + yi + zj + wk)^2$ with 
+ $x$, $y$, $z$ and $w$ all positive.
+Theorem~\ref{theorem_as_products} required 
+permutations and sign changes within the factors.
+Without loss of generality, the first factor is
+of the form $(x \pm yi \pm zj \pm wk)$,
+while the second factor has all possible permutations
+and sign changes of
+ $x$, $y$, $z$ and $w$ to produce
+$(x' + y'i + z'j + w'k)$.
+This gives $2^7(4!)$ possible expressions.
+
+
+The author let $x = \pi$, $y = e$,
+$z = \sqrt{2}$ and $w = \sqrt{5}$ and evaluated
+each of the $2^7(4!)$ expressions.
+Of these, there were $57$ different resulting values.
+The author chose one representative expression for each of the
+$57$ values. Notice that there exists a great deal of 
+redundancy among these $57$ expressions; any $2$ expressions
+characterize roughly the same set of primitive
+Pythagorean quintuples, at least for small examples. Intuitively,
+this redundancy arises because each expression describes a way in which 
+a quaternion can be factored. 
+By Theorem~\ref{theorem_unique_factorization}, a quaternion that 
+represents a primitive Pythagorean quintuple can be factored in many 
+ways, so many of these $57$ expressions characterize it.
+
+
+\vanish{
+%%% Old figure of Heinz 57
+\begin{figure}
+\begin{tabbing}
+spacespacespacespacespacespacespacespacespace\=              \kill
+1. $(x+yi+zj+wk)(x+yi+zj+wk)$ \>283\\
+2. $(x+yi+zj+wk)(x+yi+wj+zk)$ \>349\\
+3. $(x+yi+zj+wk)(x+zi+yj+wk)$ \>349\\
+4. $(x+yi+zj+wk)(x+zi+wj+yk)$ \>361\\
+5. $(x+yi+zj+wk)(x+wi+yj+zk)$ \>352\\
+6. $(x+yi+zj+wk)(x+wi+zj+yk)$ \>349\\
+7. $(x+yi+zj+wk)(y+xi+zj+wk)$ \>379\\
+8. $(x+yi+zj+wk)(y+xi+wj+zk)$ \>283\\
+9. $(x+yi+zj+wk)(y+zi+xj+wk)$ \>352\\
+10. $(x+yi+zj+wk)(y+zi+wj+xk)$ \>349\\
+11. $(x+yi+zj+wk)(y+wi+xj+zk)$ \>379\\
+12. $(x+yi+zj+wk)(y+wi+zj+xk)$ \>393\\
+13. $(x+yi+zj+wk)(z+xi+yj+wk)$ \>393\\
+14. $(x+yi+zj+wk)(z+xi+wj+yk)$ \>349\\
+15. $(x+yi+zj+wk)(z+yi+xj+wk)$ \>379\\
+16. $(x+yi+zj+wk)(z+yi+wj+xk)$ \>352\\
+17. $(x+yi+zj+wk)(z+wi+xj+yk)$ \>283\\
+18. $(x+yi+zj+wk)(w+xi+zj+yk)$ \>352\\
+19. $(x+yi+zj+wk)(w+yi+xj+zk)$ \>393\\
+20. $(x+yi+zj+wk)(w+zi+xj+yk)$ \>349\\
+21. $(x+yi+zj+wk)(w+zi+yj+xk)$ \>283\\
+22. $(x+yi+zj+wk)(x+yi+zj-wk)$ \>321\\
+23. $(x+yi+zj+wk)(x+yi+wj-zk)$ \>405\\
+24. $(x+yi+zj+wk)(x+zi+yj-wk)$ \>405\\
+25. $(x+yi+zj+wk)(x+zi+wj-yk)$ \>353\\
+26. $(x+yi+zj+wk)(x+wi+yj-zk)$ \>353\\
+27. $(x+yi+zj+wk)(x+wi+zj-yk)$ \>291\\
+28. $(x+yi+zj+wk)(y+xi+zj-wk)$ \>405\\
+29. $(x+yi+zj+wk)(y+xi+wj-zk)$ \>321\\
+30. $(x+yi+zj+wk)(y+zi+xj-wk)$ \>353\\
+31. $(x+yi+zj+wk)(y+zi+wj-xk)$ \>405\\
+32. $(x+yi+zj+wk)(y+wi+xj-zk)$ \>291\\
+33. $(x+yi+zj+wk)(z+xi+yj-wk)$ \>353\\
+34. $(x+yi+zj+wk)(z+xi+wj-yk)$ \>291\\
+35. $(x+yi+zj+wk)(z+yi+xj-wk)$ \>291\\
+36. $(x+yi+zj+wk)(z+wi+xj-yk)$ \>5\\
+37. $(x+yi+zj+wk)(z+wi+yj-xk)$ \>291\\
+38. $(x+yi+zj+wk)(w+xi+yj-zk)$ \>405\\
+39. $(x+yi+zj+wk)(w+yi+zj-xk)$ \>405\\
+40. $(x+yi+zj+wk)(w+zi+xj-yk)$ \>291\\
+41. $(x+yi+zj+wk)(w+zi+yj-xk)$ \>321\\
+42. $(x+yi+zj-wk)(x+yi+zj+wk)$ \>321\\
+43. $(x+yi+zj-wk)(x+zi+wj+yk)$ \>353\\
+44. $(x+yi+zj-wk)(x+wi+yj+zk)$ \>353\\
+45. $(x+yi+zj-wk)(y+zi+xj+wk)$ \>353\\
+46. $(x+yi+zj-wk)(z+xi+yj+wk)$ \>353\\
+47. $(x+yi+zj-wk)(z+wi+xj+yk)$ \>321\\
+48. $(x+yi+zj-wk)(w+zi+yj+xk)$ \>321\\
+49. $(x+yi+zj-wk)(x+yi+wj-zk)$ \>349\\
+50. $(x+yi+zj-wk)(x+zi+yj-wk)$ \>349\\
+51. $(x+yi+zj-wk)(x+wi+zj-yk)$ \>349\\
+52. $(x+yi+zj-wk)(y+xi+zj-wk)$ \>379\\
+53. $(x+yi+zj-wk)(y+zi+wj-xk)$ \>379\\
+54. $(x+yi+zj-wk)(y+wi+xj-zk)$ \>349\\
+55. $(x+yi+zj-wk)(z+xi+wj-yk)$ \>379\\
+56. $(x+yi+zj-wk)(z+wi+yj-xk)$ \>349\\
+57. $(x+yi+zj-wk)(w+xi+yj-zk)$ \>349
+\end{tabbing}
+\caption{The $57$ possible forms of a Pythagorean quintuple in its primitive Hurwitz form as seen in Theorem~\ref{theorem_as_products}.} 
+\label{figure_57}
+\end{figure}
+}
+
+
+
+There are $337$ Pythagorean quintuples 
+with all legs less than or equal to $20$.
+See Figure~\ref{figure_quintuples}
+for $50$ of those quintuples and
+the number of ways to generate them:
+
+
+\begin{figure}
+$$
+\begin{array}{l|c||l|c}
+                  &\mbox{Times}    &   &\mbox{Times}\\ 
+\mbox{Pythagorean Quintuple}     &\mbox{found}
+&\mbox{Pythagorean Quintuple}     &\mbox{found}\\ \hline
+&&&\\
+0^2+ 0^2+ 0^2+ 1^2  = 1^2 & 255
+& 2.5^2+ 3.5^2+ 6.5^2+ 19.5^2  = 21^2 &0\\
+0^2+ 0^2+ 3^2+ 4^2  = 5^2 &180
+&2.5^2+ 12.5^2+ 12.5^2+ 14.5^2  = 23^2 &36\\
+%%
+0^2+ 0^2+ 5^2+ 12^2  = 13^2 &180&
+2.5^2+ 13.5^2+ 16.5^2+ 19.5^2  = 29^2 &0\\
+%
+0^2+ 0^2+ 8^2+ 15^2  = 17^2 &180&
+3.5^2+ 5.5^2+ 8.5^2+ 10.5^2  = 15^2 &0\\
+%
+0^2+ 3^2+ 4^2+ 12^2  = 13^2 &252&
+3.5^2+ 5.5^2+ 9.5^2+ 12.5^2  = 17^2 &0\\
+%
+1^2+ 2^2+ 8^2+ 10^2  = 13^2 &0&
+3.5^2+ 5.5^2+ 15.5^2+ 18.5^2  = 25^2 &0\\
+%
+1^2+ 2^2+ 10^2+ 16^2  = 19^2 &0&
+3.5^2+ 5.5^2+ 17.5^2+ 19.5^2  = 27^2 &0\\
+%
+1^2+ 4^2+ 4^2+ 4^2  = 7^2 &36&
+3.5^2+ 6.5^2+ 6.5^2+ 8.5^2  = 13^2 &60\\
+%
+4^2+ 12^2+ 13^2+ 20^2  = 27^2 &0&
+3.5^2+ 6.5^2+ 11.5^2+ 18.5^2  = 23^2 &0\\
+%
+4^2+ 13^2+ 16^2+ 20^2  = 29^2 &144&
+3.5^2+ 7.5^2+ 10.5^2+ 10.5^2  = 17^2 &36\\
+%
+4^2+ 16^2+ 17^2+ 20^2  = 31^2 &0&
+3.5^2+ 7.5^2+ 10.5^2+ 13.5^2  = 19^2 &0\\
+%
+8^2+ 13^2+ 14^2+ 14^2  = 25^2 &36&
+3.5^2+ 7.5^2+ 11.5^2+ 15.5^2  = 21^2 &24\\
+%
+10^2+ 10^2+ 19^2+ 20^2  = 31^2 &36&
+3.5^2+ 8.5^2+ 8.5^2+ 11.5^2  = 17^2 &60\\
+%
+12^2+ 16^2+ 17^2+ 20^2  = 33^2 &288&
+4.5^2+ 4.5^2+ 7.5^2+ 8.5^2  = 13^2 &84\\
+%
+13^2+ 16^2+ 20^2+ 20^2  = 35^2 &36&
+4.5^2+ 4.5^2+ 10.5^2+ 14.5^2  = 19^2 &84\\
+%
+13^2+ 20^2+ 20^2+ 20^2  = 37^2 &36&
+4.5^2+ 4.5^2+ 13.5^2+ 17.5^2  = 23^2 &36\\
+%
+0.5^2+ 0.5^2+ 0.5^2+ 0.5^2  = 1^2 &30&
+8.5^2+ 15.5^2+ 17.5^2+ 18.5^2  = 31^2 &0\\
+%
+0.5^2+ 0.5^2+ 1.5^2+ 2.5^2  = 3^2 &84&
+9.5^2+ 10.5^2+ 19.5^2+ 19.5^2  = 31^2 &36\\
+%
+0.5^2+ 0.5^2+ 2.5^2+ 6.5^2  = 7^2 &84&
+9.5^2+ 12.5^2+ 14.5^2+ 16.5^2  = 27^2 &48\\
+%
+0.5^2+ 0.5^2+ 3.5^2+ 3.5^2  = 5^2 &36&
+10.5^2+ 10.5^2+ 11.5^2+ 16.5^2  = 25^2 &36\\
+%
+0.5^2+ 0.5^2+ 3.5^2+ 12.5^2  = 13^2 &84&
+10.5^2+ 12.5^2+ 12.5^2+ 17.5^2  = 27^2 &36\\
+%
+0.5^2+ 0.5^2+ 5.5^2+ 9.5^2  = 11^2 &36&
+10.5^2+ 16.5^2+ 16.5^2+ 17.5^2  = 31^2 &36\\
+%
+1.5^2+ 8.5^2+ 13.5^2+ 16.5^2  = 23^2 &0&
+11.5^2+ 16.5^2+ 18.5^2+ 18.5^2  = 33^2 &36\\
+%
+1.5^2+ 10.5^2+ 10.5^2+ 17.5^2  = 23^2 &36&
+12.5^2+ 12.5^2+ 17.5^2+ 18.5^2  = 31^2 &84\\
+%
+1.5^2+ 10.5^2+ 15.5^2+ 16.5^2  = 25^2 &0&
+12.5^2+ 14.5^2+ 18.5^2+ 19.5^2  = 33^2 &48
+\end{array}
+$$
+\caption{Generating program results for some small Pythagorean quintuples,}
+\label{figure_quintuples}
+\end{figure}
+
+
+\vanish{
+%\begin{figure}
+\begin{tabbing}
+spacespacespacespacespacespacespace\=    \kill
+Pythagorean Quintuple     \>Number of ways to generate\\
+$0^2+ 0^2+ 0^2+ 1^2  = 1^2$ \>$255$\\
+$0^2+ 0^2+ 3^2+ 4^2  = 5^2$ \>$180$\\
+$0^2+ 0^2+ 5^2+ 12^2  = 13^2$ \>$180$\\
+$0^2+ 0^2+ 8^2+ 15^2  = 17^2$ \>$180$\\
+$0^2+ 3^2+ 4^2+ 12^2  = 13^2$ \>$252$\\
+$1^2+ 2^2+ 8^2+ 10^2  = 13^2$ \>$0$\\
+$1^2+ 2^2+ 10^2+ 16^2  = 19^2$ \>$0$\\
+$1^2+ 4^2+ 4^2+ 4^2  = 7^2$ \>$36$\\
+$4^2+ 12^2+ 13^2+ 20^2  = 27^2$ \>$0$\\
+$4^2+ 13^2+ 16^2+ 20^2  = 29^2$ \>$144$\\
+$4^2+ 16^2+ 17^2+ 20^2  = 31^2$ \>$0$\\
+$8^2+ 13^2+ 14^2+ 14^2  = 25^2$ \>$36$\\
+$10^2+ 10^2+ 19^2+ 20^2  = 31^2$ \>$36$\\
+$12^2+ 16^2+ 17^2+ 20^2  = 33^2$ \>$288$\\
+$13^2+ 16^2+ 20^2+ 20^2  = 35^2$ \>$36$\\
+$13^2+ 20^2+ 20^2+ 20^2  = 37^2$ \>$36$\\
+$0.5^2+ 0.5^2+ 0.5^2+ 0.5^2  = 1^2$ \>$30$\\
+$0.5^2+ 0.5^2+ 1.5^2+ 2.5^2  = 3^2$ \>$84$\\
+$0.5^2+ 0.5^2+ 2.5^2+ 6.5^2  = 7^2$ \>$84$\\
+$0.5^2+ 0.5^2+ 3.5^2+ 3.5^2  = 5^2$ \>$36$\\
+$0.5^2+ 0.5^2+ 3.5^2+ 12.5^2  = 13^2$ \>$84$\\
+$0.5^2+ 0.5^2+ 5.5^2+ 9.5^2  = 11^2$ \>$36$\\
+$1.5^2+ 8.5^2+ 13.5^2+ 16.5^2  = 23^2$ \>$0$\\
+$1.5^2+ 10.5^2+ 10.5^2+ 17.5^2  = 23^2$ \>$36$\\
+$1.5^2+ 10.5^2+ 15.5^2+ 16.5^2  = 25^2$ \>$0$\\
+$2.5^2+ 3.5^2+ 6.5^2+ 19.5^2  = 21^2$ \>$0$\\
+$2.5^2+ 12.5^2+ 12.5^2+ 14.5^2  = 23^2$ \>$36$\\
+$2.5^2+ 13.5^2+ 16.5^2+ 19.5^2  = 29^2$ \>$0$\\
+$3.5^2+ 5.5^2+ 8.5^2+ 10.5^2  = 15^2$ \>$0$\\
+$3.5^2+ 5.5^2+ 9.5^2+ 12.5^2  = 17^2$ \>$0$\\
+$3.5^2+ 5.5^2+ 15.5^2+ 18.5^2  = 25^2$ \>$0$\\
+$3.5^2+ 5.5^2+ 17.5^2+ 19.5^2  = 27^2$ \>$0$\\
+$3.5^2+ 6.5^2+ 6.5^2+ 8.5^2  = 13^2$ \>$60$\\
+$3.5^2+ 6.5^2+ 11.5^2+ 18.5^2  = 23^2$ \>$0$\\
+$3.5^2+ 7.5^2+ 10.5^2+ 10.5^2  = 17^2$ \>$36$\\
+$3.5^2+ 7.5^2+ 10.5^2+ 13.5^2  = 19^2$ \>$0$\\
+$3.5^2+ 7.5^2+ 11.5^2+ 15.5^2  = 21^2$ \>$24$\\
+$3.5^2+ 8.5^2+ 8.5^2+ 11.5^2  = 17^2$ \>$60$\\
+$4.5^2+ 4.5^2+ 7.5^2+ 8.5^2  = 13^2$ \>$84$\\
+$4.5^2+ 4.5^2+ 10.5^2+ 14.5^2  = 19^2$ \>$84$\\
+$4.5^2+ 4.5^2+ 13.5^2+ 17.5^2  = 23^2$ \>$36$\\
+$8.5^2+ 15.5^2+ 17.5^2+ 18.5^2  = 31^2$ \>$0$\\
+$9.5^2+ 10.5^2+ 19.5^2+ 19.5^2  = 31^2$ \>$36$\\
+$9.5^2+ 12.5^2+ 14.5^2+ 16.5^2  = 27^2$ \>$48$\\
+$10.5^2+ 10.5^2+ 11.5^2+ 16.5^2  = 25^2$ \>$36$\\
+$10.5^2+ 12.5^2+ 12.5^2+ 17.5^2  = 27^2$ \>$36$\\
+$10.5^2+ 16.5^2+ 16.5^2+ 17.5^2  = 31^2$ \>$36$\\
+$11.5^2+ 16.5^2+ 18.5^2+ 18.5^2  = 33^2$ \>$36$\\
+$12.5^2+ 12.5^2+ 17.5^2+ 18.5^2  = 31^2$ \>$84$\\
+$12.5^2+ 14.5^2+ 18.5^2+ 19.5^2  = 33^2$ \>$48$\\
+\end{tabbing}
+%\label{example_quintuples}
+%\end{figure}
+}
+
+
+\end{appendices}
+
+
+
+\newpage
+
+\newcommand{\journal}[6]{{\sc #1,} #2, {\it #3} {\bf #4} (#5), #6.}
+\newcommand{\preprint}[3]{{\sc #1,} #2, preprint #3.}
+\newcommand{\book}[4]{{\sc #1,} #2, #3, #4.}
+\newcommand{\collection}[6]{{\sc #1,}  #2, #3, in {\it #4}, #5, #6.}
+\newcommand{\JCTA}{J.\ Combin.\ Theory Ser.\ A}
+\newcommand{\arxiv}[3]{{\sc #1,} #2, {\tt #3}.}
+\newcommand{\article}[3]{{\sc #1,} #2, {\tt #3}.}
+\newcommand{\journalfive}[5]{{\sc #1,} #2, {\it #3}  (#4), #5.}
+
+
+
+
+
+\begin{thebibliography}{1}
+
+%\bibitem{Hardy_and_Wright}
+%\book{G.\ H.\ Hardy and E.\ M.\ Wright}
+%         {An Introduction to the Theory of Numbers, 6th Edition}
+%         {Oxford University Press, Oxford} 
+%         {2008}
+
+
+
+\bibitem{Davidoff_Sarnak_Valette}
+\book{G.\ Davidoff, P.\ Sarnak, and A.\ Valette}
+         {Elementary Number Theory,
+           Group Theory,
+           and Ramanujan Graphs}
+         {Cambridge University Press}
+         {2003}
+
+\bibitem{Dickson}
+\book{L.\ E.\ Dickson}
+         {History of the Theory of Numbers}
+         {AMS Chelsea Publishing}
+         {1999}
+
+
+%\bibitem{Jacobi}
+%\journal{C.\ G.\ J.\ Jacobi}
+%        {De compositione numerorum e quatuor quadratis}
+%        {Journal f\"ur die reine und angewandte Mathematik}
+%        {12}{1834}{167--172}
+
+
+\bibitem{Ferrari}
+\journal{F.\ Ferrari}
+        {Risoluzione Dell'Equazione}
+        {Supplemento al Periodico di Matematica}
+        {11}{1908}{129--131}
+
+
+
+\bibitem{Mordell}
+\book{L.\ J.\ Mordell}
+         {Diophantine Equations}
+         {Academic Press, London and New York} 
+         {1969}
+
+
+\end{thebibliography}
+
+
+
+
+
+
+\end{document}
+
+
+
+
+ 
+
+%\usepackage{abstract}
+\usepackage{anyfontsize}
+\usepackage{tikz}
+\usepackage{amssymb, amsmath, fullpage, amsthm}
+\usepackage{todonotes}
+
+\parskip3mm
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{property}[theorem]{Property}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{parametrization}[theorem]{Parametrization}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remarks}[theorem]{Remarks}
+\newtheorem{remark}[theorem]{Remark}
+
+\numberwithin{equation}{section}
+\usepackage[bindingoffset=0.2in,
+            left=0.5in,right=0.5in,top=0.5in,bottom=0.5in,
+            footskip=.25in]{geometry}%Sets margins
+\pagenumbering{gobble}%No page numbers
+
+\newcommand{\controlledbf}{}
+\newcommand{\MySpacing}{25}
+%\newcommand{\MySpacing}{10}
+\newcommand{\MyFontSize}{20}
+%\newcommand{\MyFontSize}{10}
+\newcommand{\MySectionSpacing}{15}
+%\newcommand{\MySectionSpacing}{10}
+\newcommand{\MySectionFontSize}{40}
+%\newcommand{\MySectionFontSize}{10}
+
+
+%\renewcommand{\abstractnamefont}{\fontsize{\MyFontSize}{\MySpacing}}
+%\renewcommand{\abstracttextfont}{\normalfont\small}
+
+
+\DeclareMathOperator{\inv}{inv}
+\DeclareMathOperator{\frst}{frst}
+\DeclareMathOperator{\er}{er}
+\DeclareMathOperator{\asc}{asc}
+\DeclareMathOperator{\odd}{odd}
+
+\newcommand{\ascodd}{\asc_{\odd}}
+
+\newcommand{\doubleprime}{\prime\prime}
+
+
+\font\Cp = msbm10
+
+\newcommand{\Ccc}{\hbox{\Cp C}}
+\newcommand{\Fff}{\hbox{\Cp F}}
+\newcommand{\Hhh}{\hbox{\Cp H}}
+\newcommand{\Nnn}{\hbox{\Cp N}}
+\newcommand{\Rrr}{\hbox{\Cp R}}
+\newcommand{\Sss}{\hbox{\Cp S}}
+\newcommand{\Zzz}{\hbox{\Cp Z}}
+%The above commands don't work with large font.
+
+\newcommand{\SSSS}{\mathfrak{S}}
+
+\newcommand{\Gaussian}[2]{\genfrac{[}{]}{0pt}{}{#1}{#2}_q}
+
+
+
+
+\newcommand{\fix}[1]{\todo[inline]{#1}}
+
+\begin{document}
+
+
+
+
+
+
+
+\newpage
+
+
+
+
+
+
+
+
+
+
