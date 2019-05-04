@@ -8,7 +8,7 @@
 %
 %
 % 
-% Last edited: May 3, 2019
+% Last edited: May 4, 2019
 %
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -58,6 +58,7 @@
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{remarks}[theorem]{Remarks}
+\newtheorem{conjecture}[theorem]{Conjecture}
 
 
 \theoremstyle{definition}
@@ -69,15 +70,19 @@
 \hyphenation{Hurwitz}
 
 \font\german = eufm10 scaled\magstep1
-\font\Cp = msbm10
+%\font\Cp = msbm10
 
-\newcommand{\Ccc}{\hbox{\Cp C}}
-\newcommand{\Fff}{\hbox{\Cp F}}
-\newcommand{\Hhh}{\hbox{\Cp H}}
-\newcommand{\Nnn}{\hbox{\Cp N}}
-\newcommand{\Rrr}{\hbox{\Cp R}}
-\newcommand{\Sss}{\hbox{\Cp S}}
-\newcommand{\Zzz}{\hbox{\Cp Z}}
+\newcommand{\Ccc}{\mathbb C}
+\newcommand{\Fff}{\mathbb F}
+\newcommand{\Hhh}{\mathbb H}
+\newcommand{\Nnn}{\mathbb N}
+\newcommand{\Rrr}{\mathbb R}
+\newcommand{\Sss}{\mathbb S}
+\newcommand{\Zzz}{\mathbb Z}
+\newcommand{\Lll}{\mathbb L}
+\renewcommand{\Bbb}{\mathbb B}
+\newcommand{\Ooo}{\mathbb O}
+\newcommand{\Qqq}{\mathbb Q}
 
 
 \newcommand{\vanish}[1]{}
@@ -143,8 +148,8 @@
 
 \begin{abstract}
 This number theory project investigates identities found by
-multiplying together quaternions in \( \mathbb{L}[x,y,z,w] \), the
-Lipschitz quaternions \( \mathbb{L} \) adjoined with the
+multiplying together quaternions in \( \Lll[x,y,z,w] \), the
+Lipschitz quaternions \( \Lll \) adjoined with the
 indeterminates \(x\), \(y\), \(z\), \(w\).  Recall that quaternions
 are \(4\)-dimensional complex numbers.  These identities provide
 solutions to \( \sum_{j = 1}^{p} \tau_j ^ 2 = \left( \sum_{i = 1}^{m}
@@ -155,7 +160,7 @@ group action of the direct product \( \mathfrak{S}_4^\pm \times \mathfrak{S}_4^\
 two complementary methods, we compute the number of equivalence
 classes for \(n = 1, 2, 3, 4,\) where \(n\) is the number of
 quaternion factors. We move to the case concerning products of complex
-numbers, namely \( \mathbb{Z}[i][x,y] \). Using the fact that the
+numbers, namely \( \Zzz[i][x,y] \). Using the fact that the
 Gaussian integers are commutative under multiplication, we
 characterize these equivalence classes, thus also providing an
 enumeration.
@@ -168,6 +173,9 @@ enumeration.
 
 
 \section{Introduction}
+\Huge
+
+
 
 \todo[inline]{Define quaternions, Lipschitz quaternions,
 norm of a quaternion and complex numbers, complex numbers}
@@ -200,10 +208,10 @@ x_{\pi_j} & \text{if } \pi_j > 0 \\
 
 \begin{definition}
 \label{def:general}
-Fix \( p, m \in \mathbb{N} \). 
+Fix \( p, m \in \Nnn \). 
 Let \( \tau = ( \tau_1, \ldots, \tau_p) \)
 be a tuple of length \( p \) where 
-\( \tau_i \in \mathbb{Z}[x_1,x_2, \ldots, x_m] \), where \( i = 1, \ldots, p \).
+\( \tau_i \in \Zzz[x_1,x_2, \ldots, x_m] \), where \( i = 1, \ldots, p \).
 We define an equivalence relation, denoted by \( \simeq \), on \(p\)-tuples
 \( \tau \) 
 by taking the transitive closure of the following three relations:
@@ -235,7 +243,7 @@ Definition~\ref{def:general} implies that the following is true:
 
 
 
-%Fix \( p \in \mathbb{Z} \). 
+%Fix \( p \in \Zzz \). 
 We are interested in counting the number of
 equivalence classes of the set of all tuples
  \( \tau = ( \tau_1, \ldots, \tau_p) \)
@@ -332,7 +340,7 @@ In the case where \( p = m = 2\), Definition~\ref{def:general} has an alternate 
 \begin{definition}
 \label{def:2D}
 
-Let \( h(z), h'(z) \in \mathbb{Z} [i][x,y] \),
+Let \( h(z), h'(z) \in \Zzz [i][x,y] \),
 where \( z = x + iy \).
 Let \( M \) be the following set of mappings: 
 \[
@@ -380,24 +388,25 @@ This means that \( c(z) \simeq a(z) \) or \( a(z) \simeq c(z) \).
 \end{enumerate}
 \end{proof}
 
-Recall that given \( f(x,y), g(x,y) \in \mathbb{Z}[x,y] \),
-we can find \( h(z) \in \mathbb{Z} [i][x,y] \)
+Recall that given \( f(x,y), g(x,y) \in \Zzz[x,y] \),
+we can find \( h(z) \in \Zzz [i][x,y] \)
 such that
 \( z = x + iy \)
 and
 \( h(z) = f(x,y) + i \cdot g(x,y) \). 
 The converse is also true.
 
-
+\todo[inline]{Does \(\simeq\) apply to complex numbers/quaternions or just tuples? }
 
 \begin{lemma}
-Let \( h(z) \simeq h'(z) \), where \( h(z), h'(z) \in \mathbb{Z}[i][x,y] \)
- and \( z = x+ iy \). Suppose \( ( x^2 + y^2 ) ^ u
-    \divides h(z) \), where \( u \in \mathbb{N} \). Then \( ( x^2 + y^2 ) ^ u \divides h'(z) \).
+Let \( h(z) \simeq h'(z) \), where \( h(z), h'(z) \in \Zzz[i][x,y] \)
+and \( z = x+ iy \).
+Suppose \( ( x^2 + y^2 ) ^ u \divides h(z) \),
+where \( u \in \Nnn \). Then \( ( x^2 + y^2 ) ^ u \divides h'(z) \).
 \end{lemma}
    
 \begin{proof}
-Let \( h(z) = ( x^2 + y^2 ) ^ u  p(z) \), where \( p(z) \in \mathbb{Z} [i][x,y] \). 
+Let \( h(z) = ( x^2 + y^2 ) ^ u  p(z) \), where \( p(z) \in \Zzz [i][x,y] \). 
 Whatever mappings we apply to \(h\) and \(z\)
 to obtain \( h'(z) \), we also apply to the factors of \( h(z) \). 
 No mapping will remove the factor of \( ( x^2 + y^2 ) ^ u \).
@@ -406,19 +415,19 @@ No mapping will remove the factor of \( ( x^2 + y^2 ) ^ u \).
 
 \vanish{
 \begin{corollary}
-Let \( h(z), h'(z) \in \mathbb{Z}[i][x,y] \) with \( z = x+ iy \).
+Let \( h(z), h'(z) \in \Zzz[i][x,y] \) with \( z = x+ iy \).
 \[
 h(z) \simeq h'(z) 
 \implies 
-( \forall u \in \mathbb{N} \cup \{ 0 \},  ( x^2 + y^2 ) ^ u \divides h(z)  \iff ( x^2 + y^2 ) ^ u \divides h'(z)  )
+( \forall u \in \Nnn \cup \{ 0 \},  ( x^2 + y^2 ) ^ u \divides h(z)  \iff ( x^2 + y^2 ) ^ u \divides h'(z)  )
 \]
 \end{corollary}
 }
 
 \begin{corollary}
 \label{corollary_equivalence}
-Let \( h(z), h'(z) \in \mathbb{Z}[i][x,y] \) with \( z = x+ iy \).
-Suppose \( h(z) \simeq h'(z) \). Then for all  \( u \in \mathbb{N} \cup \{ 0 \} \),
+Let \( h(z), h'(z) \in \Zzz[i][x,y] \) with \( z = x+ iy \).
+Suppose \( h(z) \simeq h'(z) \). Then for all  \( u \in \Nnn \cup \{ 0 \} \),
 the following two conditions are
 equivalent:
 \begin{enumerate}[i.]
@@ -438,12 +447,12 @@ Consider the set of all \(2\)-tuples \( \tau = ( \tau_1, \tau_2 )\) where
 \left(  x_1 ^ 2 + x_2 ^ 2  \right) ^ n 
 \).
 The number of equivalence classes within this set 
-is exactly  \( \lfloor \frac{n}{2} \rfloor + 1 \). 
+is exactly  \( \left\lfloor \frac{n}{2} \right\rfloor + 1 \). 
 Moreover, each equivalence class contains a tuple
 of the form \( ( \Re( \beta ) , \Im( \beta ) ) \),
 where \( \beta = (x + iy)^j (x -  iy)^{n-j} \),
 with \( j \)
-being one of \( 0, 1, 2, \ldots, \lfloor \frac{n}{2} \rfloor \).
+being one of \( 0, 1, 2, \ldots, \left\lfloor \frac{n}{2} \right\rfloor \).
 \end{theorem}
 
 
@@ -451,15 +460,15 @@ being one of \( 0, 1, 2, \ldots, \lfloor \frac{n}{2} \rfloor \).
 \begin{proof}
 Suppose 
 \[ (x^2 + y^2)^n = f(x,y)^2 + g(x,y)^2 \]
-where \( f(x,y), g(x,y) \in \mathbb{Z}[x,y] \).
+where \( f(x,y), g(x,y) \in \Zzz[x,y] \).
 Then  
 \[ (x + iy)^n (x -  iy)^n = ( f(x,y) + i \cdot g(x,y) ) ( f(x,y) - i \cdot g(x,y) ) .\]
-Since \( \mathbb{Z} [i][x,y] \) is a unique factorization domain,
+Since \( \Zzz [i][x,y] \) is a unique factorization domain,
 we can factor this as
 \[ f(x,y) + i \cdot g(x,y) = c \cdot (x + iy)^j (x -  iy)^k \]
 and
 \[ f(x,y) - i \cdot g(x,y) = d \cdot (x + iy)^r (x -  iy)^s,\]
-where \( j, k, r, s \in \mathbb{N} \cup \{0\} \) and
+where \( j, k, r, s \in \Nnn \cup \{0\} \) and
 \(c \cdot d = 1 \) with \( c,d \in \{ \pm 1 , \pm i \} \). 
 We know \( j + r = n \) and \( k + s = n \), as well as
 (by taking norms) \( j + k = n \) and \( r + s = n \).
@@ -476,8 +485,8 @@ f(x,y) - i \cdot g(x,y) = d \cdot (x + iy)^{n-j} (x -  iy)^j,
 \]
 each equivalence class contains a representative with \( j \leq n - j
 \).  As \( 2j \leq n \), we have \( j \leq \frac{n}{2} \), so \( j \)
-is one of \( 0, 1, 2, \ldots, \lfloor \frac{n}{2} \rfloor \). This shows
-that there are at most \( \lfloor \frac{n}{2} \rfloor + 1 \)
+is one of \( 0, 1, 2, \ldots, \left\lfloor \frac{n}{2} \right\rfloor \). This shows
+that there are at most \( \left\lfloor \frac{n}{2} \right\rfloor + 1 \)
 equivalence classes. Now we show that there are at least that many.
 
 
@@ -490,27 +499,32 @@ where \( u \neq v \) and \(u,v \leq [ \frac{n}{2} ] \). We have
 (x + iy)^v (x -  iy)^{n-v} &= (x^2 + y^2)^v (x -  iy)^{n-2v}
 \end{align*}
 Without loss of generality, we may assume \( u > v \). 
-Since \( \mathbb{Z} [i][x,y] \) is a unique factorization domain,
-\( (x^2 + y^2) \notdivides (x -  iy)^e \) for \( e \in \mathbb{N} \cup \{ 0 \} \).
+Since \( \Zzz [i][x,y] \) is a unique factorization domain,
+\( (x^2 + y^2) \notdivides (x -  iy)^e \) for \( e \in \Nnn \cup \{ 0 \} \).
 Thus \( (x^2 + y^2)^u \divides (x + iy)^u (x -  iy)^{n-u} \)
 but \( (x^2 + y^2)^u \notdivides (x + iy)^v (x -  iy)^{n-v} \).
 
 By Corollary~\ref{corollary_equivalence},
 \( (x + iy)^u (x -  iy)^{n-u} \not\simeq (x + iy)^v (x -  iy)^{n-v} \), 
-so the \( \lfloor \frac{n}{2} \rfloor + 1 \) representatives arise from
+so the \( \left\lfloor \frac{n}{2} \right\rfloor + 1 \) representatives arise from
 distinct equivalence classes.
-Thus there are \( \lfloor \frac{n}{2} \rfloor + 1 \) equivalence classes, 
-one each for \( u = 0, 1, 2, \ldots,  \lfloor \frac{n}{2} \rfloor \).
+Thus there are \( \left\lfloor \frac{n}{2} \right\rfloor + 1 \) equivalence classes, 
+one each for \( u = 0, 1, 2, \ldots,  \left\lfloor \frac{n}{2} \right\rfloor \).
 \end{proof}
 
 
 
 
 
+\begin{corollary}
 
+The number of solutions \( (f, g) \) to
+\[
+f^2 + g^2 = (x^2 + y^2)^n,
+\]
+where \( f, g \in \Zzz[x,y] \), is \(4n + 4\).
 
-
-
+\end{corollary}
 
 
 \begin{figure}[h]
@@ -552,9 +566,10 @@ one each for \( u = 0, 1, 2, \ldots,  \lfloor \frac{n}{2} \rfloor \).
 
 \caption{
 The number of equivalence classes \( \kappa \)
-when \(p = m = 2\) is \( \lfloor \frac{n}{2} \rfloor + 1 \) .
+when \(p = m = 2\) is \( \left\lfloor \frac{n}{2} \right\rfloor + 1 \) .
  }
 \end{figure}
+
 
 
 
@@ -608,7 +623,7 @@ in the case where \(p = m = 4\).
 
 
 %Consider the following eight expressions, each of which is in
-%\( \mathbb{Z}[i,j,k][x,y,z,w] \).
+%\( \Zzz[i,j,k][x,y,z,w] \).
 The following eight identities are representatives from 
 eight different equivalence classes. These identities
 were generated by a product of quaternions. 
@@ -706,11 +721,59 @@ Taking norms, this gives the identity:
     \end{align*}
 \end{enumerate}
 
+\section{Things I can't mention}
+
+\begin{conjecture}
+Let \( \alpha \in \Lll[x,y,z,w] \).
+If \( N(\alpha) \) has a nontrivial
+factorization over \( \Zzz[x,y,z,w] \),
+then \( \alpha \) has a nontrivial
+factorization over \( \Lll[x,y,z,w] \).
+\end{conjecture}
+The preceding conjecture implies the following one.
+\begin{conjecture}
+\label{Ehrenborg-Leep}
+Let \( (a, b, c, d) \) be a tuple such that
+\[
+a^2 + b^2 + c^2 + d^2 = (x^2 + y^2 + z^2 + w^2)^n,
+\] 
+where \( a, b, c, d \in \Zzz[x,y,z,w]\).
+Let \(\alpha = a + bi + cj + dk \).
+Then \( \alpha = \beta_1 \beta_2 \cdots \beta_n \),
+where \( \beta_u \in \Lll[x,y,z,w] \) for \(u\) in \(1, \ldots, n\).
+Moreover, let \( \beta_u = a' + b'i + c'j + d'k \). Then
+the tuple \( (a', b', c', d') \simeq (x, y, z, w) \).
+\end{conjecture}
+This conjecture states that all identities can be written as
+a product of quaternions. 
 
 
+\section{Things I can mention}
+Conjecture~\ref{Ehrenborg-Leep} is true in
+the case where \(n = 1\).
 
+\begin{lemma}
+If \(a, b, c, d \in \Zzz[x,y,z,w]\), and
+\[
+a^2 + b^2 + c^2 + d^2 = x^2 + y^2 + z^2 + w^2,
+\]
+then \( (a, b, c, d ) \simeq (x, y, z, w )\).
+\end{lemma}
 
-
+\begin{theorem}
+Assuming Conjecture~\ref{Ehrenborg-Leep},
+the number of solutions \( (f, g, h, k) \) to
+\[
+f^2 + g^2 + h^2 + k^2 = (x^2 + y^2 + z^2 + w^2)^n,
+\] 
+where \( f, g, h, k \in \Zzz[x,y,z,w]\),
+is at most
+\[
+8 \cdot \frac{47^{n+1} - 1}{46}
+=  8 \cdot \left\lfloor \frac{ 47^{n+1} }{46} \right\rfloor
+=  8 \sum_{i = 0}^n{47^n}.
+\]
+\end{theorem}
 
 
 
@@ -806,85 +869,9 @@ I plan to explore this path.}
 \begin{appendices}
 %%\appendix
 
-\section{Detailed Analysis of a Pythagorean Quintuple That Does Not Arise from
-Theorem~\ref{theorem_as_products}}
-\label{appendix_A}
-
-
-
-Consider the Pythagorean quintuple
-$1^2 + 2^2 + 8^2 + 10^2 = 13^2$.
-It
-cannot be represented as in
-Theorem~\ref{theorem_as_products}.
-If it could, it would use one of the following generating lists.
-The
-coefficients are the only Hurwitz integers to have a modulus of 13:
-
-
-
-\begin{enumerate}
-
-\item $ \frac{7}{2},\frac{1}{2}, \frac{1}{2}, \frac{1}{2}  $\\
-How could this list create the 1?
-The terms that could add to 1 are
-\begin{itemize}
-\item $ \pm\frac{49}{4},\pm\frac{1}{4}, \pm\frac{1}{4}, \pm\frac{1}{4}  $  
-\item or $ \pm\frac{7}{4},\pm\frac{7}{4}, \pm\frac{1}{4}, \pm\frac{1}{4}  $. 
-\end{itemize}
-Neither of these possibilities work.
-
-
-\item $3,2,0,0$\\
-How could this list create the 10?
-The terms that could add to 10 are
-\begin{itemize}
-\item$ \pm9,\pm4, 0, 0  $,
-\item$ \pm6,\pm6, 0, 0  $,
-\item$ \pm6,0, 0, 0  $,
-\item$ \pm4,0, 0, 0  $,
-\item$ 0,0, 0, 0  $,
-\item or $ \pm9,0, 0, 0  $.
-\end{itemize}
-None of these possibilities work.
-
-
-\item $ \frac{5}{2},\frac{3}{2}, \frac{3}{2}, \frac{3}{2}  $\\
-How could this list create the 1?
-The terms that could add to 1 are
-\begin{itemize}
-\item$ \pm\frac{25}{4},\pm\frac{9}{4}, \pm\frac{9}{4}, \pm\frac{9}{4}  $  
-\item or $ \pm\frac{15}{4},\pm\frac{15}{4}, \pm\frac{9}{4}, \pm\frac{9}{4}  $. 
-\end{itemize}
-Neither of these possibilities work.
-
-
-
-\item $ \frac{5}{2},\frac{5}{2}, \frac{1}{2}, \frac{1}{2}  $\\
-How could this list create the 1?
-The terms that could add to 1 are
-\begin{itemize}
-\item$ \pm\frac{25}{4},\pm\frac{25}{4}, \pm\frac{1}{4}, \pm\frac{1}{4}  $,
-\item$ \pm\frac{25}{4},\pm\frac{5}{4}, \pm\frac{5}{4}, \pm\frac{1}{4}  $,
-\item or $ \pm\frac{5}{4},\pm\frac{5}{4}, \pm\frac{5}{4}, \pm\frac{5}{4}  $. 
-\end{itemize}
-None of these possibilities work.
-
-v\item $2,2,2,1$\\
-How could this list create the 10?
-The terms that could add to 10 are
-\begin{itemize}
-\item$ \pm4,\pm4, \pm4, \pm1  $  
-\item or $ \pm4,\pm4, \pm2, \pm2  $.
-\end{itemize}
-Neither of these possibilities work.
-
-
-\end {enumerate}
-
 
 \section{An Elementary Way to Generate Pythagorean Quintuples}
-\label{appendix_B}
+\label{appendix_elementary_way}
 
 This method was inspired by the method used in \cite{New_Path}, which 
 dealt with Pythagorean Quadruples. I strongly suspect that this concept
@@ -931,311 +918,6 @@ Then $a^2 + b^2 + c^2 + d^2 = e^2$. All Pythagorean quintuples can
 be generated in this way.
 
 
-\section{Testing the formulas from Theorem~\ref{theorem_as_products}}
-\label{appendix_C}
-
-
-
-
-
-
-The author wrote
-a Python program
-to test how many Pythagorean quintuples does Theorem~\ref{theorem_as_products}
-represent.
-This program found all primitive Pythagorean 
-quintuples with all legs less than or equal to $20$.
-The program then takes a form, applies it
-to a set of four integers or half integers, and records the resulting 
-Pythagorean quintuple.   
-
-
-\begin{example}
-Example of a generating list: 
-$$ 4, 4, 0, 1
-$$ 
-Example of a form:
-$$
-     (x+yi+zj+wk)(y+zi+wj-xk)
-$$
-The program applies the form: 
-$$
-     (4+4i+0j+1k)(4+0i+1j-4k)=20+15i+20j-8k
-$$
-The result:
-$$
-       8, 15, 20, 20
-$$
-The result is always a Pythagorean quintuple: 
-$$8^2+ 15^2+ 20^2+ 20^2= 33^2$$
-\end{example}
-
-
-
-
-
-
-
-
-
-The author then
-analyzed the forms to
-see if they
-capture all of the test set of primitive Pythagorean quintuples.
-To select the forms in Figure~\ref{figure_57}
-the author began with the quaternion
-$(x + yi + zj + wk)^2$ with 
- $x$, $y$, $z$ and $w$ all positive.
-Theorem~\ref{theorem_as_products} required 
-permutations and sign changes within the factors.
-Without loss of generality, the first factor is
-of the form $(x \pm yi \pm zj \pm wk)$,
-while the second factor has all possible permutations
-and sign changes of
- $x$, $y$, $z$ and $w$ to produce
-$(x' + y'i + z'j + w'k)$.
-This gives $2^7(4!)$ possible expressions.
-
-
-The author let $x = \pi$, $y = e$,
-$z = \sqrt{2}$ and $w = \sqrt{5}$ and evaluated
-each of the $2^7(4!)$ expressions.
-Of these, there were $57$ different resulting values.
-The author chose one representative expression for each of the
-$57$ values. Notice that there exists a great deal of 
-redundancy among these $57$ expressions; any $2$ expressions
-characterize roughly the same set of primitive
-Pythagorean quintuples, at least for small examples. Intuitively,
-this redundancy arises because each expression describes a way in which 
-a quaternion can be factored. 
-By Theorem~\ref{theorem_unique_factorization}, a quaternion that 
-represents a primitive Pythagorean quintuple can be factored in many 
-ways, so many of these $57$ expressions characterize it.
-
-
-\vanish{
-%%% Old figure of Heinz 57
-\begin{figure}
-\begin{tabbing}
-spacespacespacespacespacespacespacespacespace\=              \kill
-1. $(x+yi+zj+wk)(x+yi+zj+wk)$ \>283\\
-2. $(x+yi+zj+wk)(x+yi+wj+zk)$ \>349\\
-3. $(x+yi+zj+wk)(x+zi+yj+wk)$ \>349\\
-4. $(x+yi+zj+wk)(x+zi+wj+yk)$ \>361\\
-5. $(x+yi+zj+wk)(x+wi+yj+zk)$ \>352\\
-6. $(x+yi+zj+wk)(x+wi+zj+yk)$ \>349\\
-7. $(x+yi+zj+wk)(y+xi+zj+wk)$ \>379\\
-8. $(x+yi+zj+wk)(y+xi+wj+zk)$ \>283\\
-9. $(x+yi+zj+wk)(y+zi+xj+wk)$ \>352\\
-10. $(x+yi+zj+wk)(y+zi+wj+xk)$ \>349\\
-11. $(x+yi+zj+wk)(y+wi+xj+zk)$ \>379\\
-12. $(x+yi+zj+wk)(y+wi+zj+xk)$ \>393\\
-13. $(x+yi+zj+wk)(z+xi+yj+wk)$ \>393\\
-14. $(x+yi+zj+wk)(z+xi+wj+yk)$ \>349\\
-15. $(x+yi+zj+wk)(z+yi+xj+wk)$ \>379\\
-16. $(x+yi+zj+wk)(z+yi+wj+xk)$ \>352\\
-17. $(x+yi+zj+wk)(z+wi+xj+yk)$ \>283\\
-18. $(x+yi+zj+wk)(w+xi+zj+yk)$ \>352\\
-19. $(x+yi+zj+wk)(w+yi+xj+zk)$ \>393\\
-20. $(x+yi+zj+wk)(w+zi+xj+yk)$ \>349\\
-21. $(x+yi+zj+wk)(w+zi+yj+xk)$ \>283\\
-22. $(x+yi+zj+wk)(x+yi+zj-wk)$ \>321\\
-23. $(x+yi+zj+wk)(x+yi+wj-zk)$ \>405\\
-24. $(x+yi+zj+wk)(x+zi+yj-wk)$ \>405\\
-25. $(x+yi+zj+wk)(x+zi+wj-yk)$ \>353\\
-26. $(x+yi+zj+wk)(x+wi+yj-zk)$ \>353\\
-27. $(x+yi+zj+wk)(x+wi+zj-yk)$ \>291\\
-28. $(x+yi+zj+wk)(y+xi+zj-wk)$ \>405\\
-29. $(x+yi+zj+wk)(y+xi+wj-zk)$ \>321\\
-30. $(x+yi+zj+wk)(y+zi+xj-wk)$ \>353\\
-31. $(x+yi+zj+wk)(y+zi+wj-xk)$ \>405\\
-32. $(x+yi+zj+wk)(y+wi+xj-zk)$ \>291\\
-33. $(x+yi+zj+wk)(z+xi+yj-wk)$ \>353\\
-34. $(x+yi+zj+wk)(z+xi+wj-yk)$ \>291\\
-35. $(x+yi+zj+wk)(z+yi+xj-wk)$ \>291\\
-36. $(x+yi+zj+wk)(z+wi+xj-yk)$ \>5\\
-37. $(x+yi+zj+wk)(z+wi+yj-xk)$ \>291\\
-38. $(x+yi+zj+wk)(w+xi+yj-zk)$ \>405\\
-39. $(x+yi+zj+wk)(w+yi+zj-xk)$ \>405\\
-40. $(x+yi+zj+wk)(w+zi+xj-yk)$ \>291\\
-41. $(x+yi+zj+wk)(w+zi+yj-xk)$ \>321\\
-42. $(x+yi+zj-wk)(x+yi+zj+wk)$ \>321\\
-43. $(x+yi+zj-wk)(x+zi+wj+yk)$ \>353\\
-44. $(x+yi+zj-wk)(x+wi+yj+zk)$ \>353\\
-45. $(x+yi+zj-wk)(y+zi+xj+wk)$ \>353\\
-46. $(x+yi+zj-wk)(z+xi+yj+wk)$ \>353\\
-47. $(x+yi+zj-wk)(z+wi+xj+yk)$ \>321\\
-48. $(x+yi+zj-wk)(w+zi+yj+xk)$ \>321\\
-49. $(x+yi+zj-wk)(x+yi+wj-zk)$ \>349\\
-50. $(x+yi+zj-wk)(x+zi+yj-wk)$ \>349\\
-51. $(x+yi+zj-wk)(x+wi+zj-yk)$ \>349\\
-52. $(x+yi+zj-wk)(y+xi+zj-wk)$ \>379\\
-53. $(x+yi+zj-wk)(y+zi+wj-xk)$ \>379\\
-54. $(x+yi+zj-wk)(y+wi+xj-zk)$ \>349\\
-55. $(x+yi+zj-wk)(z+xi+wj-yk)$ \>379\\
-56. $(x+yi+zj-wk)(z+wi+yj-xk)$ \>349\\
-57. $(x+yi+zj-wk)(w+xi+yj-zk)$ \>349
-\end{tabbing}
-\caption{The $57$ possible forms of a Pythagorean quintuple in its primitive Hurwitz form as seen in Theorem~\ref{theorem_as_products}.} 
-\label{figure_57}
-\end{figure}
-}
-
-
-
-There are $337$ Pythagorean quintuples 
-with all legs less than or equal to $20$.
-See Figure~\ref{figure_quintuples}
-for $50$ of those quintuples and
-the number of ways to generate them:
-
-
-\begin{figure}
-$$
-\begin{array}{l|c||l|c}
-                  &\mbox{Times}    &   &\mbox{Times}\\ 
-\mbox{Pythagorean Quintuple}     &\mbox{found}
-&\mbox{Pythagorean Quintuple}     &\mbox{found}\\ \hline
-&&&\\
-0^2+ 0^2+ 0^2+ 1^2  = 1^2 & 255
-& 2.5^2+ 3.5^2+ 6.5^2+ 19.5^2  = 21^2 &0\\
-0^2+ 0^2+ 3^2+ 4^2  = 5^2 &180
-&2.5^2+ 12.5^2+ 12.5^2+ 14.5^2  = 23^2 &36\\
-%%
-0^2+ 0^2+ 5^2+ 12^2  = 13^2 &180&
-2.5^2+ 13.5^2+ 16.5^2+ 19.5^2  = 29^2 &0\\
-%
-0^2+ 0^2+ 8^2+ 15^2  = 17^2 &180&
-3.5^2+ 5.5^2+ 8.5^2+ 10.5^2  = 15^2 &0\\
-%
-0^2+ 3^2+ 4^2+ 12^2  = 13^2 &252&
-3.5^2+ 5.5^2+ 9.5^2+ 12.5^2  = 17^2 &0\\
-%
-1^2+ 2^2+ 8^2+ 10^2  = 13^2 &0&
-3.5^2+ 5.5^2+ 15.5^2+ 18.5^2  = 25^2 &0\\
-%
-1^2+ 2^2+ 10^2+ 16^2  = 19^2 &0&
-3.5^2+ 5.5^2+ 17.5^2+ 19.5^2  = 27^2 &0\\
-%
-1^2+ 4^2+ 4^2+ 4^2  = 7^2 &36&
-3.5^2+ 6.5^2+ 6.5^2+ 8.5^2  = 13^2 &60\\
-%
-4^2+ 12^2+ 13^2+ 20^2  = 27^2 &0&
-3.5^2+ 6.5^2+ 11.5^2+ 18.5^2  = 23^2 &0\\
-%
-4^2+ 13^2+ 16^2+ 20^2  = 29^2 &144&
-3.5^2+ 7.5^2+ 10.5^2+ 10.5^2  = 17^2 &36\\
-%
-4^2+ 16^2+ 17^2+ 20^2  = 31^2 &0&
-3.5^2+ 7.5^2+ 10.5^2+ 13.5^2  = 19^2 &0\\
-%
-8^2+ 13^2+ 14^2+ 14^2  = 25^2 &36&
-3.5^2+ 7.5^2+ 11.5^2+ 15.5^2  = 21^2 &24\\
-%
-10^2+ 10^2+ 19^2+ 20^2  = 31^2 &36&
-3.5^2+ 8.5^2+ 8.5^2+ 11.5^2  = 17^2 &60\\
-%
-12^2+ 16^2+ 17^2+ 20^2  = 33^2 &288&
-4.5^2+ 4.5^2+ 7.5^2+ 8.5^2  = 13^2 &84\\
-%
-13^2+ 16^2+ 20^2+ 20^2  = 35^2 &36&
-4.5^2+ 4.5^2+ 10.5^2+ 14.5^2  = 19^2 &84\\
-%
-13^2+ 20^2+ 20^2+ 20^2  = 37^2 &36&
-4.5^2+ 4.5^2+ 13.5^2+ 17.5^2  = 23^2 &36\\
-%
-0.5^2+ 0.5^2+ 0.5^2+ 0.5^2  = 1^2 &30&
-8.5^2+ 15.5^2+ 17.5^2+ 18.5^2  = 31^2 &0\\
-%
-0.5^2+ 0.5^2+ 1.5^2+ 2.5^2  = 3^2 &84&
-9.5^2+ 10.5^2+ 19.5^2+ 19.5^2  = 31^2 &36\\
-%
-0.5^2+ 0.5^2+ 2.5^2+ 6.5^2  = 7^2 &84&
-9.5^2+ 12.5^2+ 14.5^2+ 16.5^2  = 27^2 &48\\
-%
-0.5^2+ 0.5^2+ 3.5^2+ 3.5^2  = 5^2 &36&
-10.5^2+ 10.5^2+ 11.5^2+ 16.5^2  = 25^2 &36\\
-%
-0.5^2+ 0.5^2+ 3.5^2+ 12.5^2  = 13^2 &84&
-10.5^2+ 12.5^2+ 12.5^2+ 17.5^2  = 27^2 &36\\
-%
-0.5^2+ 0.5^2+ 5.5^2+ 9.5^2  = 11^2 &36&
-10.5^2+ 16.5^2+ 16.5^2+ 17.5^2  = 31^2 &36\\
-%
-1.5^2+ 8.5^2+ 13.5^2+ 16.5^2  = 23^2 &0&
-11.5^2+ 16.5^2+ 18.5^2+ 18.5^2  = 33^2 &36\\
-%
-1.5^2+ 10.5^2+ 10.5^2+ 17.5^2  = 23^2 &36&
-12.5^2+ 12.5^2+ 17.5^2+ 18.5^2  = 31^2 &84\\
-%
-1.5^2+ 10.5^2+ 15.5^2+ 16.5^2  = 25^2 &0&
-12.5^2+ 14.5^2+ 18.5^2+ 19.5^2  = 33^2 &48
-\end{array}
-$$
-\caption{Generating program results for some small Pythagorean quintuples,}
-\label{figure_quintuples}
-\end{figure}
-
-
-\vanish{
-%\begin{figure}
-\begin{tabbing}
-spacespacespacespacespacespacespace\=    \kill
-Pythagorean Quintuple     \>Number of ways to generate\\
-$0^2+ 0^2+ 0^2+ 1^2  = 1^2$ \>$255$\\
-$0^2+ 0^2+ 3^2+ 4^2  = 5^2$ \>$180$\\
-$0^2+ 0^2+ 5^2+ 12^2  = 13^2$ \>$180$\\
-$0^2+ 0^2+ 8^2+ 15^2  = 17^2$ \>$180$\\
-$0^2+ 3^2+ 4^2+ 12^2  = 13^2$ \>$252$\\
-$1^2+ 2^2+ 8^2+ 10^2  = 13^2$ \>$0$\\
-$1^2+ 2^2+ 10^2+ 16^2  = 19^2$ \>$0$\\
-$1^2+ 4^2+ 4^2+ 4^2  = 7^2$ \>$36$\\
-$4^2+ 12^2+ 13^2+ 20^2  = 27^2$ \>$0$\\
-$4^2+ 13^2+ 16^2+ 20^2  = 29^2$ \>$144$\\
-$4^2+ 16^2+ 17^2+ 20^2  = 31^2$ \>$0$\\
-$8^2+ 13^2+ 14^2+ 14^2  = 25^2$ \>$36$\\
-$10^2+ 10^2+ 19^2+ 20^2  = 31^2$ \>$36$\\
-$12^2+ 16^2+ 17^2+ 20^2  = 33^2$ \>$288$\\
-$13^2+ 16^2+ 20^2+ 20^2  = 35^2$ \>$36$\\
-$13^2+ 20^2+ 20^2+ 20^2  = 37^2$ \>$36$\\
-$0.5^2+ 0.5^2+ 0.5^2+ 0.5^2  = 1^2$ \>$30$\\
-$0.5^2+ 0.5^2+ 1.5^2+ 2.5^2  = 3^2$ \>$84$\\
-$0.5^2+ 0.5^2+ 2.5^2+ 6.5^2  = 7^2$ \>$84$\\
-$0.5^2+ 0.5^2+ 3.5^2+ 3.5^2  = 5^2$ \>$36$\\
-$0.5^2+ 0.5^2+ 3.5^2+ 12.5^2  = 13^2$ \>$84$\\
-$0.5^2+ 0.5^2+ 5.5^2+ 9.5^2  = 11^2$ \>$36$\\
-$1.5^2+ 8.5^2+ 13.5^2+ 16.5^2  = 23^2$ \>$0$\\
-$1.5^2+ 10.5^2+ 10.5^2+ 17.5^2  = 23^2$ \>$36$\\
-$1.5^2+ 10.5^2+ 15.5^2+ 16.5^2  = 25^2$ \>$0$\\
-$2.5^2+ 3.5^2+ 6.5^2+ 19.5^2  = 21^2$ \>$0$\\
-$2.5^2+ 12.5^2+ 12.5^2+ 14.5^2  = 23^2$ \>$36$\\
-$2.5^2+ 13.5^2+ 16.5^2+ 19.5^2  = 29^2$ \>$0$\\
-$3.5^2+ 5.5^2+ 8.5^2+ 10.5^2  = 15^2$ \>$0$\\
-$3.5^2+ 5.5^2+ 9.5^2+ 12.5^2  = 17^2$ \>$0$\\
-$3.5^2+ 5.5^2+ 15.5^2+ 18.5^2  = 25^2$ \>$0$\\
-$3.5^2+ 5.5^2+ 17.5^2+ 19.5^2  = 27^2$ \>$0$\\
-$3.5^2+ 6.5^2+ 6.5^2+ 8.5^2  = 13^2$ \>$60$\\
-$3.5^2+ 6.5^2+ 11.5^2+ 18.5^2  = 23^2$ \>$0$\\
-$3.5^2+ 7.5^2+ 10.5^2+ 10.5^2  = 17^2$ \>$36$\\
-$3.5^2+ 7.5^2+ 10.5^2+ 13.5^2  = 19^2$ \>$0$\\
-$3.5^2+ 7.5^2+ 11.5^2+ 15.5^2  = 21^2$ \>$24$\\
-$3.5^2+ 8.5^2+ 8.5^2+ 11.5^2  = 17^2$ \>$60$\\
-$4.5^2+ 4.5^2+ 7.5^2+ 8.5^2  = 13^2$ \>$84$\\
-$4.5^2+ 4.5^2+ 10.5^2+ 14.5^2  = 19^2$ \>$84$\\
-$4.5^2+ 4.5^2+ 13.5^2+ 17.5^2  = 23^2$ \>$36$\\
-$8.5^2+ 15.5^2+ 17.5^2+ 18.5^2  = 31^2$ \>$0$\\
-$9.5^2+ 10.5^2+ 19.5^2+ 19.5^2  = 31^2$ \>$36$\\
-$9.5^2+ 12.5^2+ 14.5^2+ 16.5^2  = 27^2$ \>$48$\\
-$10.5^2+ 10.5^2+ 11.5^2+ 16.5^2  = 25^2$ \>$36$\\
-$10.5^2+ 12.5^2+ 12.5^2+ 17.5^2  = 27^2$ \>$36$\\
-$10.5^2+ 16.5^2+ 16.5^2+ 17.5^2  = 31^2$ \>$36$\\
-$11.5^2+ 16.5^2+ 18.5^2+ 18.5^2  = 33^2$ \>$36$\\
-$12.5^2+ 12.5^2+ 17.5^2+ 18.5^2  = 31^2$ \>$84$\\
-$12.5^2+ 14.5^2+ 18.5^2+ 19.5^2  = 33^2$ \>$48$\\
-\end{tabbing}
-%\label{example_quintuples}
-%\end{figure}
-}
 
 
 \end{appendices}
