@@ -8,7 +8,7 @@
 %
 %
 % 
-% Last edited: April 30, 2019
+% Last edited: May 3, 2019
 %
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -416,20 +416,22 @@ h(z) \simeq h'(z)
 }
 
 \begin{corollary}
+\label{corollary_equivalence}
 Let \( h(z), h'(z) \in \mathbb{Z}[i][x,y] \) with \( z = x+ iy \).
 Suppose \( h(z) \simeq h'(z) \). Then for all  \( u \in \mathbb{N} \cup \{ 0 \} \),
 the following two conditions are
-equivalent: \\
-i. \( ( x^2 + y^2 ) ^ u \divides h(z) \) \\
-ii. \( ( x^2 + y^2 ) ^ u \divides h'(z)  ) \)
-\todo[inline]{Make the list look nicer}
+equivalent:
+\begin{enumerate}[i.]
+\item \( ( x^2 + y^2 ) ^ u \divides h(z) \)
+\item \( ( x^2 + y^2 ) ^ u \divides h'(z)  ) \)
+\end{enumerate}
 \end{corollary}
 
 
 
 
 \begin{theorem}
-Consider the set of all \(2\)-tuples \( \tau \) where 
+Consider the set of all \(2\)-tuples \( \tau = ( \tau_1, \tau_2 )\) where 
 \(
   \tau_1 ^ 2   +   \tau_2 ^ 2   
 = 
@@ -452,23 +454,25 @@ Suppose
 where \( f(x,y), g(x,y) \in \mathbb{Z}[x,y] \).
 Then  
 \[ (x + iy)^n (x -  iy)^n = ( f(x,y) + i \cdot g(x,y) ) ( f(x,y) - i \cdot g(x,y) ) .\]
-Since \( \mathbb{Z} [i][x,y] \) is a unique factorization domain, 
-\[ f(x,y) + i \cdot g(x,y) = (x + iy)^j (x -  iy)^k ( \pm 1 \text{ or} \pm i ) \]
+Since \( \mathbb{Z} [i][x,y] \) is a unique factorization domain,
+we can factor this as
+\[ f(x,y) + i \cdot g(x,y) = c \cdot (x + iy)^j (x -  iy)^k \]
 and
-\[ f(x,y) - i \cdot g(x,y) = (x + iy)^r (x -  iy)^s ( \pm 1 \text{ or} \mp i ), \]
-where \( j, k, r, s \in \mathbb{N} \cup \{0\} \). 
-We know \( j + r = n \) and \( k + s = n \), as well as (by taking norms) \( j + k = n \) and \( r + s = n \).
-
-Thus \(r = k\) and \(s = j\).
+\[ f(x,y) - i \cdot g(x,y) = d \cdot (x + iy)^r (x -  iy)^s,\]
+where \( j, k, r, s \in \mathbb{N} \cup \{0\} \) and
+\(c \cdot d = 1 \) with \( c,d \in \{ \pm 1 , \pm i \} \). 
+We know \( j + r = n \) and \( k + s = n \), as well as
+(by taking norms) \( j + k = n \) and \( r + s = n \).
+Thus \(k = r\) and \(j = s\).
 
 Clearly \( f(x,y) + i \cdot g(x,y) \simeq  f(x,y) - i \cdot g(x,y) \).
 Since 
 \[ 
-f(x,y) + i \cdot g(x,y) = (x + iy)^j (x -  iy)^{n-j} ( \pm 1 \text{ or} \pm i ) 
+f(x,y) + i \cdot g(x,y) = c \cdot (x + iy)^j (x -  iy)^{n-j} 
 \]
 and 
 \[ 
-f(x,y) - i \cdot g(x,y) = (x + iy)^{n-j} (x -  iy)^j ( \pm 1 \text{ or} \mp i ) ,
+f(x,y) - i \cdot g(x,y) = d \cdot (x + iy)^{n-j} (x -  iy)^j,
 \]
 each equivalence class contains a representative with \( j \leq n - j
 \).  As \( 2j \leq n \), we have \( j \leq \frac{n}{2} \), so \( j \)
@@ -478,27 +482,28 @@ equivalence classes. Now we show that there are at least that many.
 
 
 
-Consider \( (x + iy)^v (x -  iy)^{n-v} \)  and \( (x + iy)^u (x -  iy)^{n-u} \),
-where \( v \neq u \) and \(v,u \leq [ \frac{n}{2} ] \). We have:
+Consider \( (x + iy)^u (x -  iy)^{n-u} \)  and \( (x + iy)^v (x -  iy)^{n-v} \),
+where \( u \neq v \) and \(u,v \leq [ \frac{n}{2} ] \). We have
 \begin{align*}
-(x + iy)^v (x -  iy)^{n-v} &= (x^2 + y^2)^v (x -  iy)^{n-2v}
-\\
 (x + iy)^u (x -  iy)^{n-u} &= (x^2 + y^2)^u (x -  iy)^{n-2u}
+\\
+(x + iy)^v (x -  iy)^{n-v} &= (x^2 + y^2)^v (x -  iy)^{n-2v}
 \end{align*}
-
-Without loss of generality, \( v > u \). 
+Without loss of generality, we may assume \( u > v \). 
 Since \( \mathbb{Z} [i][x,y] \) is a unique factorization domain,
-\( (x^2 + y^2) \notdivides (x -  iy)^m \) for \( m \in \mathbb{N} \cup \{ 0 \} \).
-Thus \( (x^2 + y^2)^v \divides (x + iy)^v (x -  iy)^{n-v} \)
-but \( (x^2 + y^2)^v \notdivides (x + iy)^u (x -  iy)^{n-u} \).
+\( (x^2 + y^2) \notdivides (x -  iy)^e \) for \( e \in \mathbb{N} \cup \{ 0 \} \).
+Thus \( (x^2 + y^2)^u \divides (x + iy)^u (x -  iy)^{n-u} \)
+but \( (x^2 + y^2)^u \notdivides (x + iy)^v (x -  iy)^{n-v} \).
 
-Therefore \( (x + iy)^v (x -  iy)^{n-v} \not\simeq (x + iy)^u (x -  iy)^{n-u} \), 
-so the \( \lfloor \frac{n}{2} \rfloor + 1 \) representatives come from
+By Corollary~\ref{corollary_equivalence},
+\( (x + iy)^u (x -  iy)^{n-u} \not\simeq (x + iy)^v (x -  iy)^{n-v} \), 
+so the \( \lfloor \frac{n}{2} \rfloor + 1 \) representatives arise from
 distinct equivalence classes.
-
 Thus there are \( \lfloor \frac{n}{2} \rfloor + 1 \) equivalence classes, 
-one each for \( v = 0, 1, 2, \ldots,  \lfloor \frac{n}{2} \rfloor \).
+one each for \( u = 0, 1, 2, \ldots,  \lfloor \frac{n}{2} \rfloor \).
 \end{proof}
+
+
 
 
 
@@ -518,7 +523,7 @@ one each for \( v = 0, 1, 2, \ldots,  \lfloor \frac{n}{2} \rfloor \).
 \hash = 0.1;
 \height = 6;
 \length = 10;
-\scale = 2;
+\scale = 1;
 }
 
 
@@ -550,6 +555,11 @@ The number of equivalence classes \( \kappa \)
 when \(p = m = 2\) is \( \lfloor \frac{n}{2} \rfloor + 1 \) .
  }
 \end{figure}
+
+
+
+
+\section{The case where \(p = m = 4\) and \(n = 2\)}
 
 
 
@@ -589,8 +599,6 @@ in the case where \(p = m = 4\).
 \end{table}
 
 
-
-\section{The case where \(p = m = 4\) and \(n = 2\)}
 
 
 
