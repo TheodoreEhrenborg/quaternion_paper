@@ -179,6 +179,9 @@ enumeration.
 \todo[inline]{Define quaternions, Lipschitz quaternions,
 norm of a quaternion and complex numbers, complex numbers}
 
+\todo[inline]{Fill in proofs}
+
+\todo[inline]{Talk about experimental data}
 
 The following groups are an essential part of Definition~\ref{def:general}
 and Definition~\ref{def:2D}.
@@ -626,6 +629,7 @@ in the case where \(p = m = 4\).
 
 
 \begin{theorem}
+\label{theorem_8_classes}
 In the case where  \(p = m = 4\) and \(n = 2\),
 the following identities 
 come from 8 different
@@ -733,33 +737,48 @@ Identity~\ref{Identity_7} follows from taking the norm of the quaternion product
     &= (x^2 - yz - yw - zw ) + i(xy + xz + yz - w^2) \\
         &+ j(-y^2 + xz + xw + zw) + k(xy - z^2 + xw + yw).
     \end{align*}
-Identity~\ref{Identity_8} follows from taking the norm of the quaternion product    
+Finally, Identity~\ref{Identity_8} follows from taking the norm of the quaternion product    
     \begin{align*}
     &(x + iy + jz + kw)(x + iz + jw - ky) \\
     &= (x^2 - yz + yw - zw ) + i(xy + xz - yz - w^2) \\
-        &+ j(y^2 + xz + xw + zw) + k(xw - xy - z^2  + yw). 
+        &+ j(y^2 + xz + xw + zw) + k(xw - xy - z^2  + yw). \tag*{\qedhere}
     \end{align*}
 \end{proof}
 
 
 \begin{conjecture}
 In the case where  \(p = m = 4\) and \(n = 2\),
-there are exactly 8 equivalence classes.
+there are exactly 8 equivalence classes, which have representatives
+given in Theorem~\ref{theorem_8_classes}.
 \end{conjecture}
 
 
-\section{Things I can't mention}
+\section{Conjecture for \(p = m = 4\) and \( n \in \Nnn \)}
+This section represents joint work with Professor David Leep.
+
+We conjecture that when \(p = m = 4\) and \( n \in \Nnn \),
+all identities of the form
+\(
+\tau_1 ^ 2  + \tau_2 ^ 2  + \tau_3 ^ 2  + \tau_4 ^ 2  
+= 
+\left(  x_1 ^ 2 + x_2 ^ 2 + x_3 ^ 2 + x_4 ^ 2
+\right) ^ n 
+\)
+can be written as
+a product of Lipschitz quaternions.
+This is made more precise in
+Conjecture~\ref{conjecture_Ehrenborg-Leep}.
 
 \begin{conjecture}
 Let \( \alpha \in \Lll[x,y,z,w] \).
-If \( N(\alpha) \) has a nontrivial
+If the norm \( N(\alpha) \) has a nontrivial
 factorization over \( \Zzz[x,y,z,w] \),
 then \( \alpha \) has a nontrivial
 factorization over \( \Lll[x,y,z,w] \).
 \end{conjecture}
-The preceding conjecture implies the following one.
+The preceding conjecture implies the following conjecture.
 \begin{conjecture}
-\label{Ehrenborg-Leep}
+\label{conjecture_Ehrenborg-Leep}
 Let \( (a, b, c, d) \) be a tuple such that
 \[
 a^2 + b^2 + c^2 + d^2 = (x^2 + y^2 + z^2 + w^2)^n,
@@ -771,13 +790,12 @@ where \( \beta_u \in \Lll[x,y,z,w] \) for \(u\) in \(1, \ldots, n\).
 Moreover, let \( \beta_u = a' + b'i + c'j + d'k \). Then
 the tuple \( (a', b', c', d') \simeq (x, y, z, w) \).
 \end{conjecture}
-This conjecture states that all identities can be written as
-a product of quaternions. 
+
 
 
 \section{Things I can mention}
-Conjecture~\ref{Ehrenborg-Leep} is true in
-the case where \(n = 1\).
+I have proved Conjecture~\ref{conjecture_Ehrenborg-Leep}
+in the case where \(n = 1\).
 
 \begin{lemma}
 If \(a, b, c, d \in \Zzz[x,y,z,w]\), and
@@ -786,9 +804,11 @@ a^2 + b^2 + c^2 + d^2 = x^2 + y^2 + z^2 + w^2,
 \]
 then \( (a, b, c, d ) \simeq (x, y, z, w )\).
 \end{lemma}
+\begin{proof}
+\end{proof}
 
 \begin{theorem}
-Assuming Conjecture~\ref{Ehrenborg-Leep},
+Assuming Conjecture~\ref{conjecture_Ehrenborg-Leep} holds,
 the number of solutions \( (f, g, h, k) \) to
 \[
 f^2 + g^2 + h^2 + k^2 = (x^2 + y^2 + z^2 + w^2)^n,
@@ -801,7 +821,8 @@ is at most
 =  8 \sum_{i = 0}^n{47^n}.
 \]
 \end{theorem}
-
+\begin{proof}
+\end{proof}
 
 
 
@@ -1012,7 +1033,7 @@ be generated in this way.
          {Academic Press, London and New York} 
          {1969}
 
-
+\todo[inline]{Add a reference about quaternions}
 \end{thebibliography}
 
 
