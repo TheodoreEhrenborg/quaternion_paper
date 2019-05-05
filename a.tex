@@ -65,7 +65,8 @@
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{example}[theorem]{Example}
 
-
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
 
 \hyphenation{Hurwitz}
 
@@ -177,9 +178,10 @@ enumeration.
 
 
 \todo[inline]{Define quaternions, Lipschitz quaternions,
-norm of a quaternion and complex numbers, complex numbers}
+norm of a quaternion and complex numbers, complex numbers,
+associates and conjugates of quaternions}
 
-\todo[inline]{Fill in proofs}
+
 
 \todo[inline]{Talk about experimental data}
 
@@ -198,7 +200,8 @@ of the set \( \{ \pm 1, \pm 2, \ldots, \pm n \} \) such that
 
 \todo[inline]{How to compose two elements in signed symmetric group?}
 
-For a signed permutation \( \pi \in \mathfrak{S}_m^\pm \), let \( \pi \) act on a polynomial in the 
+For a signed permutation \( \pi \in \mathfrak{S}_m^\pm \),
+let \( \pi \) act on a polynomial in the 
 \(m\) variables \( x_1,x_2, \ldots, x_m \) by sending \( x_j \) to 
 \[
 \pi(x_j) =
@@ -575,6 +578,60 @@ where \( f, g \in \Zzz[x,y] \), is \(4n + 4\).
 
 \end{corollary}
 \begin{proof}
+It is sufficient to count the orbits of a representative from each
+equivalence class, where the group action is
+\( \mathfrak{S}_2^\pm \times \mathfrak{S}_2^\pm \).
+
+\noindent
+Case I: \( n = 2\lambda \) for some \( \lambda \in \Zzz \)
+
+There are \( \lambda + 1 \) equivalence classes. We choose \( \lambda + 1 \)
+representatives of the form \( (x + yi)^j (x - yi)^k \), with
+\( j >= k \) and \( j + k = n \). When \( j = k \), the representative
+is \( (x + yi)^\lambda (x - yi)^\lambda = ( x^2 + y^2 ) ^ \lambda \), which
+gives the tuple \( ( x^2 + y^2, 0 ) \), which has an orbit of order 4.
+Otherwise, we write the representative as \( (x + yi)^j-k (x^2 + y^2)^k \).
+As \( j - k \) is even, let \( j - k = 2\chi \). We have
+\begin{align*}
+(x + yi) ^ {2\chi} &= x ^ {2\chi} - \binom{2\chi}{2}  x^{2\chi - 2 } y^2
++ \ldots + \binom{2\chi}{2\chi-2} x^2 y^{2\chi - 2} (-1) ^ {\chi - 1}
++  y^{2\chi} (-1) ^ {\chi}
+\\
+&+ i \left( \binom{2\chi}{1} x ^ {2\chi - 1} y + \ldots +
+\binom{2\chi}{2\chi-1}  x y ^ {2\chi -1} (-1)^{\chi-1} \right).
+\end{align*}
+The order of the stabilizer is 8 --- the two variables can be rearranged and their
+signs switched (which may require the sign of an entire expression to be switched,
+depending of the parity of \( \chi \) ).
+As \( | \mathfrak{S}_2^\pm \times \mathfrak{S}_2^\pm | = 64\), the order of the orbit
+is also 8. 
+
+Thus in Case I there are \( 8\chi + 4 = 4 (n + 1 ) \) solutions
+to \( f^2 + g^2 = (x^2 + y^2)^n \).
+
+\noindent
+Case II: \( n = 2\lambda + 1\) for some \( \lambda \in \Zzz \)
+
+There are \( \lambda + 1 \) equivalence classes. We choose \( \lambda + 1 \)
+representatives of the form \( (x + yi)^j (x - yi)^k \), with
+\( j >= k \) and \( j + k = n \).
+It is impossible to
+choose \( j \) such that \( Im\left( (x + yi)^j (x - yi)^k \right) = 0\).
+We write the representative as \( (x + yi)^{j-k} (x^2 + y^2)^k \).
+As \( j - k \) is odd, let \( j - k = 2\chi + 1 \). We have
+\begin{align*}
+(x + yi) ^ {2\chi + 1} &= x ^ {2\chi + 1} - \binom{2\chi+1}{2}  x^{2\chi - 1 } y^2
++ \ldots + \binom{2\chi+1}{2\chi} x y^{2\chi} (-1) ^ {\chi}
+\\
+&+ i \left( \binom{2\chi+1}{1} x ^ {2\chi} y + \ldots +
+\binom{2\chi+1}{2\chi-1}  x^2 y ^ {2\chi -1} (-1)^{\chi-1}
++  y^{2\chi+1} (-1) ^ {\chi}
+\right).
+\end{align*}
+The order of the orbit of the tuple under the group action is 8, which can be
+verified in a similiar manner to Case I.
+
+Thus the number of solutions in Case II is \( 8(\chi + 1) = 4 ( 2\chi + 1) + 4 = 4n + 4 \).
 \end{proof}
 
 
@@ -797,6 +854,14 @@ the tuple \( (a', b', c', d') \simeq (x, y, z, w) \).
 I have proved Conjecture~\ref{conjecture_Ehrenborg-Leep}
 in the case where \(n = 1\).
 
+\begin{definition}
+Call \( \theta \in \Zzz[x,y,z,w] \) a \emph{term} if \( \theta \)
+is of the form \(Cx^{e_1}y^{e_2}z^{e_3}w^{e_4}\), where \( C \in \Zzz \)
+and \( e_1,e_2,e_3,e_4 \in \Nnn \cup \{0\} \). 
+\end{definition}
+\begin{remark}
+Any element of \( \Zzz[x,y,z,w] \) is a sum of terms.
+\end{remark}
 \begin{lemma}
 If \(a, b, c, d \in \Zzz[x,y,z,w]\), and
 \[
@@ -805,15 +870,75 @@ a^2 + b^2 + c^2 + d^2 = x^2 + y^2 + z^2 + w^2,
 then \( (a, b, c, d ) \simeq (x, y, z, w )\).
 \end{lemma}
 \begin{proof}
+Write \( a,b,c,d \) as sums of non-like terms. That is,
+\begin{align*}
+&a = \theta_{11} + \theta_{12} + \ldots + \theta_{1\alpha}
+\\
+&b = \theta_{21} + \theta_{22} + \ldots + \theta_{2\beta}
+\\
+&c = \theta_{31} + \theta_{32} + \ldots + \theta_{3\gamma}
+\\
+&d = \theta_{41} + \theta_{42} + \ldots + \theta_{4\delta}
+\end{align*}
+with \( \alpha,\beta,\gamma,\delta \in \Nnn \cup \{ 0 \} \).
+Form \(S\), the set of all the preceding \( \theta \)'s.
+We are going to choose a particular element \( \omega \)
+from \( S \).
+Let \( S_1 \) be the set of all \( \theta \in S  \) such that
+\( deg_x \theta \) is the maximum possible for any \( \theta \in S \).
+Let \( S_2 \) be the set of all \( \theta \in S_1  \) such that
+\( deg_y \theta \) is the maximum possible for any \( \theta \in S_1 \).
+Let \( S_3 \) be the set of all \( \theta \in S_2  \) such that
+\( deg_z \theta \) is the maximum possible for any \( \theta \in S_2 \).
+Let \( S_4 \) be the set of all \( \theta \in S_3  \) such that
+\( deg_w \theta \) is the maximum possible for any \( \theta \in S_3 \).
+Let \( \omega \) be an element of \( S_4 \). Assume that \(deg_x \omega > 1 \).
+Write \( \omega \) as \(Cx^{e_1}y^{e_2}z^{e_3}w^{e_4}\), where \( C \in \Zzz \)
+and \( e_1,e_2,e_3,e_4 \in \Nnn \cup \{0\} \). In the expression  
+\(a^2 + b^2 + c^2 + d^2\), there must be a like term or like terms
+that cancels \( \omega^2 = C^2x^{2e_1}y^{2e_2}z^{2e_3}w^{2e_4}\).
+Let one of these like terms be \( \psi \). Assume that \( \psi \)
+was not formed from the squaring of a term in \(S\), but rather
+as a product of two unlike terms.
+That is, \( \psi = \psi' \cdot \psi''\), where \( \psi' \neq \psi'' \)
+and \( \psi' , \psi'' \in S \). As \( deg_x \psi' <= deg_x \omega \)
+and \( deg_x \psi'' <= deg_x \omega \),
+we have \( deg_x \psi' == deg_x \omega = deg_x \psi'' \).
+Thus \( \psi' , \psi'' \in S_1 \). Continuing with the other variables, we
+finally discover that \( \psi' \) and \( \psi'' \) are like terms. However,
+like terms would have been combined, a contradiction. Thus \( \psi \) was
+formed by the square of a term in \( S \). However, the leading coefficient
+of \( \psi \) is thus positive, as is the leading coefficient of \( \omega \) and
+any other like term to \( \omega \), so \( \omega \) cannot be cancelled. This is
+a contradiction, so \( deg_x \omega <= 1 \). Thus no term has a \( deg_x \) of more
+than 1. In a similar way, we can show that no term has a \( deg_y \), \( deg_z \),
+or \( deg_w \) of more than 1.
+
+By setting three of the variables equal to zero, we see that \( S \) contains
+exactly one term like to \( x \), namely \( x\) or \( -x \). The same is true for
+the other three variables. Moreover, there are no constants in \( S \). Assume that
+\( a \) contains both a lone \( \pm x \) and a lone \( \pm y \). Then \(a^2\) contains
+a \( \pm 2xy \), which can only be cancelled by another product of terms like to
+\( x \) and \(y\). However, \( S \) has no such other terms,
+so the \( \pm x, \pm y, \pm z, \pm w \) are in the 4 different coordinates of
+\( (a, b, c, d) \). Assume that the coordinate that contains \( \pm x \) also contains
+another term, \( A = Dx^{f_1}y^{f_2}z^{f_3}w^{f_4}\), where \( D \in \Zzz \)
+and \( f_1,f_2,f_3,f_4 \in \{0,1\} \). Then \( D^2 \) has degrees (with respect to
+each variable) of either 0 or 2. To cancel \( D^2 \), we must find a product of two
+terms in \( S \) that is like to \( D^2 \). As no term in \( S \) has a degree
+(with respect to any variable) of two, any like term to \( D^2 \) must itself be
+a square of a like term to \( D \). In this case, the leading coefficients are
+positive and will not cancel. Thus there can be no term \( D \), so the only terms
+in \( S \) are the four desired ones.
 \end{proof}
 
 \begin{theorem}
 Assuming Conjecture~\ref{conjecture_Ehrenborg-Leep} holds,
-the number of solutions \( (f, g, h, k) \) to
+the number of solutions \( (a, b, c, d) \) to
 \[
-f^2 + g^2 + h^2 + k^2 = (x^2 + y^2 + z^2 + w^2)^n,
+a^2 + b^2 + c^2 + d^2 = (x^2 + y^2 + z^2 + w^2)^n,
 \] 
-where \( f, g, h, k \in \Zzz[x,y,z,w]\),
+where \( a, b, c, d \in \Zzz[x,y,z,w]\),
 is at most
 \[
 8 \cdot \frac{47^{n+1} - 1}{46}
@@ -822,11 +947,95 @@ is at most
 \]
 \end{theorem}
 \begin{proof}
+By Conjecture~\ref{conjecture_Ehrenborg-Leep}, any
+solution
+\( (a, b, c, d) \) can be viewed as a quaternion
+\( a + bi + cj + dk \) that is a product of
+quaternions \( \beta_1 \beta_2 \cdots \beta_n \) in the following set:
+\[
+S_1 = \{ \pm a' \pm b'i \pm c'j \pm d'k
+\mid \{ a', b', c', d' \} = \{ x, y, z, w \} \}. 
+\]
+Note that \( | S_1 | = 2^4 4! = 384 \).
+Thus there are at most \( 384^n \) unique solutions.
+Using the fact that
+\[
+\beta_1 \beta_2 \cdots \beta_v \beta_{v+1} \cdots \beta_n
+=
+\beta_1 \beta_2 \cdots \beta_v u u^{-1} \beta_{v+1} \cdots \beta_n
+\]
+for \( u \in \{ \pm 1 , \pm i, \pm j, \pm k \} \), we can specify
+that every factor except the first has \( a' = x \) without
+losing any solutions. Thus the number of unique solutions is at most
+\( 384 \cdot 48^{n-1} \). Alternatively, we can factor out a unit
+from the first term to ensure that it has \( a' = x \), so the
+product is of the form \( u \beta_1 \beta_2 \cdots \beta_n \),
+where each \( \beta_v \) belongs to
+\[
+S_2 = \{ x \pm b'i \pm c'j \pm d'k
+\mid \{ b', c', d' \} = \{ y, z, w \} \},
+\]
+with \( | S_2 | = 2^3 3! = 48 \).
+
+If any two consecutive \( \beta \)'s are conjugates, we combine them
+to form \( x^2 + y^2 + z^2 + w^2 \). As this is a real number, we can
+factor it out. The product now is of the form
+\[
+(x^2 + y^2 + z^2 + w^2)^\gamma u \beta_1 \beta_2 \cdots \beta_{n-2\gamma},
+\]
+with \( \gamma \) ranging over \( 0, 1, \ldots, \left\lfloor \frac{n}{2} \right\rfloor \).
+
+Assume \( n \) is even.
+When \( \gamma = \frac{n}{2} \), the product is of the form
+\( (x^2 + y^2 + z^2 + w^2)^{\frac{n}{2}} u  \), so there are 8 unique values, one for
+each unit.
+When \( \gamma = \frac{n}{2} - 1 \), the product is of the form
+\( (x^2 + y^2 + z^2 + w^2)^{\frac{n}{2} - 1} u \beta_1 \beta_2  \). Although \( \beta_1 \)
+can be any element of \( S_2 \), \( \beta_2 \) cannot be \( \overline{ \beta_1 } \),
+so the number of values in this case is \( 8 \cdot 48 \cdot 47 \). The same restriction
+applies for all \( \gamma < \frac{n}{2} \). For \( \gamma < \frac{n}{2} \),
+the number of values is \( 8 \cdot 48 \cdot 47^{n - 2\gamma - 1} \).
+Summing over all \( \gamma \), the number of values is
+\begin{align*}
+&8 + 8 \cdot 48 \cdot 47 + 8 \cdot 48 \cdot 47^3 + \ldots
++ 8 \cdot 48 \cdot 47^{n-1}
+\\
+&= 8 + 8 \cdot 48 \cdot 47 \cdot \frac{47^{2 \cdot \frac{n}{2} } - 1 }{47^2 - 1}
+\\
+&= 8 + 8 \cdot 47 \cdot \frac{47^{n} - 1 }{47 - 1}
+\\
+&= 8 \left(1 +  \frac{47 (47^{n} - 1 ) }{46}\right)
+\\
+&= 8 \left( \frac{46 + (47^{n+1} - 47 ) }{46}\right)
+\\
+&= 8 \left( \frac{47^{n+1} -1 }{46}\right)
+\end{align*}
+
+Assume \( n \) is odd.
+When \( \gamma = \frac{n-1}{2} \), the product is of the form
+\( (x^2 + y^2 + z^2 + w^2)^{\frac{n-1}{2}} u \beta_1  \), so there are \( 8 \cdot 48 \)
+unique values.
+When \( \gamma = \frac{n-1}{2} - 1 = \frac{n-3}{2}  \), the product is of the form
+\( (x^2 + y^2 + z^2 + w^2)^{\frac{n-3}{2}} u \beta_1 \beta_2 \beta_3  \). Although \( \beta_1 \)
+can be any element of \( S_2 \), \( \beta_2 \neq \overline{ \beta_1 } \)
+and \( \beta_3 \neq \overline{ \beta_2 } \),
+so the number of values in this case is \( 8 \cdot 48 \cdot 47^2 \). The same restriction
+applies for all \( \gamma < \frac{n-1}{2} \). For \( \gamma < \frac{n-1}{2} \),
+the number of values is \( 8 \cdot 48 \cdot 47^{n - 2\gamma - 1 } \).
+Summing over all \( \gamma \), the number of values is
+\begin{align*}
+&8 \cdot 48 + 8 \cdot 48 \cdot 47^2 + 8 \cdot 48 \cdot 47^4 + \ldots
++ 8 \cdot 48 \cdot 47^{n-1}
+\\
+&= 8 \cdot 48 \cdot \frac{47^{2 \cdot \frac{n+1}{2} } - 1 }{47^2 - 1}
+\\
+&= 8  \cdot \frac{47^{n+1} - 1 }{47 - 1}
+\end{align*}
 \end{proof}
-
-
-
-
+\begin{remark}
+Note that this proof does not show that the remaining values are unique, only that
+a larger number of values certainly contains repetitions.
+\end{remark}
 \section{Conclusion}
 
 
