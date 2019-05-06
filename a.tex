@@ -1,4 +1,4 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %
 %  Classifying Quaternion Identities
@@ -152,19 +152,19 @@
 
 \begin{abstract}
 This number theory project investigates identities found by
-multiplying together quaternions in \( \Lll[x,y,z,w] \), the
-Lipschitz quaternions \( \Lll \) adjoined with the
-indeterminates \(x\), \(y\), \(z\), \(w\).  Recall that quaternions
-are \(4\)-dimensional complex numbers.  These identities provide
-solutions to \( \sum_{j = 1}^{p} \tau_j ^ 2 = \left( \sum_{i = 1}^{m}
-x_i ^ 2 \right) ^ n \). We present a rigorous definition that captures
+multiplying together quaternions in $ \Lll[x,y,z,w] $, the
+Lipschitz quaternions $ \Lll $ adjoined with the
+indeterminates $x$, $y$, $z$, $w$.  Recall that quaternions
+are $4$-dimensional complex numbers.  These identities provide
+solutions to $ \sum_{j = 1}^{p} \tau_j ^ 2 = \left( \sum_{i = 1}^{m}
+x_i ^ 2 \right) ^ n $. We present a rigorous definition that captures
 the intuitive notion of when two such identities are equivalent. This
 definition implies that the true structure of this problem involves the
-group action of the direct product \( \mathfrak{S}_4^\pm \times \mathfrak{S}_4^\pm \).  Using
+group action of the direct product $ \mathfrak{S}_4^\pm \times \mathfrak{S}_4^\pm $.  Using
 two complementary methods, we compute the number of equivalence
-classes for \(n = 1, 2, 3, 4,\) where \(n\) is the number of
+classes for $n = 1, 2, 3, 4,$ where $n$ is the number of
 quaternion factors. We move to the case concerning products of complex
-numbers, namely \( \Zzz[i][x,y] \). Using the fact that the
+numbers, namely $ \Zzz[i][x,y] $. Using the fact that the
 Gaussian integers are commutative under multiplication, we
 characterize these equivalence classes, thus also providing an
 enumeration.
@@ -180,10 +180,58 @@ enumeration.
 
 
 
-\todo[inline]{Define quaternions, Lipschitz quaternions,
-norm of a quaternion and complex numbers, complex numbers,
-associates and conjugates of quaternions}
 
+
+\begin{definition}
+The \emph{complex numbers} $\Ccc$ are a two-dimensional extension of $\Rrr$.
+Complex numbers take the form $x + iy$, where $i$ is defined to be the
+square root of $-1$ and $x,y \in \Rrr$.
+Addition is done component-wise, and multiplication
+is done using the Distributive Property and the fact that
+$i^2 = -1$.
+
+The \emph{conjugate} of a complex number $ \alpha = x + iy$ is $ \overline{\alpha} = x - iy$.  
+The \emph{norm} of a complex number $ \alpha $ is $ \alpha \overline{\alpha} = x^2 + y^2$.  
+
+The Gaussian integers $ \Zzz[i] $ are a subset of $\Ccc$:
+\[
+\Zzz[i] = \{ x + iy: x,y \in \Zzz \}
+\]
+\end{definition}
+
+
+\begin{definition}
+The \emph{quaternions} $\Qqq$ are a four-dimensional extension of $\Rrr$.
+Quaternions take the form $x + iy + jz + wk$, where $i,j,k$ are defined to be
+linearly independent square roots of $-1$ and $x,y,z,w \in \Rrr$.
+Addition is done component-wise, and multiplication
+is done using the Distributive Property and the following facts:
+\begin{align*}
+i^2 = j^2 = k^2 = -1
+\\
+ij = -ji = k
+\\
+jk = -kj = i
+\\
+ki = -ik = j
+\end{align*}
+Multiplication is usually not commutative.
+
+The \emph{conjugate} of a quaternion $ \alpha = x + iy + jz + kw$
+is $ \overline{\alpha} = x - iy - jz - kw$.  
+The \emph{norm} of a quaternion $ \alpha $ is
+$ \alpha \overline{\alpha} = x^2 + y^2 + z^2 + w^2$.  
+
+The Lipschitz quaternions $ \Lll $ are a subset of $\Qqq$:
+\[
+\Lll = \{ x + iy + jz + kw: x,y,z,w \in \Zzz \}.
+\]
+\end{definition}
+
+
+In the rest of this paper $x, y, z, w$ will
+usually refer to indeterminates, not to variables with
+an unknown real value.
 
 
 \todo[inline]{Talk about experimental data}
@@ -191,21 +239,21 @@ associates and conjugates of quaternions}
 The following groups are an essential part of Definition~\ref{def:general}
 and Definition~\ref{def:2D}.
 \begin{definition}
-The {\em symmetric group} \( \mathfrak{S}_n \) is the 
-set of all permutations \( \pi = \pi_1 \cdots \pi_n \) 
-of the \( n \) element set \( \{ 1, 2, \ldots, n \} \),
-where \( \pi(i) = \pi_i \).
-The {\em signed symmetric group} \( \mathfrak{S}_n^\pm \)
-is the set of all permutations \( \sigma = \sigma_1 \cdots \sigma_n\)
-of the set \( \{ \pm 1, \pm 2, \ldots, \pm n \} \) such that
-\( | \sigma | = | \sigma_1 | \cdots |\sigma_n| \in \mathfrak{S}_n \).
+The {\em symmetric group} $ \mathfrak{S}_n $ is the 
+set of all permutations $ \pi = \pi_1 \cdots \pi_n $ 
+of the $ n $ element set $ \{ 1, 2, \ldots, n \} $,
+where $ \pi(i) = \pi_i $.
+The {\em signed symmetric group} $ \mathfrak{S}_n^\pm $
+is the set of all permutations $ \sigma = \sigma_1 \cdots \sigma_n$
+of the set $ \{ \pm 1, \pm 2, \ldots, \pm n \} $ such that
+$ | \sigma | = | \sigma_1 | \cdots |\sigma_n| \in \mathfrak{S}_n $.
 \end{definition}
 
 \todo[inline]{How to compose two elements in signed symmetric group?}
 
-For a signed permutation \( \pi \in \mathfrak{S}_m^\pm \),
-let \( \pi \) act on a polynomial in the 
-\(m\) variables \( x_1,x_2, \ldots, x_m \) by sending \( x_j \) to 
+For a signed permutation $ \pi \in \mathfrak{S}_m^\pm $,
+let $ \pi $ act on a polynomial in the 
+$m$ variables $ x_1,x_2, \ldots, x_m $ by sending $ x_j $ to 
 \[
 \pi(x_j) =
 \begin{cases}
@@ -216,25 +264,25 @@ x_{\pi_j} & \text{if } \pi_j > 0 \\
 
 \begin{definition}
 \label{def:general}
-Fix \( p, m \in \Nnn \). 
-Let \( \tau = ( \tau_1, \ldots, \tau_p) \)
-be a tuple of length \( p \) where 
-\( \tau_i \in \Zzz[x_1,x_2, \ldots, x_m] \), where \( i = 1, \ldots, p \).
-We define an equivalence relation, denoted by \( \simeq \), on \(p\)-tuples
-\( \tau \) 
+Fix $ p, m \in \Nnn $. 
+Let $ \tau = ( \tau_1, \ldots, \tau_p) $
+be a tuple of length $ p $ where 
+$ \tau_i \in \Zzz[x_1,x_2, \ldots, x_m] $, where $ i = 1, \ldots, p $.
+We define an equivalence relation, denoted by $ \simeq $, on $p$-tuples
+$ \tau $ 
 by taking the transitive closure of the following three relations:
 \begin{itemize}
 \item
-\( ( \tau_1, \ldots, \tau_p) \simeq ( \tau'_1, \ldots, \tau'_p) \)
-if there exists a signed permutation \( \pi \in \mathfrak{S}_m^\pm \)
-acting on the \( m \) variables such that \( \pi( \tau_i ) = \tau'_i \),
- where \( i = 1, \ldots, p \).
+$ ( \tau_1, \ldots, \tau_p) \simeq ( \tau'_1, \ldots, \tau'_p) $
+if there exists a signed permutation $ \pi \in \mathfrak{S}_m^\pm $
+acting on the $ m $ variables such that $ \pi( \tau_i ) = \tau'_i $,
+ where $ i = 1, \ldots, p $.
 \item
-\( ( \tau_1, \ldots, \tau_p) \simeq ( \tau'_1, \ldots, \tau'_p) \)
-if there exists a permutation \( \sigma \in \mathfrak{S}_p \)
-such that \( \tau_{\sigma(i)} = \tau'_i \), where \( i = 1, \ldots, p \).
+$ ( \tau_1, \ldots, \tau_p) \simeq ( \tau'_1, \ldots, \tau'_p) $
+if there exists a permutation $ \sigma \in \mathfrak{S}_p $
+such that $ \tau_{\sigma(i)} = \tau'_i $, where $ i = 1, \ldots, p $.
 \item
-\( ( \tau_1, \ldots, \tau_p) \simeq ( \pm \tau_1, \ldots, \pm \tau_p) \)
+$ ( \tau_1, \ldots, \tau_p) \simeq ( \pm \tau_1, \ldots, \pm \tau_p) $
 \end{itemize}
 \end{definition}
 
@@ -251,29 +299,29 @@ Definition~\ref{def:general} implies that the following is true:
 
 
 
-%Fix \( p \in \Zzz \). 
+%Fix $ p \in \Zzz $. 
 We are interested in counting the number of
 equivalence classes of the set of all tuples
- \( \tau = ( \tau_1, \ldots, \tau_p) \)
+ $ \tau = ( \tau_1, \ldots, \tau_p) $
 where
-%the sum of the squares of the elements of \( \tau \) is
+%the sum of the squares of the elements of $ \tau $ is
 \[
 \sum_{j = 1}^{p}  \tau_j ^ 2  
 = 
 \left( \sum_{i = 1}^{m}  x_i ^ 2  \right) ^ n 
 \] 
 This problem is most easily attacked when we
-view \( \left( \sum_{i = 1}^{m}  x_i ^ 2  \right) ^ n \)
+view $ \left( \sum_{i = 1}^{m}  x_i ^ 2  \right) ^ n $
 as the norm of a product of complex numbers or quaternions.
-Thus we will focus on the cases where \( p = m = 2 \) and where \( p = m = 4 \).
+Thus we will focus on the cases where $ p = m = 2 $ and where $ p = m = 4 $.
 The general problem can also be viewed as finding the disjoint orbits of 
-various tuples, where the group action is \( \mathfrak{S}_p^\pm \times \mathfrak{S}_m^\pm \).
+various tuples, where the group action is $ \mathfrak{S}_p^\pm \times \mathfrak{S}_m^\pm $.
 
 
 
 \begin{example}
 
-Consider the case where \( p = m = 2 \) and \( n = 2\).
+Consider the case where $ p = m = 2 $ and $ n = 2$.
 The following two identities are representatives from 
 the two different equivalence classes in this case. These identities
 were generated by a product of complex numbers. 
@@ -305,7 +353,7 @@ Taking norms gives the identity
 \begin{example}
 The following two identities are representatives from 
 the two different equivalence classes in the
-case where \( p = m = 2 \) and \( n = 3\).
+case where $ p = m = 2 $ and $ n = 3$.
 These identities
 were generated by a product of complex numbers. 
 
@@ -338,53 +386,52 @@ Taking norms gives the identity
 
 
 
-\section{The case where \( p = m = 2\)}
+\section{The case where $ p = m = 2$}
 
 
-In the case where \( p = m = 2\), Definition~\ref{def:general} has an alternate form.
+In the case where $ p = m = 2$, Definition~\ref{def:general} has an alternate form.
 
 
 
 \begin{definition}
 \label{def:2D}
 
-Let \( h(z), h'(z) \in \Zzz [i][x,y] \),
-where \( z = x + iy \).
-Let \( M \) be the following set of mappings: 
+Let $ h(z), h'(z) \in \Zzz [i][x,y] $,
+where $ z = x + iy $.
+Let $ M $ be the following set of mappings: 
 \[
 M = \{ z \mapsto uz \mid u \in \{ \pm 1, \pm i \} \}  
 \cup \{ z\mapsto u \bar{z} \mid u \in \{ \pm 1, \pm i \} \}.  
 \]
-%Write \( f(x,y) + i \cdot g(x,y) \) and \( f'(x,y) + i \cdot g'(x,y) \) as  \( h(z) \) and  \( h'(z) \), respectively.
-We say \( h(z) \simeq h'(z) \) when there exist mappings \( \varphi, \varphi' \in M \)
-such that \( \varphi( h( \varphi'( z ) ) )  = h'(z) \).
+%Write $ f(x,y) + i \cdot g(x,y) $ and $ f'(x,y) + i \cdot g'(x,y) $ as  $ h(z) $ and  $ h'(z) $, respectively.
+We say $ h(z) \simeq h'(z) $ when there exist mappings $ \varphi, \varphi' \in M $
+such that $ \varphi( h( \varphi'( z ) ) )  = h'(z) $.
 
-%\todo{ Prove that this is an equivalence relation. 
-%That is, it has the reflexive, symmetric, and transitive properties. }
+
 
 \end{definition}
 
 \begin{lemma}
-The relation \( \simeq \) is an equivalence relation.
+The relation $ \simeq $ is an equivalence relation.
 \end{lemma}
 
 \begin{proof}
-The relation \( \simeq \) satisfies the three conditions of an equivalence relation.
+The relation $ \simeq $ satisfies the three conditions of an equivalence relation.
 \begin{enumerate}
-\item Reflexive Property: If we choose \( \mu \) and \( \mu'\) to be the identity map \( z \mapsto z \), 
-then \( h(z) \simeq h(z) \).
+\item Reflexive Property: If we choose $ \mu $ and $ \mu'$ to be the identity map $ z \mapsto z $, 
+then $ h(z) \simeq h(z) $.
 
-\item Symmetric Property: Let  \( h(z) \simeq h'(z) \), that is, there exist mappings 
-\( \mu, \mu' \in M \)
-such that \( \mu( h( \mu'( z ) ) )  = h'(z) \).
-\(M\) is isomorphic to the signed symmetric group \( \mathfrak{S}_2^\pm \), so every mapping in \(M\)
-has an inverse in \(M\). As  \( \mu^{-1}( h'( (\mu')^{-1}( z ) ) )  = h(z) \),
-we have \( h'(z) \simeq h(z) \).
+\item Symmetric Property: Let  $ h(z) \simeq h'(z) $, that is, there exist mappings 
+$ \mu, \mu' \in M $
+such that $ \mu( h( \mu'( z ) ) )  = h'(z) $.
+$M$ is isomorphic to the signed symmetric group $ \mathfrak{S}_2^\pm $, so every mapping in $M$
+has an inverse in $M$. As  $ \mu^{-1}( h'( (\mu')^{-1}( z ) ) )  = h(z) $,
+we have $ h'(z) \simeq h(z) $.
 
-\item Transitive Property: Let \( a(z) \simeq b(z) \) and \( b(z) \simeq c(z) \). By the 
-Symmetric Property, we have \( c(z) \simeq b(z) \). Thus there exist mappings
-\( \mu, \mu', \nu, \nu' \in M \) such that \( \mu( a( \mu'( z ) ) )  = b(z) \) and 
-\( \nu( c( \nu'( z ) ) )  = b(z) \). As a result:
+\item Transitive Property: Let $ a(z) \simeq b(z) $ and $ b(z) \simeq c(z) $. By the 
+Symmetric Property, we have $ c(z) \simeq b(z) $. Thus there exist mappings
+$ \mu, \mu', \nu, \nu' \in M $ such that $ \mu( a( \mu'( z ) ) )  = b(z) $ and 
+$ \nu( c( \nu'( z ) ) )  = b(z) $. As a result:
 \[
 \mu( a( \mu'( z ) ) ) = \nu( c( \nu'( z ) ) )  
 \]
@@ -392,38 +439,38 @@ Thus we have:
 \[
 a(  z  ) = \mu^{-1}( \nu( c( (\mu')^{-1}( \nu'( z ) ) ) ) )
 \]
-This means that \( c(z) \simeq a(z) \) or \( a(z) \simeq c(z) \).
+This means that $ c(z) \simeq a(z) $ or $ a(z) \simeq c(z) $.
 \end{enumerate}
 \end{proof}
 
-Recall that given \( f(x,y), g(x,y) \in \Zzz[x,y] \),
-we can find \( h(z) \in \Zzz [i][x,y] \)
+Recall that given $ f(x,y), g(x,y) \in \Zzz[x,y] $,
+we can find $ h(z) \in \Zzz [i][x,y] $
 such that
-\( z = x + iy \)
+$ z = x + iy $
 and
-\( h(z) = f(x,y) + i \cdot g(x,y) \). 
+$ h(z) = f(x,y) + i \cdot g(x,y) $. 
 The converse is also true.
 
-\todo[inline]{Does \(\simeq\) apply to complex numbers/quaternions or just tuples? }
+\todo[inline]{Does $\simeq$ apply to complex numbers/quaternions or just tuples? }
 
 \begin{lemma}
-Let \( h(z) \simeq h'(z) \), where \( h(z), h'(z) \in \Zzz[i][x,y] \)
-and \( z = x+ iy \).
-Suppose \( ( x^2 + y^2 ) ^ u \divides h(z) \),
-where \( u \in \Nnn \). Then \( ( x^2 + y^2 ) ^ u \divides h'(z) \).
+Let $ h(z) \simeq h'(z) $, where $ h(z), h'(z) \in \Zzz[i][x,y] $
+and $ z = x+ iy $.
+Suppose $ ( x^2 + y^2 ) ^ u \divides h(z) $,
+where $ u \in \Nnn $. Then $ ( x^2 + y^2 ) ^ u \divides h'(z) $.
 \end{lemma}
    
 \begin{proof}
-Let \( h(z) = ( x^2 + y^2 ) ^ u  p(z) \), where \( p(z) \in \Zzz [i][x,y] \). 
-Whatever mappings we apply to \(h\) and \(z\)
-to obtain \( h'(z) \), we also apply to the factors of \( h(z) \). 
-No mapping will remove the factor of \( ( x^2 + y^2 ) ^ u \).
+Let $ h(z) = ( x^2 + y^2 ) ^ u  p(z) $, where $ p(z) \in \Zzz [i][x,y] $. 
+Whatever mappings we apply to $h$ and $z$
+to obtain $ h'(z) $, we also apply to the factors of $ h(z) $. 
+No mapping will remove the factor of $ ( x^2 + y^2 ) ^ u $.
 
 \end{proof}
 
 \vanish{
 \begin{corollary}
-Let \( h(z), h'(z) \in \Zzz[i][x,y] \) with \( z = x+ iy \).
+Let $ h(z), h'(z) \in \Zzz[i][x,y] $ with $ z = x+ iy $.
 \[
 h(z) \simeq h'(z) 
 \implies 
@@ -434,13 +481,13 @@ h(z) \simeq h'(z)
 
 \begin{corollary}
 \label{corollary_equivalence}
-Let \( h(z), h'(z) \in \Zzz[i][x,y] \) with \( z = x+ iy \).
-Suppose \( h(z) \simeq h'(z) \). Then for all  \( u \in \Nnn \cup \{ 0 \} \),
+Let $ h(z), h'(z) \in \Zzz[i][x,y] $ with $ z = x+ iy $.
+Suppose $ h(z) \simeq h'(z) $. Then for all  $ u \in \Nnn \cup \{ 0 \} $,
 the following two conditions are
 equivalent:
 \begin{enumerate}[i.]
-\item \( ( x^2 + y^2 ) ^ u \divides h(z) \)
-\item \( ( x^2 + y^2 ) ^ u \divides h'(z)  ) \)
+\item $ ( x^2 + y^2 ) ^ u \divides h(z) $
+\item $ ( x^2 + y^2 ) ^ u \divides h'(z)  ) $
 \end{enumerate}
 \end{corollary}
 
@@ -448,19 +495,19 @@ equivalent:
 
 
 \begin{theorem}
-Consider the set of all \(2\)-tuples \( \tau = ( \tau_1, \tau_2 )\) where 
-\(
+Consider the set of all $2$-tuples $ \tau = ( \tau_1, \tau_2 )$ where 
+$
   \tau_1 ^ 2   +   \tau_2 ^ 2   
 = 
 \left(  x_1 ^ 2 + x_2 ^ 2  \right) ^ n 
-\).
+$.
 The number of equivalence classes within this set 
-is exactly  \( \left\lfloor \frac{n}{2} \right\rfloor + 1 \). 
+is exactly  $ \left\lfloor \frac{n}{2} \right\rfloor + 1 $. 
 Moreover, each equivalence class contains a tuple
-of the form \( ( \Real( \beta ) , \Imag( \beta ) ) \),
-where \( \beta = (x + iy)^j (x -  iy)^{n-j} \),
-with \( j \)
-being one of \( 0, 1, 2, \ldots, \left\lfloor \frac{n}{2} \right\rfloor \).
+of the form $ ( \Real( \beta ) , \Imag( \beta ) ) $,
+where $ \beta = (x + iy)^j (x -  iy)^{n-j} $,
+with $ j $
+being one of $ 0, 1, 2, \ldots, \left\lfloor \frac{n}{2} \right\rfloor $.
 \end{theorem}
 
 
@@ -468,21 +515,21 @@ being one of \( 0, 1, 2, \ldots, \left\lfloor \frac{n}{2} \right\rfloor \).
 \begin{proof}
 Suppose 
 \[ (x^2 + y^2)^n = f(x,y)^2 + g(x,y)^2 \]
-where \( f(x,y), g(x,y) \in \Zzz[x,y] \).
+where $ f(x,y), g(x,y) \in \Zzz[x,y] $.
 Then  
 \[ (x + iy)^n (x -  iy)^n = ( f(x,y) + i \cdot g(x,y) ) ( f(x,y) - i \cdot g(x,y) ) .\]
-Since \( \Zzz [i][x,y] \) is a unique factorization domain,
+Since $ \Zzz [i][x,y] $ is a unique factorization domain,
 we can factor this as
 \[ f(x,y) + i \cdot g(x,y) = c \cdot (x + iy)^j (x -  iy)^k \]
 and
 \[ f(x,y) - i \cdot g(x,y) = d \cdot (x + iy)^r (x -  iy)^s,\]
-where \( j, k, r, s \in \Nnn \cup \{0\} \) and
-\(c \cdot d = 1 \) with \( c,d \in \{ \pm 1 , \pm i \} \). 
-We know \( j + r = n \) and \( k + s = n \), as well as
-(by taking norms) \( j + k = n \) and \( r + s = n \).
-Thus \(k = r\) and \(j = s\).
+where $ j, k, r, s \in \Nnn \cup \{0\} $ and
+$c \cdot d = 1 $ with $ c,d \in \{ \pm 1 , \pm i \} $. 
+We know $ j + r = n $ and $ k + s = n $, as well as
+(by taking norms) $ j + k = n $ and $ r + s = n $.
+Thus $k = r$ and $j = s$.
 
-Clearly \( f(x,y) + i \cdot g(x,y) \simeq  f(x,y) - i \cdot g(x,y) \).
+Clearly $ f(x,y) + i \cdot g(x,y) \simeq  f(x,y) - i \cdot g(x,y) $.
 Since 
 \[ 
 f(x,y) + i \cdot g(x,y) = c \cdot (x + iy)^j (x -  iy)^{n-j} 
@@ -491,33 +538,33 @@ and
 \[ 
 f(x,y) - i \cdot g(x,y) = d \cdot (x + iy)^{n-j} (x -  iy)^j,
 \]
-each equivalence class contains a representative with \( j \leq n - j
-\).  As \( 2j \leq n \), we have \( j \leq \frac{n}{2} \), so \( j \)
-is one of \( 0, 1, 2, \ldots, \left\lfloor \frac{n}{2} \right\rfloor \). This shows
-that there are at most \( \left\lfloor \frac{n}{2} \right\rfloor + 1 \)
+each equivalence class contains a representative with $ j \leq n - j
+$.  As $ 2j \leq n $, we have $ j \leq \frac{n}{2} $, so $ j $
+is one of $ 0, 1, 2, \ldots, \left\lfloor \frac{n}{2} \right\rfloor $. This shows
+that there are at most $ \left\lfloor \frac{n}{2} \right\rfloor + 1 $
 equivalence classes. Now we show that there are at least that many.
 
 
 
-Consider \( (x + iy)^u (x -  iy)^{n-u} \)  and \( (x + iy)^v (x -  iy)^{n-v} \),
-where \( u \neq v \) and \(u,v \leq [ \frac{n}{2} ] \). We have
+Consider $ (x + iy)^u (x -  iy)^{n-u} $  and $ (x + iy)^v (x -  iy)^{n-v} $,
+where $ u \neq v $ and $u,v \leq [ \frac{n}{2} ] $. We have
 \begin{align*}
 (x + iy)^u (x -  iy)^{n-u} &= (x^2 + y^2)^u (x -  iy)^{n-2u}
 \\
 (x + iy)^v (x -  iy)^{n-v} &= (x^2 + y^2)^v (x -  iy)^{n-2v}
 \end{align*}
-Without loss of generality, we may assume \( u > v \). 
-Since \( \Zzz [i][x,y] \) is a unique factorization domain,
-\( (x^2 + y^2) \notdivides (x -  iy)^e \) for \( e \in \Nnn \cup \{ 0 \} \).
-Thus \( (x^2 + y^2)^u \divides (x + iy)^u (x -  iy)^{n-u} \)
-but \( (x^2 + y^2)^u \notdivides (x + iy)^v (x -  iy)^{n-v} \).
+Without loss of generality, we may assume $ u > v $. 
+Since $ \Zzz [i][x,y] $ is a unique factorization domain,
+$ (x^2 + y^2) \notdivides (x -  iy)^e $ for $ e \in \Nnn \cup \{ 0 \} $.
+Thus $ (x^2 + y^2)^u \divides (x + iy)^u (x -  iy)^{n-u} $
+but $ (x^2 + y^2)^u \notdivides (x + iy)^v (x -  iy)^{n-v} $.
 
 By Corollary~\ref{corollary_equivalence},
-\( (x + iy)^u (x -  iy)^{n-u} \not\simeq (x + iy)^v (x -  iy)^{n-v} \), 
-so the \( \left\lfloor \frac{n}{2} \right\rfloor + 1 \) representatives arise from
+$ (x + iy)^u (x -  iy)^{n-u} \not\simeq (x + iy)^v (x -  iy)^{n-v} $, 
+so the $ \left\lfloor \frac{n}{2} \right\rfloor + 1 $ representatives arise from
 distinct equivalence classes.
-Thus there are \( \left\lfloor \frac{n}{2} \right\rfloor + 1 \) equivalence classes, 
-one each for \( u = 0, 1, 2, \ldots,  \left\lfloor \frac{n}{2} \right\rfloor \).
+Thus there are $ \left\lfloor \frac{n}{2} \right\rfloor + 1 $ equivalence classes, 
+one each for $ u = 0, 1, 2, \ldots,  \left\lfloor \frac{n}{2} \right\rfloor $.
 \end{proof}
 
 
@@ -541,12 +588,12 @@ one each for \( u = 0, 1, 2, \ldots,  \left\lfloor \frac{n}{2} \right\rfloor \).
 
 
 \draw[thick] (0,0) -- (\scale * \length,0);
-\fill (\scale * \length/2, -1) circle (0cm) node[anchor=north] {\Large \( n \) };
+\fill (\scale * \length/2, -1) circle (0cm) node[anchor=north] {\Large $ n $ };
 
 \draw[thick] (0,0) -- (0,\scale * \height);
 %\fill (-2, \scale * \height/2 ) circle (0cm) node[rotate=90,anchor=south] {\Large  Number of };
 %\fill (-1, \scale * \height/2 ) circle (0cm) node[rotate=90,anchor=south] {\Large  equivalence classes };
-\fill (-1, \scale * \height/2 ) circle (0cm) node[anchor=east] {\Large  \( \kappa \) };
+\fill (-1, \scale * \height/2 ) circle (0cm) node[anchor=east] {\Large  $ \kappa $ };
 
 
 \foreach \y in {1, ..., \height}
@@ -564,8 +611,8 @@ one each for \( u = 0, 1, 2, \ldots,  \left\lfloor \frac{n}{2} \right\rfloor \).
 \end{center}
 
 \caption{
-The number of equivalence classes \( \kappa \)
-when \(p = m = 2\) is \( \left\lfloor \frac{n}{2} \right\rfloor + 1 \) .
+The number of equivalence classes $ \kappa $
+when $p = m = 2$ is $ \left\lfloor \frac{n}{2} \right\rfloor + 1 $ .
  }
 \end{figure}
 
@@ -573,29 +620,29 @@ when \(p = m = 2\) is \( \left\lfloor \frac{n}{2} \right\rfloor + 1 \) .
 
 \begin{corollary}
 
-The number of solutions \( (f, g) \) to
+The number of solutions $ (f, g) $ to
 \[
 f^2 + g^2 = (x^2 + y^2)^n,
 \]
-where \( f, g \in \Zzz[x,y] \), is \(4n + 4\).
+where $ f, g \in \Zzz[x,y] $, is $4n + 4$.
 
 \end{corollary}
 \begin{proof}
 It is sufficient to count the orbits of a representative from each
 equivalence class, where the group action is
-\( \mathfrak{S}_2^\pm \times \mathfrak{S}_2^\pm \).
+$ \mathfrak{S}_2^\pm \times \mathfrak{S}_2^\pm $.
 
 \noindent
-Case I: \( n = 2z \) for some \( z \in \Zzz \).
+Case I: $ n = 2z $ for some $ z \in \Zzz $.
 
-There are \( z + 1 \) equivalence classes. We choose \( z + 1 \)
-representatives of the form \( (x - yi)^j (x + yi)^k \), with
-\( 0 \leq j \leq \frac{n}{2}\) and \( j + k = n \).
-When \( j = k \), the representative
-is \( (x - yi)^z (x + yi)^z = ( x^2 + y^2 ) ^ z \), which
-gives the tuple \( ( x^2 + y^2, 0 ) \), which has an orbit of order 4.
-Otherwise, we write the representative as \( (x + yi)^{k-j} (x^2 + y^2)^j \).
-As \( k - j \) is even, let \( k - j = 2w \). We have
+There are $ z + 1 $ equivalence classes. We choose $ z + 1 $
+representatives of the form $ (x - yi)^j (x + yi)^k $, with
+$ 0 \leq j \leq \frac{n}{2}$ and $ j + k = n $.
+When $ j = k $, the representative
+is $ (x - yi)^z (x + yi)^z = ( x^2 + y^2 ) ^ z $, which
+gives the tuple $ ( x^2 + y^2, 0 ) $, which has an orbit of order 4.
+Otherwise, we write the representative as $ (x + yi)^{k-j} (x^2 + y^2)^j $.
+As $ k - j $ is even, let $ k - j = 2w $. We have
 \begin{align}
 \label{equation_first_binomial}
 (x + yi) ^ {2w} &= x ^ {2w} - \binom{2w}{2}  x^{2w - 2 } y^2
@@ -610,25 +657,25 @@ of Equation~\ref{equation_first_binomial} and the second entry
 is the imaginary part.
 The order of the stabilizer is 8 --- the two variables can be rearranged and their
 signs switched. This may require the sign of an entire expression to be switched,
-depending on the parity of \( w \).
-As \( | \mathfrak{S}_2^\pm \times \mathfrak{S}_2^\pm | = 64\), the order of each orbit
+depending on the parity of $ w $.
+As $ | \mathfrak{S}_2^\pm \times \mathfrak{S}_2^\pm | = 64$, the order of each orbit
 is also 8. 
 
-Thus in Case I there are \( 8z + 4 = 4 (n + 1 ) \) solutions
-to \( f^2 + g^2 = (x^2 + y^2)^n \).
+Thus in Case I there are $ 8z + 4 = 4 (n + 1 ) $ solutions
+to $ f^2 + g^2 = (x^2 + y^2)^n $.
 
 
 
 \noindent
-Case II: \( n = 2z + 1\) for some \( z \in \Zzz \).
+Case II: $ n = 2z + 1$ for some $ z \in \Zzz $.
 
-There are \( z + 1 \) equivalence classes. We choose \( z + 1 \)
-representatives of the form \( (x - yi)^j (x + yi)^k \), with
-\( 0 \leq j \leq \frac{n}{2}\) and \( j + k = n \).
+There are $ z + 1 $ equivalence classes. We choose $ z + 1 $
+representatives of the form $ (x - yi)^j (x + yi)^k $, with
+$ 0 \leq j \leq \frac{n}{2}$ and $ j + k = n $.
 It is impossible to
-choose \( j \) such that \( \Imag\left( (x - yi)^j (x + yi)^k \right) = 0\).
-We write the representative as \( (x + yi)^{k-j} (x^2 + y^2)^j \).
-As \( k - j \) is odd, let \( k - j = 2w + 1 \). We have
+choose $ j $ such that $ \Imag\left( (x - yi)^j (x + yi)^k \right) = 0$.
+We write the representative as $ (x + yi)^{k-j} (x^2 + y^2)^j $.
+As $ k - j $ is odd, let $ k - j = 2w + 1 $. We have
 \begin{align}
 \label{equation_second_binomial}
 (x + yi) ^ {2w + 1} &= x ^ {2w + 1} - \binom{2w+1}{2}  x^{2w - 1 } y^2
@@ -645,13 +692,13 @@ is the imaginary part.
 The order of the orbit of the tuple under the group action is 8, which can be
 verified in a similiar manner to Case I.
 
-Thus the number of solutions in Case II is \( 8(z + 1) = 4 ( 2w + 1) + 4 = 4n + 4 \).
+Thus the number of solutions in Case II is $ 8(z + 1) = 4 ( 2w + 1) + 4 = 4n + 4 $.
 \end{proof}
 
 
 
 
-\section{The case where \(p = m = 4\) and \(n = 2\)}
+\section{The case where $p = m = 4$ and $n = 2$}
 
 
 
@@ -666,7 +713,7 @@ Thus the number of solutions in Case II is \( 8(z + 1) = 4 ( 2w + 1) + 4 = 4n + 
 
 
 \begin{tabular}{ c | c }
- \( n \) & \( \kappa \) \\
+ $ n $ & $ \kappa $ \\
 \hline\hline
  1 & 1 \\
 \hline
@@ -684,8 +731,8 @@ Thus the number of solutions in Case II is \( 8(z + 1) = 4 ( 2w + 1) + 4 = 4n + 
 \end{center}
 \caption{
 The conjectured number of equivalence
-classes \( \kappa \)  
-in the case where \(p = m = 4\).
+classes $ \kappa $  
+in the case where $p = m = 4$.
  }
 
 \end{table}
@@ -701,7 +748,7 @@ in the case where \(p = m = 4\).
 
 \begin{theorem}
 \label{theorem_8_classes}
-In the case where  \(p = m = 4\) and \(n = 2\),
+In the case where  $p = m = 4$ and $n = 2$,
 the following identities 
 come from 8 different
 equivalence classes.
@@ -818,80 +865,80 @@ Finally, Identity~\ref{Identity_8} follows from taking the norm of the quaternio
 
 
 \begin{conjecture}
-In the case where  \(p = m = 4\) and \(n = 2\),
+In the case where  $p = m = 4$ and $n = 2$,
 there are exactly 8 equivalence classes, which have representatives
 given in Theorem~\ref{theorem_8_classes}.
 \end{conjecture}
 
 
-\section{Conjecture for \(p = m = 4\) and \( n \in \Nnn \)}
+\section{Conjecture for $p = m = 4$ and $ n \in \Nnn $}
 This section represents joint work with Professor David Leep.
 
-We conjecture that when \(p = m = 4\) and \( n \in \Nnn \),
+We conjecture that when $p = m = 4$ and $ n \in \Nnn $,
 all identities of the form
-\(
+$
 \tau_1 ^ 2  + \tau_2 ^ 2  + \tau_3 ^ 2  + \tau_4 ^ 2  
 = 
 \left(  x_1 ^ 2 + x_2 ^ 2 + x_3 ^ 2 + x_4 ^ 2
 \right) ^ n 
-\)
+$
 can be written as
 a product of Lipschitz quaternions.
 This is made more precise in
 Conjecture~\ref{conjecture_Ehrenborg-Leep}.
 
 \begin{conjecture}
-Let \( \alpha \in \Lll[x,y,z,w] \).
-If the norm \( N(\alpha) \) has a nontrivial
-factorization over \( \Zzz[x,y,z,w] \),
-then \( \alpha \) has a nontrivial
-factorization over \( \Lll[x,y,z,w] \).
+Let $ \alpha \in \Lll[x,y,z,w] $.
+If the norm $ N(\alpha) $ has a nontrivial
+factorization over $ \Zzz[x,y,z,w] $,
+then $ \alpha $ has a nontrivial
+factorization over $ \Lll[x,y,z,w] $.
 \end{conjecture}
 The preceding conjecture implies the following conjecture.
 \begin{conjecture}
 \label{conjecture_Ehrenborg-Leep}
-Let \( (a, b, c, d) \) be a tuple such that
+Let $ (a, b, c, d) $ be a tuple such that
 \[
 a^2 + b^2 + c^2 + d^2 = (x^2 + y^2 + z^2 + w^2)^n,
 \] 
-where \( a, b, c, d \in \Zzz[x,y,z,w]\).
-Let \(\alpha = a + bi + cj + dk \).
-Then \( \alpha = \beta_1 \beta_2 \cdots \beta_n \),
-where \( \beta_u \in \Lll[x,y,z,w] \) for \(u\) in \(1, \ldots, n\).
-Moreover, let \( \beta_u = a' + b'i + c'j + d'k \). Then
-the tuple \( (a', b', c', d') \simeq (x, y, z, w) \).
+where $ a, b, c, d \in \Zzz[x,y,z,w]$.
+Let $\alpha = a + bi + cj + dk $.
+Then $ \alpha = \beta_1 \beta_2 \cdots \beta_n $,
+where $ \beta_u \in \Lll[x,y,z,w] $ for $u$ in $1, \ldots, n$.
+Moreover, let $ \beta_u = a' + b'i + c'j + d'k $. Then
+the tuple $ (a', b', c', d') \simeq (x, y, z, w) $.
 \end{conjecture}
 
 
 
 \section{Things I can mention}
 I have proved Conjecture~\ref{conjecture_Ehrenborg-Leep}
-in the case where \(n = 1\).
+in the case where $n = 1$.
 
 
-Recall that \( \theta \in \Zzz[x,y,z,w] \) is a \emph{monomial} if \( \theta \)
-is of the form \(Cx^{e_1}y^{e_2}z^{e_3}w^{e_4}\), where \( C \in \Zzz \)
-and \( e_1,e_2,e_3,e_4 \in \Nnn \cup \{0\} \).
-Two monomials \( u\) and \( v \) are \emph{similar}, denoted  \( u \sim v \),
+Recall that $ \theta \in \Zzz[x,y,z,w] $ is a \emph{monomial} if $ \theta $
+is of the form $Cx^{e_1}y^{e_2}z^{e_3}w^{e_4}$, where $ C \in \Zzz $
+and $ e_1,e_2,e_3,e_4 \in \Nnn \cup \{0\} $.
+Two monomials $ u$ and $ v $ are \emph{similar}, denoted  $ u \sim v $,
 if they are equal or only differ in their
 coefficient.
-We denote the degree of  \( \theta \) with repect to \(x\) 
-by  \(deg_x \theta = e_1 \). We use analogous notation for the
+We denote the degree of  $ \theta $ with repect to $x$ 
+by  $deg_x \theta = e_1 $. We use analogous notation for the
 other three variables.
 
 \begin{remark}
-Any element of \( \Zzz[x,y,z,w] \) is a sum of monomials.
+Any element of $ \Zzz[x,y,z,w] $ is a sum of monomials.
 \end{remark}
 
 \begin{lemma}
-If \(a, b, c, d \in \Zzz[x,y,z,w]\), and
+If $a, b, c, d \in \Zzz[x,y,z,w]$, and
 \[
 a^2 + b^2 + c^2 + d^2 = x^2 + y^2 + z^2 + w^2,
 \]
-then \( (a, b, c, d ) \simeq (x, y, z, w )\).
+then $ (a, b, c, d ) \simeq (x, y, z, w )$.
 \end{lemma}
 \begin{proof}
-Write each of \( a,b,c,d \) as sums of monomials, that is, 
+Write each of $ a,b,c,d $ as sums of monomials, that is, 
 \begin{align*}
 &a = \theta_{11} + \theta_{12} + \cdots + \theta_{1\alpha}
 \\
@@ -901,71 +948,71 @@ Write each of \( a,b,c,d \) as sums of monomials, that is,
 \\
 &d = \theta_{41} + \theta_{42} + \cdots + \theta_{4\delta}
 \end{align*}
-where the monomial \( \theta_{ij}\) is not similar
-to the monomial \(\theta_{ik}\) for \( j \neq k\).
+where the monomial $ \theta_{ij}$ is not similar
+to the monomial $\theta_{ik}$ for $ j \neq k$.
 
-Let \(S\) be the \emph{multiset} of all the preceding \( \theta \)'s.
-We are going to select a particular element~\( \omega \)
-from \( S \).
-Let \( S_1 \) be the set of all \( \theta \in S  \) such that
-\( deg_x \theta \) is the maximum possible for all \( \theta \in S \).
-Let \( S_2 \) be the set of all \( \theta \in S_1  \) such that
-\( deg_y \theta \) is the maximum possible for all \( \theta \in S_1 \).
-Let \( S_3 \) be the set of all \( \theta \in S_2  \) such that
-\( deg_z \theta \) is the maximum possible for all \( \theta \in S_2 \).
-Let \( S_4 \) be the set of all \( \theta \in S_3  \) such that
-\( deg_w \theta \) is the maximum possible for all \( \theta \in S_3 \).
-Let \( \omega \) be an element of \( S_4 \). 
-Write \( \omega \) as \(Cx^{e_1}y^{e_2}z^{e_3}w^{e_4}\), where \( C \in \Zzz \)
-and \( e_1,e_2,e_3,e_4 \in \Nnn \cup \{0\} \).
+Let $S$ be the \emph{multiset} of all the preceding $ \theta $'s.
+We are going to select a particular element~$ \omega $
+from $ S $.
+Let $ S_1 $ be the set of all $ \theta \in S  $ such that
+$ deg_x \theta $ is the maximum possible for all $ \theta \in S $.
+Let $ S_2 $ be the set of all $ \theta \in S_1  $ such that
+$ deg_y \theta $ is the maximum possible for all $ \theta \in S_1 $.
+Let $ S_3 $ be the set of all $ \theta \in S_2  $ such that
+$ deg_z \theta $ is the maximum possible for all $ \theta \in S_2 $.
+Let $ S_4 $ be the set of all $ \theta \in S_3  $ such that
+$ deg_w \theta $ is the maximum possible for all $ \theta \in S_3 $.
+Let $ \omega $ be an element of $ S_4 $. 
+Write $ \omega $ as $Cx^{e_1}y^{e_2}z^{e_3}w^{e_4}$, where $ C \in \Zzz $
+and $ e_1,e_2,e_3,e_4 \in \Nnn \cup \{0\} $.
 
-We first assume that \(deg_x \omega > 1 \).
+We first assume that $deg_x \omega > 1 $.
 In the expression  
-\(a^2 + b^2 + c^2 + d^2\), there must be at least one monomial similar to \( \omega^2 \)
-that cancels the \( \omega^2 = C^2x^{2e_1}y^{2e_2}z^{2e_3}w^{2e_4}\) term.
-Let one of these monomials be \( \psi \). Assume for the moment that \( \psi \)
-is not formed from squaring a monomial in \(S\), but rather
+$a^2 + b^2 + c^2 + d^2$, there must be at least one monomial similar to $ \omega^2 $
+that cancels the $ \omega^2 = C^2x^{2e_1}y^{2e_2}z^{2e_3}w^{2e_4}$ term.
+Let one of these monomials be $ \psi $. Assume for the moment that $ \psi $
+is not formed from squaring a monomial in $S$, but rather
 from a product of two nonsimilar monomials.
-In other words, \( \psi = \psi' \cdot \psi''\), where \( \psi' \nsim \psi'' \)
-and \( \psi' , \psi'' \in S \). As \( deg_x \psi' \leq deg_x \omega \)
-and \( deg_x \psi'' \leq deg_x \omega \),
-we have \( deg_x \psi' = deg_x \omega = deg_x \psi'' \).
-Thus \( \psi' , \psi'' \in S_1 \). Continuing in this manner
+In other words, $ \psi = \psi' \cdot \psi''$, where $ \psi' \nsim \psi'' $
+and $ \psi' , \psi'' \in S $. As $ deg_x \psi' \leq deg_x \omega $
+and $ deg_x \psi'' \leq deg_x \omega $,
+we have $ deg_x \psi' = deg_x \omega = deg_x \psi'' $.
+Thus $ \psi' , \psi'' \in S_1 $. Continuing in this manner
 with the other variables, we
-conclude that \( \psi' \) and \( \psi'' \) are similar monomials.
-This contradicts the fact that \( \psi' \nsim \psi'' \). Thus \( \psi \) was
-formed by the square of a monomial in \( S \). However, the coefficient
-of \( \psi \) is thus positive, as is the coefficient of \( \omega^2 \) and
-any other similar monomial to \( \omega^2 \), so \( \omega^2 \) cannot be cancelled. This is
-a contradiction, so \( deg_x \omega \leq 1 \). Thus no monomial has a \( deg_x \) of more
-than \(1\). In an analogous way, we can show that no monomial has a \( deg_y \), \( deg_z \),
-or \( deg_w \) of more than \(1\).
+conclude that $ \psi' $ and $ \psi'' $ are similar monomials.
+This contradicts the fact that $ \psi' \nsim \psi'' $. Thus $ \psi $ was
+formed by the square of a monomial in $ S $. However, the coefficient
+of $ \psi $ is thus positive, as is the coefficient of $ \omega^2 $ and
+any other similar monomial to $ \omega^2 $, so $ \omega^2 $ cannot be cancelled. This is
+a contradiction, so $ deg_x \omega \leq 1 $. Thus no monomial has a $ deg_x $ of more
+than $1$. In an analogous way, we can show that no monomial has a $ deg_y $, $ deg_z $,
+or $ deg_w $ of more than $1$.
 
-By setting three of the variables equal to zero, we see that \( S \) contains
-exactly one monomial similar to \( x \), namely \( x\) or \( -x \). The same is true for
-the other three variables. Moreover, there are no constants in \( S \). Assume that
-\( a \) contains both a lone \( \pm x \) and a lone \( \pm y \). Then \(a^2\) contains
-a \( \pm 2xy \), which can only be cancelled by another product of monomials similar to
-\( x \) and \(y\). However, \( S \) has no such other monomials,
-so the \( \pm x, \pm y, \pm z, \pm w \) are in the 4 different coordinates of
-\( (a, b, c, d) \). Assume that the coordinate that contains \( \pm x \) also contains
-another monomial, \( A = Dx^{f_1}y^{f_2}z^{f_3}w^{f_4}\), where \( D \in \Zzz \)
-and \( f_1,f_2,f_3,f_4 \in \{0,1\} \). Then \( A^2 \) has degrees (with respect to
-each variable) of either 0 or 2. To cancel \( A^2 \), we must find a product of two
-monomials in \( S \) that is similar to \( A^2 \). As no monomial in \( S \) has a degree
-(with respect to any variable) of two, any similar monomial to \( A^2 \) must itself be
-a square of a similar monomial to \( A \). In this case, the coefficients are
-positive and will not cancel. Thus there can be no monomial \( A \), so the only monomials
-in \( S \) are the four desired ones.
+By setting three of the variables equal to zero, we see that $ S $ contains
+exactly one monomial similar to $ x $, namely $ x$ or $ -x $. The same is true for
+the other three variables. Moreover, there are no constants in $ S $. Assume that
+$ a $ contains both a lone $ \pm x $ and a lone $ \pm y $. Then $a^2$ contains
+a $ \pm 2xy $, which can only be cancelled by another product of monomials similar to
+$ x $ and $y$. However, $ S $ has no such other monomials,
+so the $ \pm x, \pm y, \pm z, \pm w $ are in the 4 different coordinates of
+$ (a, b, c, d) $. Assume that the coordinate that contains $ \pm x $ also contains
+another monomial, $ A = Dx^{f_1}y^{f_2}z^{f_3}w^{f_4}$, where $ D \in \Zzz $
+and $ f_1,f_2,f_3,f_4 \in \{0,1\} $. Then $ A^2 $ has degrees (with respect to
+each variable) of either 0 or 2. To cancel $ A^2 $, we must find a product of two
+monomials in $ S $ that is similar to $ A^2 $. As no monomial in $ S $ has a degree
+(with respect to any variable) of two, any similar monomial to $ A^2 $ must itself be
+a square of a similar monomial to $ A $. In this case, the coefficients are
+positive and will not cancel. Thus there can be no monomial $ A $, so the only monomials
+in $ S $ are the four desired ones.
 \end{proof}
 
 \begin{theorem}
 Assuming Conjecture~\ref{conjecture_Ehrenborg-Leep} holds,
-the number of solutions \( (a, b, c, d) \) to
+the number of solutions $ (a, b, c, d) $ to
 \[
 a^2 + b^2 + c^2 + d^2 = (x^2 + y^2 + z^2 + w^2)^n,
 \] 
-where \( a, b, c, d \in \Zzz[x,y,z,w]\),
+where $ a, b, c, d \in \Zzz[x,y,z,w]$,
 is at most
 \[
 8 \cdot \frac{47^{n+1} - 1}{46}
@@ -976,53 +1023,53 @@ is at most
 \begin{proof}
 If Conjecture~\ref{conjecture_Ehrenborg-Leep} holds, any
 solution
-\( (a, b, c, d) \) can be viewed as a quaternion
-\( a + bi + cj + dk \) that is a product of
-quaternions \( \beta_1 \beta_2 \cdots \beta_n \) in the following set:
+$ (a, b, c, d) $ can be viewed as a quaternion
+$ a + bi + cj + dk $ that is a product of
+quaternions $ \beta_1 \beta_2 \cdots \beta_n $ in the following set:
 \[
 S_1 = \{ \pm a' \pm b'i \pm c'j \pm d'k
 \mid \{ a', b', c', d' \} = \{ x, y, z, w \} \}. 
 \]
-Note that \( | S_1 | = 2^4 4! = 384 \).
-Thus there are at most \( 384^n \) unique solutions.
+Note that $ | S_1 | = 2^4 4! = 384 $.
+Thus there are at most $ 384^n $ unique solutions.
 Using the fact that
 \[
 \beta_1 \beta_2 \cdots \beta_v \beta_{v+1} \cdots \beta_n
 =
 \beta_1 \beta_2 \cdots \beta_v u u^{-1} \beta_{v+1} \cdots \beta_n
 \]
-for \( u \in \{ \pm 1 , \pm i, \pm j, \pm k \} \), we can specify
-that every factor except the first has \( a' = x \) without
+for $ u \in \{ \pm 1 , \pm i, \pm j, \pm k \} $, we can specify
+that every factor except the first has $ a' = x $ without
 losing any solutions. Thus the number of unique solutions is at most
-\( 384 \cdot 48^{n-1} \). Alternatively, we can factor out a unit
-from the first monomial to ensure that it has \( a' = x \), so the
-product is of the form \( u \beta_1 \beta_2 \cdots \beta_n \),
-where each \( \beta_v \) belongs to
+$ 384 \cdot 48^{n-1} $. Alternatively, we can factor out a unit
+from the first monomial to ensure that it has $ a' = x $, so the
+product is of the form $ u \beta_1 \beta_2 \cdots \beta_n $,
+where each $ \beta_v $ belongs to
 \[
 S_2 = \{ x \pm b'i \pm c'j \pm d'k
 \mid \{ b', c', d' \} = \{ y, z, w \} \},
 \]
-with \( | S_2 | = 2^3 3! = 48 \).
+with $ | S_2 | = 2^3 3! = 48 $.
 
-If any two consecutive \( \beta \)'s are conjugates, we combine them
-to form \( x^2 + y^2 + z^2 + w^2 \). As this is a real number, we can
+If any two consecutive $ \beta $'s are conjugates, we combine them
+to form $ x^2 + y^2 + z^2 + w^2 $. As this is a real number, we can
 factor it out. The product now is of the form
 \[
 (x^2 + y^2 + z^2 + w^2)^\gamma u \beta_1 \beta_2 \cdots \beta_{n-2\gamma},
 \]
-with \( \gamma \) ranging over \( 0, 1, \ldots, \left\lfloor \frac{n}{2} \right\rfloor \).
+with $ \gamma $ ranging over $ 0, 1, \ldots, \left\lfloor \frac{n}{2} \right\rfloor $.
 
-Assume \( n \) is even.
-When \( \gamma = \frac{n}{2} \), the product is of the form
-\( (x^2 + y^2 + z^2 + w^2)^{\frac{n}{2}} u  \), so there are 8 unique values, one for
+Assume $ n $ is even.
+When $ \gamma = \frac{n}{2} $, the product is of the form
+$ (x^2 + y^2 + z^2 + w^2)^{\frac{n}{2}} u  $, so there are 8 unique values, one for
 each unit.
-When \( \gamma = \frac{n}{2} - 1 \), the product is of the form
-\( (x^2 + y^2 + z^2 + w^2)^{\frac{n}{2} - 1} u \beta_1 \beta_2  \). Although \( \beta_1 \)
-can be any element of \( S_2 \), \( \beta_2 \) cannot be \( \overline{ \beta_1 } \),
-so the number of values in this case is \( 8 \cdot 48 \cdot 47 \). The same restriction
-applies for all \( \gamma < \frac{n}{2} \). For \( \gamma < \frac{n}{2} \),
-the number of values is \( 8 \cdot 48 \cdot 47^{n - 2\gamma - 1} \).
-Summing over all \( \gamma \), the number of values is
+When $ \gamma = \frac{n}{2} - 1 $, the product is of the form
+$ (x^2 + y^2 + z^2 + w^2)^{\frac{n}{2} - 1} u \beta_1 \beta_2  $. Although $ \beta_1 $
+can be any element of $ S_2 $, $ \beta_2 $ cannot be $ \overline{ \beta_1 } $,
+so the number of values in this case is $ 8 \cdot 48 \cdot 47 $. The same restriction
+applies for all $ \gamma < \frac{n}{2} $. For $ \gamma < \frac{n}{2} $,
+the number of values is $ 8 \cdot 48 \cdot 47^{n - 2\gamma - 1} $.
+Summing over all $ \gamma $, the number of values is
 \begin{align*}
 &8 + 8 \cdot 48 \cdot 47 + 8 \cdot 48 \cdot 47^3 + \ldots
 + 8 \cdot 48 \cdot 47^{n-1}
@@ -1038,18 +1085,18 @@ Summing over all \( \gamma \), the number of values is
 &= 8 \left( \frac{47^{n+1} -1 }{46}\right)
 \end{align*}
 
-Assume \( n \) is odd.
-When \( \gamma = \frac{n-1}{2} \), the product is of the form
-\( (x^2 + y^2 + z^2 + w^2)^{\frac{n-1}{2}} u \beta_1  \), so there are \( 8 \cdot 48 \)
+Assume $ n $ is odd.
+When $ \gamma = \frac{n-1}{2} $, the product is of the form
+$ (x^2 + y^2 + z^2 + w^2)^{\frac{n-1}{2}} u \beta_1  $, so there are $ 8 \cdot 48 $
 unique values.
-When \( \gamma = \frac{n-1}{2} - 1 = \frac{n-3}{2}  \), the product is of the form
-\( (x^2 + y^2 + z^2 + w^2)^{\frac{n-3}{2}} u \beta_1 \beta_2 \beta_3  \). Although \( \beta_1 \)
-can be any element of \( S_2 \), \( \beta_2 \neq \overline{ \beta_1 } \)
-and \( \beta_3 \neq \overline{ \beta_2 } \),
-so the number of values in this case is \( 8 \cdot 48 \cdot 47^2 \). The same restriction
-applies for all \( \gamma < \frac{n-1}{2} \). For \( \gamma < \frac{n-1}{2} \),
-the number of values is \( 8 \cdot 48 \cdot 47^{n - 2\gamma - 1 } \).
-Summing over all \( \gamma \), the number of values is
+When $ \gamma = \frac{n-1}{2} - 1 = \frac{n-3}{2}  $, the product is of the form
+$ (x^2 + y^2 + z^2 + w^2)^{\frac{n-3}{2}} u \beta_1 \beta_2 \beta_3  $. Although $ \beta_1 $
+can be any element of $ S_2 $, $ \beta_2 \neq \overline{ \beta_1 } $
+and $ \beta_3 \neq \overline{ \beta_2 } $,
+so the number of values in this case is $ 8 \cdot 48 \cdot 47^2 $. The same restriction
+applies for all $ \gamma < \frac{n-1}{2} $. For $ \gamma < \frac{n-1}{2} $,
+the number of values is $ 8 \cdot 48 \cdot 47^{n - 2\gamma - 1 } $.
+Summing over all $ \gamma $, the number of values is
 \begin{align*}
 &8 \cdot 48 + 8 \cdot 48 \cdot 47^2 + 8 \cdot 48 \cdot 47^4 + \ldots
 + 8 \cdot 48 \cdot 47^{n-1}
