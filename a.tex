@@ -8,7 +8,7 @@
 %
 %
 % 
-% Last edited: May 5, 2019
+% Last edited: May 6, 2019
 %
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -871,13 +871,18 @@ in the case where \(n = 1\).
 
 Recall that \( \theta \in \Zzz[x,y,z,w] \) is a \emph{monomial} if \( \theta \)
 is of the form \(Cx^{e_1}y^{e_2}z^{e_3}w^{e_4}\), where \( C \in \Zzz \)
-and \( e_1,e_2,e_3,e_4 \in \Nnn \cup \{0\} \). 
-Two monomials are \emph{similar} if they are equal or only differ in their
+and \( e_1,e_2,e_3,e_4 \in \Nnn \cup \{0\} \).
+Two monomials \( u\) and \( v \) are \emph{similar}, denoted  \( u \sim v \),
+if they are equal or only differ in their
 coefficient.
+We denote the degree of  \( \theta \) with repect to \(x\) 
+by  \(deg_x \theta = e_1 \). We use analogous notation for the
+other three variables.
 
 \begin{remark}
 Any element of \( \Zzz[x,y,z,w] \) is a sum of monomials.
 \end{remark}
+
 \begin{lemma}
 If \(a, b, c, d \in \Zzz[x,y,z,w]\), and
 \[
@@ -900,37 +905,41 @@ where the monomial \( \theta_{ij}\) is not similar
 to the monomial \(\theta_{ik}\) for \( j \neq k\).
 
 Let \(S\) be the \emph{multiset} of all the preceding \( \theta \)'s.
-We are going to choose a particular element \( \omega \)
+We are going to select a particular element~\( \omega \)
 from \( S \).
 Let \( S_1 \) be the set of all \( \theta \in S  \) such that
-\( deg_x \theta \) is the maximum possible for any \( \theta \in S \).
+\( deg_x \theta \) is the maximum possible for all \( \theta \in S \).
 Let \( S_2 \) be the set of all \( \theta \in S_1  \) such that
-\( deg_y \theta \) is the maximum possible for any \( \theta \in S_1 \).
+\( deg_y \theta \) is the maximum possible for all \( \theta \in S_1 \).
 Let \( S_3 \) be the set of all \( \theta \in S_2  \) such that
-\( deg_z \theta \) is the maximum possible for any \( \theta \in S_2 \).
+\( deg_z \theta \) is the maximum possible for all \( \theta \in S_2 \).
 Let \( S_4 \) be the set of all \( \theta \in S_3  \) such that
-\( deg_w \theta \) is the maximum possible for any \( \theta \in S_3 \).
-Let \( \omega \) be an element of \( S_4 \). Assume that \(deg_x \omega > 1 \).
+\( deg_w \theta \) is the maximum possible for all \( \theta \in S_3 \).
+Let \( \omega \) be an element of \( S_4 \). 
 Write \( \omega \) as \(Cx^{e_1}y^{e_2}z^{e_3}w^{e_4}\), where \( C \in \Zzz \)
-and \( e_1,e_2,e_3,e_4 \in \Nnn \cup \{0\} \). In the expression  
-\(a^2 + b^2 + c^2 + d^2\), there must be a similar monomial or similar monomials
-that cancels \( \omega^2 = C^2x^{2e_1}y^{2e_2}z^{2e_3}w^{2e_4}\).
-Let one of these similar monomials be \( \psi \). Assume that \( \psi \)
-was not formed from the squaring of a monomial in \(S\), but rather
-as a product of two unlike monomials.
-That is, \( \psi = \psi' \cdot \psi''\), where \( \psi' \neq \psi'' \)
+and \( e_1,e_2,e_3,e_4 \in \Nnn \cup \{0\} \).
+
+We first assume that \(deg_x \omega > 1 \).
+In the expression  
+\(a^2 + b^2 + c^2 + d^2\), there must be at least one monomial similar to \( \omega^2 \)
+that cancels the \( \omega^2 = C^2x^{2e_1}y^{2e_2}z^{2e_3}w^{2e_4}\) term.
+Let one of these monomials be \( \psi \). Assume for the moment that \( \psi \)
+is not formed from squaring a monomial in \(S\), but rather
+from a product of two nonsimilar monomials.
+In other words, \( \psi = \psi' \cdot \psi''\), where \( \psi' \nsim \psi'' \)
 and \( \psi' , \psi'' \in S \). As \( deg_x \psi' \leq deg_x \omega \)
 and \( deg_x \psi'' \leq deg_x \omega \),
 we have \( deg_x \psi' = deg_x \omega = deg_x \psi'' \).
-Thus \( \psi' , \psi'' \in S_1 \). Continuing with the other variables, we
-finally discover that \( \psi' \) and \( \psi'' \) are similar monomials. However,
-similar monomials would have been combined, a contradiction. Thus \( \psi \) was
+Thus \( \psi' , \psi'' \in S_1 \). Continuing in this manner
+with the other variables, we
+conclude that \( \psi' \) and \( \psi'' \) are similar monomials.
+This contradicts the fact that \( \psi' \nsim \psi'' \). Thus \( \psi \) was
 formed by the square of a monomial in \( S \). However, the coefficient
-of \( \psi \) is thus positive, as is the coefficient of \( \omega \) and
-any other similar monomial to \( \omega \), so \( \omega \) cannot be cancelled. This is
+of \( \psi \) is thus positive, as is the coefficient of \( \omega^2 \) and
+any other similar monomial to \( \omega^2 \), so \( \omega^2 \) cannot be cancelled. This is
 a contradiction, so \( deg_x \omega \leq 1 \). Thus no monomial has a \( deg_x \) of more
-than 1. In a similar way, we can show that no monomial has a \( deg_y \), \( deg_z \),
-or \( deg_w \) of more than 1.
+than \(1\). In an analogous way, we can show that no monomial has a \( deg_y \), \( deg_z \),
+or \( deg_w \) of more than \(1\).
 
 By setting three of the variables equal to zero, we see that \( S \) contains
 exactly one monomial similar to \( x \), namely \( x\) or \( -x \). The same is true for
@@ -941,12 +950,12 @@ a \( \pm 2xy \), which can only be cancelled by another product of monomials sim
 so the \( \pm x, \pm y, \pm z, \pm w \) are in the 4 different coordinates of
 \( (a, b, c, d) \). Assume that the coordinate that contains \( \pm x \) also contains
 another monomial, \( A = Dx^{f_1}y^{f_2}z^{f_3}w^{f_4}\), where \( D \in \Zzz \)
-and \( f_1,f_2,f_3,f_4 \in \{0,1\} \). Then \( D^2 \) has degrees (with respect to
-each variable) of either 0 or 2. To cancel \( D^2 \), we must find a product of two
-monomials in \( S \) that is similar to \( D^2 \). As no monomial in \( S \) has a degree
-(with respect to any variable) of two, any similar monomial to \( D^2 \) must itself be
-a square of a similar monomial to \( D \). In this case, the coefficients are
-positive and will not cancel. Thus there can be no monomial \( D \), so the only monomials
+and \( f_1,f_2,f_3,f_4 \in \{0,1\} \). Then \( A^2 \) has degrees (with respect to
+each variable) of either 0 or 2. To cancel \( A^2 \), we must find a product of two
+monomials in \( S \) that is similar to \( A^2 \). As no monomial in \( S \) has a degree
+(with respect to any variable) of two, any similar monomial to \( A^2 \) must itself be
+a square of a similar monomial to \( A \). In this case, the coefficients are
+positive and will not cancel. Thus there can be no monomial \( A \), so the only monomials
 in \( S \) are the four desired ones.
 \end{proof}
 
