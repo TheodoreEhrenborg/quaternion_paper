@@ -111,6 +111,8 @@
 \DeclareMathOperator{\odd}{odd}
 \DeclareMathOperator{\Imag}{Im}
 \DeclareMathOperator{\Real}{Re}
+\DeclareMathOperator{\N}{N}
+
 
 
 \newcommand{\ascodd}{\asc_{\odd}}
@@ -182,30 +184,28 @@ enumeration.
 
 
 
-\begin{definition}
-The \emph{complex numbers} $\Ccc$ are a two-dimensional extension of $\Rrr$.
+
+Recall that the \emph{complex numbers} $\Ccc$ are a two-dimensional
+field extension of $\Rrr$.
 Complex numbers take the form $x + iy$, where $i$ is defined to be the
 square root of $-1$ and $x,y \in \Rrr$.
-Addition is done component-wise, and multiplication
-is done using the Distributive Property and the fact that
+Addition is component-wise, and multiplication
+follows from the distributive property and the fact that
 $i^2 = -1$.
+The \emph{conjugate} of a complex number $ z = x + iy$ is $ \overline{z} = x - iy$, and  
+the \emph{norm} is $ \N(z) = z \overline{z} = x^2 + y^2$.  
 
-The \emph{conjugate} of a complex number $ \alpha = x + iy$ is $ \overline{\alpha} = x - iy$.  
-The \emph{norm} of a complex number $ \alpha $ is $ \alpha \overline{\alpha} = x^2 + y^2$.  
-
-The Gaussian integers $ \Zzz[i] $ are a subset of $\Ccc$:
+The \emph{Gaussian integers} $ \Zzz[i] $ are a subring of $\Ccc$:
 \[
-\Zzz[i] = \{ x + iy: x,y \in \Zzz \}
+\Zzz[i] = \{ x + iy: x,y \in \Zzz \}.
 \]
-\end{definition}
 
 
-\begin{definition}
-The \emph{quaternions} $\Qqq$ are a four-dimensional extension of $\Rrr$.
-Quaternions take the form $x + iy + jz + wk$, where $i,j,k$ are defined to be
-linearly independent square roots of $-1$ and $x,y,z,w \in \Rrr$.
-Addition is done component-wise, and multiplication
-is done using the Distributive Property and the following facts:
+
+Recall that
+the \emph{quaternions} $\Qqq$ are a four-dimensional division ring extension of $\Rrr$.
+Quaternions take the form $x + iy + jz + kw$, with
+$x,y,z,w \in \Rrr$, and the elements $i$, $j$, $k$ satisfy the relations:
 \begin{align*}
 i^2 = j^2 = k^2 = -1
 \\
@@ -213,25 +213,25 @@ ij = -ji = k
 \\
 jk = -kj = i
 \\
-ki = -ik = j
+ki = -ik = j.
 \end{align*}
-Multiplication is usually not commutative.
-
+Addition is component-wise, and multiplication, which is
+in general not commutative,
+follows from the distributive property and the preceding relations.
 The \emph{conjugate} of a quaternion $ \alpha = x + iy + jz + kw$
-is $ \overline{\alpha} = x - iy - jz - kw$.  
-The \emph{norm} of a quaternion $ \alpha $ is
-$ \alpha \overline{\alpha} = x^2 + y^2 + z^2 + w^2$.  
+is $ \overline{\alpha} = x - iy - jz - kw$,  
+and the \emph{norm} is 
+$ \N( \alpha ) = \alpha \overline{\alpha} = x^2 + y^2 + z^2 + w^2$.  
 
-The Lipschitz quaternions $ \Lll $ are a subset of $\Qqq$:
+The \emph{Lipschitz quaternions} $ \Lll $ are a subring of $\Qqq$:
 \[
 \Lll = \{ x + iy + jz + kw: x,y,z,w \in \Zzz \}.
 \]
-\end{definition}
 
 
-In the rest of this paper $x, y, z, w$ will
-usually refer to indeterminates, not to variables with
-an unknown real value.
+
+In the rest of this paper $x$, $y$, $z$, $w$ will
+usually refer to indeterminates.
 
 
 \todo[inline]{Talk about experimental data}
@@ -400,8 +400,8 @@ Let $ h(z), h'(z) \in \Zzz [i][x,y] $,
 where $ z = x + iy $.
 Let $ M $ be the following set of mappings: 
 \[
-M = \{ z \mapsto uz \mid u \in \{ \pm 1, \pm i \} \}  
-\cup \{ z\mapsto u \bar{z} \mid u \in \{ \pm 1, \pm i \} \}.  
+M = \{ z \mapsto uz \text{ : } u \in \{ \pm 1, \pm i \} \}  
+\cup \{ z\mapsto u \bar{z} \text{ : } u \in \{ \pm 1, \pm i \} \}.  
 \]
 %Write $ f(x,y) + i \cdot g(x,y) $ and $ f'(x,y) + i \cdot g'(x,y) $ as  $ h(z) $ and  $ h'(z) $, respectively.
 We say $ h(z) \simeq h'(z) $ when there exist mappings $ \varphi, \varphi' \in M $
@@ -636,16 +636,16 @@ $ \mathfrak{S}_2^\pm \times \mathfrak{S}_2^\pm $.
 Case I: $ n = 2z $ for some $ z \in \Zzz $.
 
 There are $ z + 1 $ equivalence classes. We choose $ z + 1 $
-representatives of the form $ (x - yi)^j (x + yi)^k $, with
+representatives of the form $ (x - iy)^j (x + iy)^k $, with
 $ 0 \leq j \leq \frac{n}{2}$ and $ j + k = n $.
 When $ j = k $, the representative
-is $ (x - yi)^z (x + yi)^z = ( x^2 + y^2 ) ^ z $, which
+is $ (x - iy)^z (x + iy)^z = ( x^2 + y^2 ) ^ z $, which
 gives the tuple $ ( x^2 + y^2, 0 ) $, which has an orbit of order 4.
-Otherwise, we write the representative as $ (x + yi)^{k-j} (x^2 + y^2)^j $.
+Otherwise, we write the representative as $ (x + iy)^{k-j} (x^2 + y^2)^j $.
 As $ k - j $ is even, let $ k - j = 2w $. We have
 \begin{align}
 \label{equation_first_binomial}
-(x + yi) ^ {2w} &= x ^ {2w} - \binom{2w}{2}  x^{2w - 2 } y^2
+(x + iy) ^ {2w} &= x ^ {2w} - \binom{2w}{2}  x^{2w - 2 } y^2
 + \cdots + \binom{2w}{2w-2} x^2 y^{2w - 2} (-1) ^ {w - 1}
 +  y^{2w} (-1) ^ {w} \nonumber
 \\
@@ -653,7 +653,7 @@ As $ k - j $ is even, let $ k - j = 2w $. We have
 \binom{2w}{2w-1}  x y ^ {2w -1} (-1)^{w-1} \right).
 \end{align}
 As a tuple, this has two entries, where the first is the real part
-of Equation~\ref{equation_first_binomial} and the second entry
+of equation~\ref{equation_first_binomial} and the second entry
 is the imaginary part.
 The order of the stabilizer is 8 --- the two variables can be rearranged and their
 signs switched. This may require the sign of an entire expression to be switched,
@@ -670,15 +670,15 @@ to $ f^2 + g^2 = (x^2 + y^2)^n $.
 Case II: $ n = 2z + 1$ for some $ z \in \Zzz $.
 
 There are $ z + 1 $ equivalence classes. We choose $ z + 1 $
-representatives of the form $ (x - yi)^j (x + yi)^k $, with
+representatives of the form $ (x - iy)^j (x + iy)^k $, with
 $ 0 \leq j \leq \frac{n}{2}$ and $ j + k = n $.
 It is impossible to
-choose $ j $ such that $ \Imag\left( (x - yi)^j (x + yi)^k \right) = 0$.
-We write the representative as $ (x + yi)^{k-j} (x^2 + y^2)^j $.
+choose $ j $ such that $ \Imag\left( (x - iy)^j (x + iy)^k \right) = 0$.
+We write the representative as $ (x + iy)^{k-j} (x^2 + y^2)^j $.
 As $ k - j $ is odd, let $ k - j = 2w + 1 $. We have
 \begin{align}
 \label{equation_second_binomial}
-(x + yi) ^ {2w + 1} &= x ^ {2w + 1} - \binom{2w+1}{2}  x^{2w - 1 } y^2
+(x + iy) ^ {2w + 1} &= x ^ {2w + 1} - \binom{2w+1}{2}  x^{2w - 1 } y^2
 + \cdots + \binom{2w+1}{2w} x y^{2w} (-1) ^ {w} \nonumber
 \\
 &+ i \left( \binom{2w+1}{1} x ^ {2w} y + \cdots +
@@ -687,7 +687,7 @@ As $ k - j $ is odd, let $ k - j = 2w + 1 $. We have
 \right).
 \end{align}
 As a tuple, this has two entries, where the first is the real part
-of Equation~\ref{equation_second_binomial} and the second entry
+of equation~\ref{equation_second_binomial} and the second entry
 is the imaginary part.
 The order of the orbit of the tuple under the group action is 8, which can be
 verified in a similiar manner to Case I.
@@ -889,7 +889,7 @@ Conjecture~\ref{conjecture_Ehrenborg-Leep}.
 
 \begin{conjecture}
 Let $ \alpha \in \Lll[x,y,z,w] $.
-If the norm $ N(\alpha) $ has a nontrivial
+If the norm $ \N(\alpha) $ has a nontrivial
 factorization over $ \Zzz[x,y,z,w] $,
 then $ \alpha $ has a nontrivial
 factorization over $ \Lll[x,y,z,w] $.
@@ -911,7 +911,7 @@ the tuple $ (a', b', c', d') \simeq (x, y, z, w) $.
 
 
 
-\section{Things I can mention}
+\section{Proof of Conjecture~\ref{conjecture_Ehrenborg-Leep} when $n=1$}
 I have proved Conjecture~\ref{conjecture_Ehrenborg-Leep}
 in the case where $n = 1$.
 
@@ -923,7 +923,7 @@ Two monomials $ u$ and $ v $ are \emph{similar}, denoted  $ u \sim v $,
 if they are equal or only differ in their
 coefficient.
 We denote the degree of  $ \theta $ with repect to $x$ 
-by  $deg_x \theta = e_1 $. We use analogous notation for the
+by  $\deg_x \theta = e_1 $. We use analogous notation for the
 other three variables.
 
 \begin{remark}
@@ -952,66 +952,79 @@ where the monomial $ \theta_{ij}$ is not similar
 to the monomial $\theta_{ik}$ for $ j \neq k$.
 
 Let $S$ be the \emph{multiset} of all the preceding $ \theta $'s.
-We are going to select a particular element~$ \omega $
-from $ S $.
+We select a particular element~$ \omega $
+from $S$ in the following manner.
 Let $ S_1 $ be the set of all $ \theta \in S  $ such that
-$ deg_x \theta $ is the maximum possible for all $ \theta \in S $.
+$ \deg_x \theta $ is the maximum possible for all $ \theta \in S $.
 Let $ S_2 $ be the set of all $ \theta \in S_1  $ such that
-$ deg_y \theta $ is the maximum possible for all $ \theta \in S_1 $.
+$ \deg_y \theta $ is the maximum possible for all $ \theta \in S_1 $.
 Let $ S_3 $ be the set of all $ \theta \in S_2  $ such that
-$ deg_z \theta $ is the maximum possible for all $ \theta \in S_2 $.
-Let $ S_4 $ be the set of all $ \theta \in S_3  $ such that
-$ deg_w \theta $ is the maximum possible for all $ \theta \in S_3 $.
+$ \deg_z \theta $ is the maximum possible for all $ \theta \in S_2 $.
+Finally, let $ S_4 $ be the set of all $ \theta \in S_3  $ such that
+$ \deg_w \theta $ is the maximum possible for all $ \theta \in S_3 $.
 Let $ \omega $ be an element of $ S_4 $. 
-Write $ \omega $ as $Cx^{e_1}y^{e_2}z^{e_3}w^{e_4}$, where $ C \in \Zzz $
+We can write $ \omega = Cx^{e_1}y^{e_2}z^{e_3}w^{e_4}$, where $ C \in \Zzz $
 and $ e_1,e_2,e_3,e_4 \in \Nnn \cup \{0\} $.
 
-We first assume that $deg_x \omega > 1 $.
+We first assume that $\deg_x \omega > 1 $.
 In the expression  
 $a^2 + b^2 + c^2 + d^2$, there must be at least one monomial similar to $ \omega^2 $
-that cancels the $ \omega^2 = C^2x^{2e_1}y^{2e_2}z^{2e_3}w^{2e_4}$ term.
+that cancels the term $ \omega^2 = C^2x^{2e_1}y^{2e_2}z^{2e_3}w^{2e_4}$.
 Let one of these monomials be $ \psi $. Assume for the moment that $ \psi $
 is not formed from squaring a monomial in $S$, but rather
 from a product of two nonsimilar monomials.
 In other words, $ \psi = \psi' \cdot \psi''$, where $ \psi' \nsim \psi'' $
-and $ \psi' , \psi'' \in S $. As $ deg_x \psi' \leq deg_x \omega $
-and $ deg_x \psi'' \leq deg_x \omega $,
-we have $ deg_x \psi' = deg_x \omega = deg_x \psi'' $.
+and $ \psi' , \psi'' \in S $. Since $\omega$ was chosen to have maximal $x$-degree,
+we have $\deg_x \psi' \leq \deg_x \omega$ and
+$\deg_x \psi'' \leq \deg_x \omega$.
+As $\omega^2 \sim \psi = \psi' \cdot \psi''$,
+we have $ \deg_x \omega^2 = \deg_x \psi' + \deg_x \psi''$
+and immediately have $ \deg_x \omega = \deg_x \psi' = \deg_x \psi'' $.
 Thus $ \psi' , \psi'' \in S_1 $. Continuing in this manner
 with the other variables, we
 conclude that $ \psi' $ and $ \psi'' $ are similar monomials.
-This contradicts the fact that $ \psi' \nsim \psi'' $. Thus $ \psi $ was
-formed by the square of a monomial in $ S $. However, the coefficient
-of $ \psi $ is thus positive, as is the coefficient of $ \omega^2 $ and
-any other similar monomial to $ \omega^2 $, so $ \omega^2 $ cannot be cancelled. This is
-a contradiction, so $ deg_x \omega \leq 1 $. Thus no monomial has a $ deg_x $ of more
-than $1$. In an analogous way, we can show that no monomial has a $ deg_y $, $ deg_z $,
-or $ deg_w $ of more than $1$.
+This contradicts the fact that $ \psi' \nsim \psi'' $.
+Hence $ \psi $ was
+formed by the square of a monomial in $ S $. However, this implies the coefficient
+of $ \psi $ is positive. Furthermore, the coefficient of
+any monomial similar to $ \omega^2 $ must be positive,
+so $ \omega^2 $ cannot be cancelled. This is
+a contradiction, so $ \deg_x \omega \leq 1 $. Thus no monomial in $S$ has $x$-degree more
+than $1$. In an analogous way, we can show that no monomial in $S$ has $y$-degree, $z$-degree,
+or $w$-degree more than $1$.
 
-By setting three of the variables equal to zero, we see that $ S $ contains
+By setting the three variables $y$, $z$, $w$ equal to zero, we see that $ S $ contains
 exactly one monomial similar to $ x $, namely $ x$ or $ -x $. The same is true for
-the other three variables. Moreover, there are no constants in $ S $. Assume that
-$ a $ contains both a lone $ \pm x $ and a lone $ \pm y $. Then $a^2$ contains
-a $ \pm 2xy $, which can only be cancelled by another product of monomials similar to
-$ x $ and $y$. However, $ S $ has no such other monomials,
-so the $ \pm x, \pm y, \pm z, \pm w $ are in the 4 different coordinates of
-$ (a, b, c, d) $. Assume that the coordinate that contains $ \pm x $ also contains
-another monomial, $ A = Dx^{f_1}y^{f_2}z^{f_3}w^{f_4}$, where $ D \in \Zzz $
+the other three variables. Moreover, there are no constants in $ S $.
+
+Assume that $\theta_{11} \sim x$ and $\theta_{12} \sim y$.
+Then $a^2$ contains
+a monomial similar to $ xy $, which can only be cancelled by another product of monomials similar to
+$ x $ and $y$. However, we showed that $ S $ has no such other monomials.
+Thus each coordinate $ (a, b, c, d) $ contains exactly one of $ \pm x$, $\pm y$, $\pm z$, $\pm w $.
+
+
+Assume that the coordinate that contains $ \pm x $ also contains
+another monomial $ A = Dx^{f_1}y^{f_2}z^{f_3}w^{f_4}$, where $ D \in \Zzz $
 and $ f_1,f_2,f_3,f_4 \in \{0,1\} $. Then $ A^2 $ has degrees (with respect to
 each variable) of either 0 or 2. To cancel $ A^2 $, we must find a product of two
 monomials in $ S $ that is similar to $ A^2 $. As no monomial in $ S $ has a degree
-(with respect to any variable) of two, any similar monomial to $ A^2 $ must itself be
-a square of a similar monomial to $ A $. In this case, the coefficients are
-positive and will not cancel. Thus there can be no monomial $ A $, so the only monomials
+(with respect to any variable) of two, any monomial similar to $ A^2 $ must itself be
+a square of a monomial similar to $ A $. In this case, the coefficients are
+positive and will not cancel. Thus there can be no such monomial $ A $, so the only monomials
 in $ S $ are the four desired ones.
 \end{proof}
 
+\section{Enumerative Consequences of Conjecture~\ref{conjecture_Ehrenborg-Leep}} 
+
 \begin{theorem}
+\label{theorem_counting_4D}
 Assuming Conjecture~\ref{conjecture_Ehrenborg-Leep} holds,
-the number of solutions $ (a, b, c, d) $ to
-\[
+then the number of solutions $ (a, b, c, d) $ to
+\begin{equation}
+\label{equation_4D}
 a^2 + b^2 + c^2 + d^2 = (x^2 + y^2 + z^2 + w^2)^n,
-\] 
+\end{equation}
 where $ a, b, c, d \in \Zzz[x,y,z,w]$,
 is at most
 \[
@@ -1024,36 +1037,38 @@ is at most
 If Conjecture~\ref{conjecture_Ehrenborg-Leep} holds, any
 solution
 $ (a, b, c, d) $ can be viewed as a quaternion
-$ a + bi + cj + dk $ that is a product of
-quaternions $ \beta_1 \beta_2 \cdots \beta_n $ in the following set:
+$ a + bi + cj + dk = \beta_1 \beta_2 \cdots \beta_n $
+where the $\beta_i$ are quaternions from the following set:
 \[
-S_1 = \{ \pm a' \pm b'i \pm c'j \pm d'k
-\mid \{ a', b', c', d' \} = \{ x, y, z, w \} \}. 
+T_1 = \{ \pm a' \pm b'i \pm c'j \pm d'k
+\text{ : } \{ a', b', c', d' \} = \{ x, y, z, w \} \}. 
 \]
-Note that $ | S_1 | = 2^4 4! = 384 $.
-Thus there are at most $ 384^n $ unique solutions.
+Note that $ | T_1 | = 2^4 4! = 384 $.
+Thus there are at most $ 384^n $ unique solutions to equation~\ref{equation_4D}.
 Using the fact that
 \[
-\beta_1 \beta_2 \cdots \beta_v \beta_{v+1} \cdots \beta_n
+\beta_1 \beta_2 \cdots \beta_i \beta_{i+1} \cdots \beta_n
 =
-\beta_1 \beta_2 \cdots \beta_v u u^{-1} \beta_{v+1} \cdots \beta_n
+\beta_1 \beta_2 \cdots \beta_i u u^{-1} \beta_{i+1} \cdots \beta_n,
 \]
-for $ u \in \{ \pm 1 , \pm i, \pm j, \pm k \} $, we can specify
-that every factor except the first has $ a' = x $ without
-losing any solutions. Thus the number of unique solutions is at most
+where $ u \in \{ \pm 1 , \pm i, \pm j, \pm k \} $ is a unit of $\Lll$,
+we can specify
+that every $\beta_i$ except the first has $ a' = x $ without
+losing any solutions. Thus the number of unique solutions
+to equation~\ref{equation_4D} is at most
 $ 384 \cdot 48^{n-1} $. Alternatively, we can factor out a unit
-from the first monomial to ensure that it has $ a' = x $, so the
-product is of the form $ u \beta_1 \beta_2 \cdots \beta_n $,
-where each $ \beta_v $ belongs to
+from the first factor $\beta_1$ to ensure that it has $ a' = x $, so the
+resulting product is of the form $ u \beta_1 \beta_2 \cdots \beta_n $,
+where each $ \beta_i $ belongs to
 \[
-S_2 = \{ x \pm b'i \pm c'j \pm d'k
-\mid \{ b', c', d' \} = \{ y, z, w \} \},
+T_2 = \{ x \pm b'i \pm c'j \pm d'k
+\text{ : } \{ b', c', d' \} = \{ y, z, w \} \},
 \]
-with $ | S_2 | = 2^3 3! = 48 $.
+with $ | T_2 | = 2^3 3! = 48 $.
 
-If any two consecutive $ \beta $'s are conjugates, we combine them
+If any two consecutive $ \beta $'s are conjugates, we can combine them
 to form $ x^2 + y^2 + z^2 + w^2 $. As this is a real number, we can
-factor it out. The product now is of the form
+factor it out. The product is now of the form
 \[
 (x^2 + y^2 + z^2 + w^2)^\gamma u \beta_1 \beta_2 \cdots \beta_{n-2\gamma},
 \]
@@ -1065,15 +1080,15 @@ $ (x^2 + y^2 + z^2 + w^2)^{\frac{n}{2}} u  $, so there are 8 unique values, one 
 each unit.
 When $ \gamma = \frac{n}{2} - 1 $, the product is of the form
 $ (x^2 + y^2 + z^2 + w^2)^{\frac{n}{2} - 1} u \beta_1 \beta_2  $. Although $ \beta_1 $
-can be any element of $ S_2 $, $ \beta_2 $ cannot be $ \overline{ \beta_1 } $,
-so the number of values in this case is $ 8 \cdot 48 \cdot 47 $. The same restriction
+can be any element of $ T_2 $, $ \beta_2 $ cannot be equal to $ \overline{ \beta_1 } $,
+so the number of solutions in this case is $ 8 \cdot 48 \cdot 47 $. The same restriction
 applies for all $ \gamma < \frac{n}{2} $. For $ \gamma < \frac{n}{2} $,
-the number of values is $ 8 \cdot 48 \cdot 47^{n - 2\gamma - 1} $.
-Summing over all $ \gamma $, the number of values is
+the number of
+solutions is $ 8 \cdot 48 \cdot 47^{n - 2\gamma - 1} $.
+Summing over all possible values of $ \gamma $, the number of solutions is
 \begin{align*}
-&8 + 8 \cdot 48 \cdot 47 + 8 \cdot 48 \cdot 47^3 + \ldots
+8 + 8 \cdot 48 \cdot 47 + 8 \cdot 48 \cdot 47^3 + \ldots
 + 8 \cdot 48 \cdot 47^{n-1}
-\\
 &= 8 + 8 \cdot 48 \cdot 47 \cdot \frac{47^{2 \cdot \frac{n}{2} } - 1 }{47^2 - 1}
 \\
 &= 8 + 8 \cdot 47 \cdot \frac{47^{n} - 1 }{47 - 1}
@@ -1082,178 +1097,37 @@ Summing over all $ \gamma $, the number of values is
 \\
 &= 8 \left( \frac{46 + (47^{n+1} - 47 ) }{46}\right)
 \\
-&= 8 \left( \frac{47^{n+1} -1 }{46}\right)
+&= 8 \left( \frac{47^{n+1} -1 }{46}\right).
 \end{align*}
 
-Assume $ n $ is odd.
+Now assume $ n $ is odd.
 When $ \gamma = \frac{n-1}{2} $, the product is of the form
 $ (x^2 + y^2 + z^2 + w^2)^{\frac{n-1}{2}} u \beta_1  $, so there are $ 8 \cdot 48 $
-unique values.
+unique solutions.
 When $ \gamma = \frac{n-1}{2} - 1 = \frac{n-3}{2}  $, the product is of the form
 $ (x^2 + y^2 + z^2 + w^2)^{\frac{n-3}{2}} u \beta_1 \beta_2 \beta_3  $. Although $ \beta_1 $
-can be any element of $ S_2 $, $ \beta_2 \neq \overline{ \beta_1 } $
+can be any element of $ T_2 $, $ \beta_2 \neq \overline{ \beta_1 } $
 and $ \beta_3 \neq \overline{ \beta_2 } $,
-so the number of values in this case is $ 8 \cdot 48 \cdot 47^2 $. The same restriction
+so the number of solutions in this case is $ 8 \cdot 48 \cdot 47^2 $. The same restriction
 applies for all $ \gamma < \frac{n-1}{2} $. For $ \gamma < \frac{n-1}{2} $,
-the number of values is $ 8 \cdot 48 \cdot 47^{n - 2\gamma - 1 } $.
-Summing over all $ \gamma $, the number of values is
+the number of solutions is $ 8 \cdot 48 \cdot 47^{n - 2\gamma - 1 } $.
+Summing over all values of $ \gamma $, the number of solutions is
 \begin{align*}
-&8 \cdot 48 + 8 \cdot 48 \cdot 47^2 + 8 \cdot 48 \cdot 47^4 + \ldots
+8 \cdot 48 + 8 \cdot 48 \cdot 47^2 + 8 \cdot 48 \cdot 47^4 + \ldots
 + 8 \cdot 48 \cdot 47^{n-1}
-\\
 &= 8 \cdot 48 \cdot \frac{47^{2 \cdot \frac{n+1}{2} } - 1 }{47^2 - 1}
 \\
-&= 8  \cdot \frac{47^{n+1} - 1 }{47 - 1}
+&= 8  \cdot \frac{47^{n+1} - 1 }{47 - 1}. \qedhere
 \end{align*}
 \end{proof}
 \begin{remark}
-Note that this proof does not show that the remaining values are unique, only that
-a larger number of values certainly contains repetitions.
+Note that the proof of Theorem~\ref{theorem_counting_4D}
+gives an upper bound for the number of solutions.
 \end{remark}
+
 \section{Conclusion}
 
-
-
-The original
-goal of this project was to find a parameterization, preferably a polynomial one,  of 
-Pythagorean~quintuples in four parameters.
-Such a parameterization of quintuples
-has been done using $12$ parameters~\cite{Polynomial_parametrization},
-but the method involved a
-specific case of sextuples, not a direct relationship between 
-quintuples and quaternions. 
-This project has shown that a
-direct relationship is not trivial.
-
-
-
-There are several paths
- for future research:
-\begin{enumerate}
-
-%Not true
-%\item
-%{ The Hurwitz integers have
-% 24 units, so it may be possible to represent any Pythagorean 
-%quintuple as a product of two quaternions and a unit. 
-%}
-
-%
-%\item 
-%{ Why can almost every 
-%quintuple be generated
-%in a multiple of 12 times? I suspect that this is an artifact
-%of my program. 
-%}
-
-
-\item
-{Conway and Smith have developed connections between the
- quaternions and 
-orthogonal groups (rotations of space). 
-Once I understand
- more group theory, their ideas may provide an important
- geometrical interpretation. 
-}
-
-
-\item
-{ Perhaps the obvious geometrical analogue of Pythagorean quintuples
-  --- the volumes of the facets of what we will call a
-  tetrarectangular 4-dimensional simplex --- has a deeper meaning.  }
-
-
-%\item
-%{ Perhaps the obvious geometrical
-%analogue of Pythagorean quintuples --- sections of a 4-dimensional
-% rectangular prism, just as a right triangle is a section of
-% a rectangle --- has deeper meaning.   
-%}
-
-\item
-
-{In the 1930s, B.\ Berggren \cite{Swedish_Tree} discovered a set of
-transformations that iteratively generate all primitive Pythagorean
-triples.  F.\ J.\ M.\ Barning \cite{Dutch_Tree} independently found
-this method and reformulated it into a set of matrices, and Conrad 
-\cite{Conrad} provided a geometric interpretation.  Notably,
-these transformations can be shown as the Barning-Hall tree, which
-contains all primitive Pythagorean triples.  This approach is 
-completely different from the methods in this paper, but
-I plan to explore this path.}
-
-%Berggren was not just republishing a result by H. Rath.  Rath appears
-%to have compiled every known result on Pythagorean triples and not
-%cited his sources.  https://hdl.handle.net/2027/mdp.39015036980533
-
-%This paper seems like real math, but is not related enough to my
-%project. It has a correct overview of the topic: A Discussion on
-%Primitive Pythagorean Triples and Primitive Pythagorean Primes
-%Duvvuri Surya Rahul and Snehanshu Saha
-
-
-\end{enumerate}
-
-
-
-
-\begin{appendices}
-%%\appendix
-
-
-\section{An Elementary Way to Generate Pythagorean Quintuples}
-\label{appendix_elementary_way}
-
-This method was inspired by the method used in \cite{New_Path}, which 
-dealt with Pythagorean Quadruples. I strongly suspect that this concept
-is a consequence of \cite{Formalized_New_Path}.
-
-
-Choose 3 nonnegative integers $a$, $b$, and $c$, excluding the case 
-where two of them are odd and one is even.
-
-
-
-
-
-Choose integers $p$ and $q$ that obey the following 
-conditions:
-
-
-\begin{itemize}
-\item[(i)]
-$p|(a^2 + b^2 + c^2)$ 
-
-
-\item[(ii)]
-$pq = a^2 + b^2 + c^2$ 
-
-
-
-\item[(iii)]
-$p \equiv q \pmod 2$
-
-
-
-\end{itemize}
-
-
-
-
-Let $d$ = $\frac{p-q}{2}$ and
-$e$ = $\frac{p+q}{2}$. 
-Note that if $p \not\equiv q \pmod 2$, then $d$ and $e$
-would not be integers.
-
-Then $a^2 + b^2 + c^2 + d^2 = e^2$. All Pythagorean quintuples can 
-be generated in this way.
-
-
-
-
-\end{appendices}
-
-
+\todo[inline]{Conclusion?}
 
 \newpage
 
@@ -1316,7 +1190,7 @@ be generated in this way.
          {Academic Press, London and New York} 
          {1969}
 
-\todo[inline]{Add a reference about quaternions}
+\todo[inline]{Add a reference about quaternions, as well as my paper}
 \end{thebibliography}
 
 
