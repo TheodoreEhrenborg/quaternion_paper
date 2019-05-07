@@ -577,7 +577,7 @@ one each for $ u = 0, 1, 2, \ldots,  \left\lfloor \frac{n}{2} \right\rfloor $.
 
 
 \begin{figure}[h]
-\label{fig:2D}
+
 
 \begin{center}
 \begin{tikzpicture}
@@ -617,6 +617,9 @@ one each for $ u = 0, 1, 2, \ldots,  \left\lfloor \frac{n}{2} \right\rfloor $.
 The number of equivalence classes $ \kappa $
 when $p = m = 2$ is $ \left\lfloor \frac{n}{2} \right\rfloor + 1 $ .
  }
+ 
+\label{fig:2D}
+ 
 \end{figure}
 
 
@@ -701,7 +704,7 @@ Thus the number of solutions in Case II is $ 8(z + 1) = 4 ( 2w + 1) + 4 = 4n + 4
 
 
 
-\section{The case where $p = m = 4$ and $n = 2$}
+\section{The case where $p = m = 4$}
 
 
 
@@ -709,7 +712,7 @@ Thus the number of solutions in Case II is $ 8(z + 1) = 4 ( 2w + 1) + 4 = 4n + 4
 
 \begin{table}[h]
 
-\label{table:4D}
+
 
 
 \begin{center}
@@ -738,6 +741,8 @@ classes $ \kappa $
 in the case where $p = m = 4$.
  }
 
+\label{table:4D}
+
 \end{table}
 
 
@@ -747,7 +752,6 @@ in the case where $p = m = 4$.
 
 \begin{table}[h]
 
-\label{table_barcode}
 
 
 \begin{center}
@@ -816,11 +820,52 @@ $2^2 + 2^2 + 2^2 + 2^2 = 4^2$ & \cellcolor{gray!50} & \cellcolor{gray!0}
 
 \end{center}
 \caption{
-Caption goes here
- }
+Sample data for differentiating between equivalence classes
+of identities. 
+Shaded cells indicate that the particular value
+of $ a^2 + b^2 + c^2 + d^2 = e^2$ was a particular
+value of the identity.
+}
+
+\label{table_barcode}
+
 
 \end{table}
 
+Two methods of gathering experimental data about the 
+number of equivalence classes were used. 
+
+To 
+separate the identities into equivalence classes,
+the program \emph{numeric\_comparison}
+calculated the particular numeric values of 
+identities. If two identities fulfilled
+a different set of solutions, they were
+different. 
+For $n = 2$, a sample of this process
+appears in Table~\ref{table_barcode}.
+This program provided a lower
+bound on the number of identities, but 
+could not prove that two identities are 
+equivalent.
+
+To show that identities are in the same
+equivalence class, the program
+\emph{symbolic\_comparison} used particular
+group actions from 
+$ \mathfrak{S}_4^\pm \times \mathfrak{S}_4^\pm $
+to prove equivalence.
+An image of this process
+appears in 
+Figure~\ref{figure_connections}.
+This program provided an upper
+bound on the number of identities,
+but could not prove that two identities
+are not equivalent.
+
+The two programs agreed on the values for 
+$n = 1$ to $4$. This data appears in 
+Table~\ref{table:4D}.
 
 
 
@@ -1204,9 +1249,27 @@ Note that the proof of Theorem~\ref{theorem_counting_4D}
 gives an upper bound for the number of solutions.
 \end{remark}
 
+
+
+
 \section{Conclusion}
 
-\todo[inline]{Conclusion?}
+\todo[inline]{Finish conclusion}
+
+
+Experimental data shows that 
+Theorem~\ref{theorem_counting_4D}
+gives the exact number of solutions
+in the cases where $n = 0, 1, 2, 3$.
+This data was collected by applying the
+group action of
+$ \mathfrak{S}_4^\pm \times \mathfrak{S}_4^\pm $
+to a representative from each equivalence
+class and counting the unique identities.
+It is worthwhile to search for a proof 
+that  $ 8 \sum_{i = 0}^n{47^n} $ is
+a lower bound as well as an upper bound.
+
 
 \newpage
 
