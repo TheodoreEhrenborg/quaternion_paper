@@ -8,7 +8,7 @@
 %
 %
 % 
-% Last edited: May 6, 2019
+% Last edited: May 7, 2019
 %
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -32,7 +32,7 @@
 
 
 
-\documentclass[12pt]{article}
+\documentclass[12pt,table]{article}
 %\usepackage{anyfontsize}
 \usepackage{amssymb, amsmath, fullpage, amsthm}
 \usepackage{mathrsfs}
@@ -43,6 +43,9 @@
 \usepackage{ gensymb }
 \usepackage{enumerate}
 \usepackage{caption}
+\usepackage{xcolor}
+\usepackage{diagbox}
+
 
 
 \usetikzlibrary{math}
@@ -741,6 +744,82 @@ in the case where $p = m = 4$.
 
 
 
+
+\begin{table}[h]
+
+\label{table_barcode}
+
+
+\begin{center}
+
+
+\begin{tabular}{ r || c | c | c | c | c | c | c | c | }
+\diagbox{Value}{Identity} & \ref{Identity_1} & \ref{Identity_2}
+& \ref{Identity_3} & \ref{Identity_4}
+& \ref{Identity_5} & \ref{Identity_6}
+& \ref{Identity_7} & \ref{Identity_8}
+\\
+\hline\hline
+$0^2 + 0^2 + 0^2 + 0^2 = 0^2$ & \cellcolor{gray!50} & \cellcolor{gray!50}
+& \cellcolor{gray!50} & \cellcolor{gray!50}
+& \cellcolor{gray!50} & \cellcolor{gray!50}
+& \cellcolor{gray!50} & \cellcolor{gray!50}
+\\
+\hline
+$0^2 + 0^2 + 0^2 + 1^2 = 1^2$ & \cellcolor{gray!50} & \cellcolor{gray!50}
+& \cellcolor{gray!50} & \cellcolor{gray!50}
+& \cellcolor{gray!50} & \cellcolor{gray!50}
+& \cellcolor{gray!50} & \cellcolor{gray!50}
+\\
+\hline
+$0^2 + 0^2 + 0^2 + 2^2 = 2^2$ & \cellcolor{gray!50} & \cellcolor{gray!50}
+& \cellcolor{gray!50} & \cellcolor{gray!50}
+& \cellcolor{gray!50} & \cellcolor{gray!50}
+& \cellcolor{gray!0} & \cellcolor{gray!0}
+\\
+\hline
+$0^2 + 0^2 + 0^2 + 3^2 = 3^2$ & \cellcolor{gray!50} & \cellcolor{gray!0}
+& \cellcolor{gray!50} & \cellcolor{gray!50}
+& \cellcolor{gray!50} & \cellcolor{gray!0}
+& \cellcolor{gray!50} & \cellcolor{gray!50}
+\\
+\hline
+$0^2 + 0^2 + 0^2 + 4^2 = 4^2$ & \cellcolor{gray!0} & \cellcolor{gray!50}
+& \cellcolor{gray!50} & \cellcolor{gray!0}
+& \cellcolor{gray!50} & \cellcolor{gray!0}
+& \cellcolor{gray!0} & \cellcolor{gray!50}
+\\
+\hline
+$0^2 + 1^2 + 2^2 + 2^2 = 3^2$ & \cellcolor{gray!50} & \cellcolor{gray!50}
+& \cellcolor{gray!0} & \cellcolor{gray!50}
+& \cellcolor{gray!50} & \cellcolor{gray!50}
+& \cellcolor{gray!50} & \cellcolor{gray!50}
+\\
+\hline
+$1^2 + 1^2 + 1^2 + 1^2 = 2^2$ & \cellcolor{gray!0} & \cellcolor{gray!0}
+& \cellcolor{gray!0} & \cellcolor{gray!50}
+& \cellcolor{gray!50} & \cellcolor{gray!50}
+& \cellcolor{gray!50} & \cellcolor{gray!50}
+\\
+\hline
+$2^2 + 2^2 + 2^2 + 2^2 = 4^2$ & \cellcolor{gray!50} & \cellcolor{gray!0}
+& \cellcolor{gray!0} & \cellcolor{gray!50}
+& \cellcolor{gray!0} & \cellcolor{gray!50}
+& \cellcolor{gray!50} & \cellcolor{gray!0}
+\\
+\hline
+\end{tabular}
+
+
+
+
+
+\end{center}
+\caption{
+Caption goes here
+ }
+
+\end{table}
 
 
 
