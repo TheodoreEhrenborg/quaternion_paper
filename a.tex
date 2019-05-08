@@ -183,7 +183,7 @@ enumeration.
 
 \section{Introduction}
 
-
+\todo[inline]{Add introduction}
 
 
 
@@ -195,8 +195,8 @@ square root of $-1$ and $x,y \in \Rrr$.
 Addition is component-wise, and multiplication
 follows from the distributive property and the fact that
 $i^2 = -1$.
-The \emph{conjugate} of a complex number $ z = x + iy$ is $ \overline{z} = x - iy$, and  
-the \emph{norm} is $ \N(z) = z \overline{z} = x^2 + y^2$.  
+The \emph{conjugate} of a complex number $ z = x + iy$ is $ \bar{z} = x - iy$, and  
+the \emph{norm} is $ \N(z) = z \bar{z} = x^2 + y^2$.  
 
 The \emph{Gaussian integers} $ \Zzz[i] $ are a subring of $\Ccc$:
 \[
@@ -222,9 +222,9 @@ Addition is component-wise, and multiplication, which is
 in general not commutative,
 follows from the distributive property and the preceding relations.
 The \emph{conjugate} of a quaternion $ \alpha = x + iy + jz + kw$
-is $ \overline{\alpha} = x - iy - jz - kw$,  
+is $ \bar{\alpha} = x - iy - jz - kw$,  
 and the \emph{norm} is 
-$ \N( \alpha ) = \alpha \overline{\alpha} = x^2 + y^2 + z^2 + w^2$.  
+$ \N( \alpha ) = \alpha \bar{\alpha} = x^2 + y^2 + z^2 + w^2$.  
 
 The \emph{Lipschitz quaternions} $ \Lll $ are a subring of $\Qqq$:
 \[
@@ -413,6 +413,49 @@ such that $ \varphi( h( \varphi'( z ) ) )  = h'(z) $.
 
 \end{definition}
 
+
+
+\begin{figure}[h]
+
+
+\begin{center}
+\begin{tikzpicture}
+
+\tikzmath{
+\scale = .7;
+}
+
+
+\draw[thick] (-5*\scale,0) -- (5*\scale,0);
+\draw[thick] (0,-5*\scale) -- (0,5*\scale);
+
+\fill (2 * \scale , 4*\scale) circle (0.1*\scale) node[anchor=east] {\Large $ z $ };
+\fill (4 * \scale , -2*\scale) circle (0.1*\scale) node[anchor=west] {\Large $ -iz $ };
+\fill (-2 * \scale , -4*\scale) circle (0.1*\scale) node[anchor=west] {\Large $ -z $ };
+\fill (-4 * \scale , 2*\scale) circle (0.1*\scale) node[anchor=east] {\Large $ iz $ };
+
+\fill (2 * \scale , -4*\scale) circle (0.1*\scale) node[anchor=east] {\Large $ \bar{z} $ };
+\fill (4 * \scale , 2*\scale) circle (0.1*\scale) node[anchor=west] {\Large $ i\bar{z} $ };
+\fill (-2 * \scale , 4*\scale) circle (0.1*\scale) node[anchor=west] {\Large $ -\bar{z} $ };
+\fill (-4 * \scale , -2*\scale) circle (0.1*\scale) node[anchor=east] {\Large $ -i\bar{z} $ };
+
+  
+
+\end{tikzpicture}
+
+\end{center}
+
+\caption{
+The set $M$ in Definition~\ref{def:2D} is isomorphic to
+the signed symmetric group $ \mathfrak{S}_2^\pm $.
+}
+ 
+\label{fig:2D_transformations}
+ 
+\end{figure}
+
+
+
 \begin{lemma}
 The relation $ \simeq $ is an equivalence relation.
 \end{lemma}
@@ -453,7 +496,7 @@ and
 $ h(z) = f(x,y) + i \cdot g(x,y) $. 
 The converse is also true.
 
-\todo[inline]{Does $\simeq$ apply to complex numbers/quaternions or just tuples? }
+
 
 \begin{lemma}
 Let $ h(z) \simeq h'(z) $, where $ h(z), h'(z) \in \Zzz[i][x,y] $
