@@ -8,7 +8,7 @@
 %
 %
 % 
-% Last edited: May 8, 2019
+% Last edited: May 9, 2019
 %
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -197,15 +197,25 @@ is exact.
 \section{Introduction}
 
 
-My previous work in~\cite{Ehrenborg_2018}
+The author's previous work in~\cite{Ehrenborg_2018}
 focused on characterizing the
 integer solutions to
 $a^2 + b^2 + c^2 + d^2 = e^2$.
-This paper explores the solutions
+This paper explores the polynomial solutions
 in $ \Zzz[x,y,z,w] $ to
-$a^2 + b^2 + c^2 + d^2 = e^2$.
+$a^2 + b^2 + c^2 + d^2 = e^n$, where
+$e = x^2 + y^2 + z^2 + w^2$.
 
-
+In \cite{Ehrenborg_2018} the author characterized integer
+solutions by viewing $a^2 + b^2 + c^2 + d^2 = e^2$
+as a product of two quaternions. This gave
+rise to polynomial solutions to
+$a^2 + b^2 + c^2 + d^2 = e^2$
+with $e = x^2 + y^2 + z^2 + w^2$.
+The paper found an upper bound for the number
+of such solutions: $57$. This paper seeks to
+improve that bound, as well as to investigate
+the cases when $n > 2$.
 
 
 
@@ -253,8 +263,8 @@ The \emph{Lipschitz quaternions} $ \Lll $ are a subring of $\Qqq$:
 \Lll = \{ x + iy + jz + kw: x,y,z,w \in \Zzz \}.
 \]
 
-Quaternions were first discovered by Sir William Rowan Hamilton
-(see~\cite{Hamilton}).
+Quaternions were first discovered by Sir William Rowan Hamilton;
+see~\cite{Hamilton}.
 
 In the rest of this paper $x$, $y$, $z$, $w$ will
 usually refer to indeterminates.
