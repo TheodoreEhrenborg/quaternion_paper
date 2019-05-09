@@ -173,7 +173,20 @@ numbers, namely $ \Zzz[i][x,y] $. Using the fact that the
 Gaussian integers are commutative under multiplication, we
 characterize these equivalence classes, thus also providing an
 enumeration.
-
+This enumeration quickly gives a proof that
+the total number of solutions in $\Zzz[x,y] $
+to $a^2 + b^2 = (x^2 + y^2)^n$
+is $4n + 4$.
+Assuming that all identities when $p = m = 4$
+are a product of quaternions, we prove
+that
+the total number of solutions in $\Zzz[x,y,z,w] $
+to $a^2 + b^2 + c^2 + d^2 = (x^2 + y^2 + z^2 + w^2)^n$
+is no more than
+$ 8 \sum_{i = 0}^n{47^n} $.
+Experimental data for $n = 0,1,2,3$
+suggests that this expression
+is exact.
 
 \end{abstract}
 
@@ -183,7 +196,15 @@ enumeration.
 
 \section{Introduction}
 
-\todo[inline]{Add introduction}
+
+My previous work in~\cite{Ehrenborg_2018}
+focused on characterizing the
+integer solutions to
+$a^2 + b^2 + c^2 + d^2 = e^2$.
+This paper explores the solutions
+in $ \Zzz[x,y,z,w] $ to
+$a^2 + b^2 + c^2 + d^2 = e^2$.
+
 
 
 
@@ -540,7 +561,7 @@ equivalent:
 \end{corollary}
 
 
-
+\todo[inline]{f,g should become a,b}
 
 \begin{theorem}
 Consider the set of all $2$-tuples $ \tau = ( \tau_1, \tau_2 )$ where 
@@ -750,8 +771,7 @@ Thus the number of solutions in Case II is $ 8(z + 1) = 4 ( 2w + 1) + 4 = 4n + 4
 
 
 \section{The case where $p = m = 4$}
-
-
+\label{sec:4D}
 
 
 
@@ -1406,10 +1426,36 @@ gives an upper bound for the number of solutions.
 
 \section{Conclusion}
 
-\todo[inline]{Finish conclusion}
 
 
-Experimental data shows that 
+This paper is a significant advance
+over~\cite{Ehrenborg_2018}'s estimate
+of the number of equivalence classes
+when
+$p = m = 4$ and $n=2$. Using the two
+new computational methods discussed
+in Section~\ref{sec:4D}, the upper bound
+has been reduced from $57$ to $8$,
+assuming Conjecture~\ref{conjecture_Ehrenborg-Leep}
+holds.
+
+It is notable that the number of solutions
+when $p = m = 2$ increases linearly in
+$n$, but the number of solutions
+when $p = m = 4$
+is asymptotic to an
+exponential
+function
+in $n$.
+
+Future steps include the following:
+\begin{enumerate}
+\item A proof of
+Conjecture~\ref{conjecture_Ehrenborg-Leep}
+would solidify Theorem~\ref{theorem_counting_4D}
+and provide more theoretical insight
+into the nature of these identities.
+\item Experimental data shows that 
 Theorem~\ref{theorem_counting_4D}
 gives the exact number of solutions
 in the cases where $n = 0, 1, 2, 3$.
@@ -1418,10 +1464,24 @@ group action of
 $ \mathfrak{S}_4^\pm \times \mathfrak{S}_4^\pm $
 to a representative from each equivalence
 class and counting the unique identities.
-It is worthwhile to search for a proof 
-that  $ 8 \sum_{i = 0}^n{47^n} $ is
+It seems plausible that for all $n$
+the expression  $ 8 \sum_{i = 0}^n{47^n} $ is
 a lower bound as well as an upper bound.
-
+\item It is difficult to approach the equation
+$ \sum_{j = 1}^{p} \tau_j ^ 2 = \left( \sum_{i = 1}^{m} x_i ^ 2 \right) ^ n $
+in cases besides $p = m = 2$ and $p = m = 4$, since
+the only division rings with a norm are the reals, the complex
+numbers, the quaternions, and the $8$-dimensional
+octonions, as was proven by Hurwitz in~\cite{Hurwitz}.
+I may be able to approach the case $p = m = 8$
+using the octonions,
+although the lack of associativity presents
+new challenges.
+Alternatively, I may be able to adapt
+Theorem~\ref{theorem_counting_4D} to
+cases where $p$ and $m$ take on values
+less than four.
+\end{enumerate}
 
 \newpage
 
@@ -1462,7 +1522,7 @@ a lower bound as well as an upper bound.
          {AMS Chelsea Publishing}
          {1999}
 
-\bibitem{Ehrenborg_2018_preprint}
+\bibitem{Ehrenborg_2018}
 \preprint{T.\ Ehrenborg}
         {Pythagorean Quintuples and Quaternions}
         {2018}
@@ -1487,6 +1547,13 @@ a lower bound as well as an upper bound.
         {The London, Edinburgh and Dublin Philosophical Magazine
          and Journal of Science}
         {25}{1844}{10--13}
+
+
+\bibitem{Hurwitz}
+\journal{A.\ Hurwitz}
+        {\"Uber die Komposition der quadratischen Formen}
+        {Mathematische Annalen}
+        {88}{1922}{1--25}
 
 \bibitem{Mordell}
 \book{L.\ J.\ Mordell}
