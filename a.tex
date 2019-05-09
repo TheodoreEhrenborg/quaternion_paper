@@ -137,7 +137,9 @@
 \title{Classifying Quaternion Identities}
 
 
-\author{\sc Theodore EHRENBORG%\thanks{Corresponding author:
+\author{\sc Theodore EHRENBORG
+%\thanks{
+%Corresponding author:
 %Department of Mathematics,
 %University of Kentucky,
 %Lexington, KY 40506-0027,
@@ -343,11 +345,12 @@ equivalence classes of the set of all tuples
  $ \tau = ( \tau_1, \ldots, \tau_p) $,
 where
 %the sum of the squares of the elements of $ \tau $ is
-\[
+\begin{equation}
+\label{equation_general}
 \sum_{j = 1}^{p}  \tau_j ^ 2  
 = 
 \left( \sum_{i = 1}^{m}  x_i ^ 2  \right) ^ n 
-\] 
+\end{equation}
 This problem is most easily attacked when we
 view $ \left( \sum_{i = 1}^{m}  x_i ^ 2  \right) ^ n $
 as the norm of a product of complex numbers or quaternions.
@@ -787,7 +790,7 @@ As a tuple, this has two entries, where the first is the real part
 of equation~\ref{equation_second_binomial} and the second entry
 is the imaginary part.
 The order of the orbit of the tuple under the group action is 8, which can be
-verified in a similiar manner to Case I.
+verified in a similar manner to Case I.
 
 Thus the number of solutions in Case II is $ 8(z + 1) = 4 ( 2w + 1) + 4 = 4n + 4 $.
 \end{proof}
@@ -798,6 +801,8 @@ Thus the number of solutions in Case II is $ 8(z + 1) = 4 ( 2w + 1) + 4 = 4n + 4
 \section{The case where $p = m = 4$}
 \label{sec:4D}
 
+In this section we examine the case where
+$p = m = 4$ in Equation~\ref{equation_general}.
 This case is approached by factoring the identities
 into quaternions in $\Lll[x,y,z,w]$. The quaternions'
 lack of multiplicative commutativity precludes the 
@@ -805,9 +810,21 @@ technique used in the proof of Theorem~\ref{thm:2D_equivalence},
 so experimental data becomes more important.
 
 
+Two methods of gathering experimental data about the 
+number of equivalence classes are used. 
+In the first method,
+the program \emph{numeric\_comparison}
+is used to calculate specific numerical values of 
+the identities in order to 
+separate them into equivalence classes.
+If two identities fulfill
+a different set of solutions, they are
+not equivalent.
 
 
-\begin{table}[h]
+
+
+\begin{table}[t]
 
 
 
@@ -891,6 +908,12 @@ value of the identity.
 
 \end{table}
 
+For $n = 2$, a sample of this process
+appears in Table~\ref{table_barcode}.
+This program provides a lower
+bound on the number of identities, but 
+cannot prove that two identities are 
+equivalent.
 
 \begin{figure}[h]
 
@@ -1004,39 +1027,23 @@ usually complete.
 
 
 
-Two methods of gathering experimental data about the 
-number of equivalence classes were used. 
-
-To 
-separate the identities into equivalence classes,
-the program \emph{numeric\_comparison}
-calculated the particular numeric values of 
-identities. If two identities fulfilled
-a different set of solutions, they were
-different. 
-For $n = 2$, a sample of this process
-appears in Table~\ref{table_barcode}.
-This program provided a lower
-bound on the number of identities, but 
-could not prove that two identities are 
-equivalent.
 
 To show that identities are in the same
 equivalence class, the program
 \emph{symbolic\_comparison}
-used particular
+uses particular
 group actions from 
 $ \mathfrak{S}_4^\pm \times \mathfrak{S}_4^\pm $
 to prove equivalence.
 An image of this process
 appears in 
 Figure~\ref{figure_connections}.
-This program provided an upper
+This program provides an upper
 bound on the number of identities,
-but could not prove that two identities
+but cannot prove that two identities
 are not equivalent.
 
-The two programs agreed on the values for 
+The two programs agree on the values for 
 $n = 1$ to $4$. This data appears in 
 Table~\ref{table:4D}.
 
@@ -1076,7 +1083,7 @@ in the case where $p = m = 4$.
 
 \end{table}
 
-
+\newpage
 
 
 
@@ -1205,8 +1212,8 @@ given in Theorem~\ref{theorem_8_classes}.
 \end{conjecture}
 
 \begin{remark}
-The prevalence of each equivalence class in the
-set of solutions to $a^2 + b^2 + c^2 + d^2 = x^2 + y^2 + z^2 + w^2$
+The cardinality of each equivalence class in the
+set of solutions to $a^2 + b^2 + c^2 + d^2 = (x^2 + y^2 + z^2 + w^2)^2$
 can be calculated using the group action under
 $ \mathfrak{S}_4^\pm \times \mathfrak{S}_4^\pm $.
 The orders of these orbits are, respectively,
@@ -1215,9 +1222,13 @@ Naturally, all of those numbers are factors of
 $ | \mathfrak{S}_4^\pm \times \mathfrak{S}_4^\pm | = 2^{14} 3^2 $.
 The programs \emph{numeric\_comparison} and \emph{symbolic\_comparison} 
 both used the space of all products of relevant quaternions,
-giving a different list of prevalences:
+giving a different list of cardinalities:
 4, 3, 8, 6, 12, 6, 8, 8.
-For instance, this list represents the number of
+In fact, the programs were able to ignore large
+portions of this space for theoretical reasons,
+which is why the cardinalities in this list are
+smaller.
+In particular, this list represents the number of
 nodes in the connected subgraphs found by  \emph{symbolic\_comparison}.
 This list is almost the first list
 scaled down by a factor of 384, but the third term is inconsistent
@@ -1276,7 +1287,7 @@ and $ e_1,e_2,e_3,e_4 \in \Nnn \cup \{0\} $.
 Two monomials $ u$ and $ v $ are \emph{similar}, denoted  $ u \sim v $,
 if they are equal or only differ in their
 coefficient.
-We denote the degree of  $ \theta $ with repect to the variable $x$ 
+We denote the degree of  $ \theta $ with respect to the variable $x$ 
 by  $\deg_x \theta = e_1 $. We use analogous notation for the
 other three variables.
 
@@ -1543,7 +1554,7 @@ cases when $p$ and $m$ take on values
 less than four.
 \end{enumerate}
 
-\newpage
+%\newpage
 
 \newcommand{\journal}[6]{{\sc #1,} #2, {\it #3} {\bf #4} (#5), #6.}
 \newcommand{\preprint}[3]{{\sc #1,} #2, preprint #3.}
