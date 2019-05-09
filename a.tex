@@ -8,7 +8,7 @@
 %
 %
 % 
-% Last edited: May 7, 2019
+% Last edited: May 8, 2019
 %
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -208,7 +208,8 @@ The \emph{Gaussian integers} $ \Zzz[i] $ are a subring of $\Ccc$:
 Recall that
 the \emph{quaternions} $\Qqq$ are a four-dimensional division ring extension of $\Rrr$.
 Quaternions take the form $x + iy + jz + kw$, with
-$x,y,z,w \in \Rrr$, and the elements $i$, $j$, $k$ satisfy the relations:
+$x,y,z,w \in \Rrr$, and the linearly independent
+elements $i$, $j$, $k$ satisfy the relations:
 \begin{align*}
 i^2 = j^2 = k^2 = -1
 \\
@@ -231,7 +232,8 @@ The \emph{Lipschitz quaternions} $ \Lll $ are a subring of $\Qqq$:
 \Lll = \{ x + iy + jz + kw: x,y,z,w \in \Zzz \}.
 \]
 
-
+Quaternions were first discovered by Sir William Rowan Hamilton
+(see~\cite{Hamilton}).
 
 In the rest of this paper $x$, $y$, $z$, $w$ will
 usually refer to indeterminates.
@@ -248,10 +250,11 @@ where $ \pi(i) = \pi_i $.
 The {\em signed symmetric group} $ \mathfrak{S}_n^\pm $
 is the set of all permutations $ \sigma = \sigma_1 \cdots \sigma_n$
 of the set $ \{ \pm 1, \pm 2, \ldots, \pm n \} $ such that
-$ | \sigma | = | \sigma_1 | \cdots |\sigma_n| \in \mathfrak{S}_n $.
+$ | \sigma | = | \sigma_1 | \cdots |\sigma_n| \in \mathfrak{S}_n $
+and $ \sigma(-i) =  -\sigma(i) $.   
 \end{definition}
 
-\todo[inline]{How to compose two elements in signed symmetric group?}
+
 
 For a signed permutation $ \pi \in \mathfrak{S}_m^\pm $,
 let $ \pi $ act on a polynomial in the 
@@ -1459,6 +1462,10 @@ a lower bound as well as an upper bound.
          {AMS Chelsea Publishing}
          {1999}
 
+\bibitem{Ehrenborg_2018_preprint}
+\preprint{T.\ Ehrenborg}
+        {Pythagorean Quintuples and Quaternions}
+        {2018}
 
 %\bibitem{Jacobi}
 %\journal{C.\ G.\ J.\ Jacobi}
@@ -1474,6 +1481,12 @@ a lower bound as well as an upper bound.
         {11}{1908}{129--131}
 
 
+\bibitem{Hamilton}
+\journal{W.\ Hamilton}
+        {On Quaternions; or on a new System of Imaginaries in Algebra}
+        {The London, Edinburgh and Dublin Philosophical Magazine
+         and Journal of Science}
+        {25}{1844}{10--13}
 
 \bibitem{Mordell}
 \book{L.\ J.\ Mordell}
@@ -1481,7 +1494,9 @@ a lower bound as well as an upper bound.
          {Academic Press, London and New York} 
          {1969}
 
-\todo[inline]{Add a reference about quaternions, as well as my paper}
+
+
+
 \end{thebibliography}
 
 
@@ -1490,6 +1505,11 @@ a lower bound as well as an upper bound.
 
 
 \end{document}
+
+
+
+
+
 
 
 
