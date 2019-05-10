@@ -699,7 +699,7 @@ one each for $ u = 0, 1, \dotsc,  \left\lfloor \myfrac{n}{2} \right\rfloor $.
 \foreach \x in {1, ..., \length}
 {
    \draw[thick] ( \scale * \x, -\hash ) node[anchor=north] {\Large \x} -- ( \scale * \x, \hash ) ;
-   \fill (\scale * \x, { \scale *  floor( \x / 2 ) + \scale } ) circle (.1cm);
+   \fill (\scale * \x, { \scale *  floor( \x / 2 ) + \scale } ) circle (\scale * .1cm);
 }
   
 
@@ -1214,13 +1214,13 @@ set of solutions to $a^2 + b^2 + c^2 + d^2 = (x^2 + y^2 + z^2 + w^2)^2$
 can be calculated using the group action under
 $ \mathfrak{S}_4^\pm \times \mathfrak{S}_4^\pm $.
 The orders of these orbits are, respectively,
-1536, 1152, 8, 2304, 4608, 2304, 3072, 3072.
+$1536$, $1152$, $8$, $2304$, $4608$, $2304$, $3072$, $3072$.
 Naturally, all of those numbers are factors of
 $ | \mathfrak{S}_4^\pm \times \mathfrak{S}_4^\pm | = 2^{14} 3^2 $.
 The programs \emph{numeric\_comparison} and \emph{symbolic\_comparison} 
 both used the space of all products of relevant quaternions,
 giving a different list of cardinalities:
-4, 3, 8, 6, 12, 6, 8, 8.
+$4$, $3$, $8$, $6$, $12$, $6$, $8$, $8$.
 In fact, the programs were able to ignore large
 portions of this space for theoretical reasons,
 which is why the cardinalities in this list are
