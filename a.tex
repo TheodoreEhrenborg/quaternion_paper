@@ -2,6 +2,7 @@
 %
 %
 %  Classifying Quaternion Identities
+%  and Pythagorean Quintuples and Quaternions
 %  (journal article)
 %  
 %  by Theodore Ehrenborg
@@ -27,6 +28,9 @@
 \pdfpageheight=11truein
 
 
+
+
+
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -38,19 +42,30 @@
 \usepackage{mathrsfs}
 \usepackage{tikz}
 \usepackage[title]{appendix}
-\usepackage{todonotes}
 \usepackage{mathrsfs}
 \usepackage{ gensymb }
 \usepackage{enumerate}
 \usepackage{caption}
 \usepackage{xcolor}
 \usepackage{diagbox}
-
+\usepackage[colorinlistoftodos]{todonotes}
 
 
 
 
 \usetikzlibrary{math}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -62,7 +77,6 @@
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
-\newtheorem{remarks}[theorem]{Remarks}
 \newtheorem{conjecture}[theorem]{Conjecture}
 
 
@@ -72,11 +86,16 @@
 
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
+\newtheorem{remarks}[theorem]{Remarks}
+
+
+
+
 
 \hyphenation{Hurwitz}
 
 \font\german = eufm10 scaled\magstep1
-%\font\Cp = msbm10
+\font\Cp = msbm10
 
 \newcommand{\Ccc}{\mathbb C}
 \newcommand{\Fff}{\mathbb F}
@@ -96,6 +115,17 @@
 \newcommand{\divides}{\mid}
 \newcommand{\notdivides}{\nmid}
 \newcommand{\timesdots}{\times \cdots \times}
+\newcommand{\ascodd}{\asc_{\odd}}
+\newcommand{\doubleprime}{\prime\prime}
+\newcommand{\myfrac}[2]{#1 / #2}
+\newcommand{\SSSS}{\mathfrak{S}}
+\newcommand{\Gaussian}[2]{\genfrac{[}{]}{0pt}{}{#1}{#2}_q}
+\newcommand{\fix}[1]{\todo[inline]{#1}}
+
+
+
+
+
 
 \numberwithin{equation}{section}
 %\usepackage[bindingoffset=0.2in,
@@ -120,25 +150,18 @@
 
 
 
-\newcommand{\ascodd}{\asc_{\odd}}
 
-\newcommand{\doubleprime}{\prime\prime}
-
-
-\newcommand{\myfrac}[2]{#1 / #2}
-
-\newcommand{\SSSS}{\mathfrak{S}}
-
-\newcommand{\Gaussian}[2]{\genfrac{[}{]}{0pt}{}{#1}{#2}_q}
 
 \begin{document}
 %\begin{landscape}
 
 
-\title{Classifying Quaternion Identities}
+\title{Classifying Quaternion Identities,
+Pythagorean Quintuples and Quaternions}
 
 
 \author{\sc Theodore EHRENBORG
+\fix{I should thank Professor Leep.}
 %\thanks{
 %Corresponding author:
 %Department of Mathematics,
@@ -160,6 +183,35 @@
 
 
 \begin{abstract}
+This paper, which is in number theory, explores 
+the  
+connections between quaternions and primitive Pythagorean quintuples. 
+It is known that the square of a Gaussian integer
+(a complex number) is a Pythagorean triple $a^2 + b^2 = c^2$.
+Less is 
+known about the relationship between quaternions, an extension 
+of complex numbers, and Pythagorean quintuples
+$a^2 + b^2 + c^2 + d^2 = e^2$.
+We show that squaring a quaternion produces a subfamily
+of Pythagorean quintuples.
+Motivated by Conway and Smith's unique
+factorization theorem for the
+Hurwitz integers,
+we present a more general version of
+squaring a quaternion which
+generates a larger subfamily of Pythagorean quintuples.
+Using a counting argument and Jacobi's Four Square Theorem,
+we show that unlike the characterization for Pythagorean triples,
+the preceding characterization for Pythagorean quintuples is sparse.
+Finally, we use a geometric approach to 
+characterize 
+all Pythagorean
+quintuples.
+We notice a similarity between the geometric approach
+and the quaternion squaring approach in that they
+differ by a geometrically defined constant.
+\fix{Combine}
+
 This number theory project investigates identities found by
 multiplying together quaternions in $ \Lll[x,y,z,w] $, the
 Lipschitz quaternions $ \Lll $ adjoined with the
@@ -194,9 +246,9 @@ is exact.
 
 \end{abstract}
 
+\listoftodos
 
-
-
+\fix{koala}
 
 \section{Introduction}
 
@@ -1653,175 +1705,7 @@ less than four.
 
 
 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-%
-%  Pythagorean Quintuples and Quaternions
-%  (journal article)
-%  
-%  by Theodore Ehrenborg
-%
-%
-% 
-% Last edited: October 21, 2018 
-%
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% This should contain all the information from my 2018 state 
-% science fair poster and more 
-%
-%how to cite -- https://faculty.math.illinois.edu/~hildebr/tex/bibliographies.html
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% pdf settings
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-\pdfpagewidth=8.5truein
-\pdfpageheight=11truein
-
-
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-\documentclass[12pt]{article}
-%\usepackage{anyfontsize}
-\usepackage{amssymb, amsmath, fullpage, amsthm}
-\usepackage{mathrsfs}
-\usepackage{tikz}
-\usepackage[title]{appendix}
-
-
-
-\parskip2mm
-
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{hypothesis}[theorem]{Hypothesis}
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{proposition}[theorem]{Proposition}
-\newtheorem{definition}[theorem]{Definition}
-\newtheorem{corollary}[theorem]{Corollary}
-\newtheorem{example}[theorem]{Example}
-\newtheorem{remarks}[theorem]{Remarks}
-
-\hyphenation{Hurwitz}
-
-\font\german = eufm10 scaled\magstep1
-\font\Cp = msbm10
-
-\newcommand{\Ccc}{\hbox{\Cp C}}
-\newcommand{\Fff}{\hbox{\Cp F}}
-\newcommand{\Hhh}{\hbox{\Cp H}}
-\newcommand{\Nnn}{\hbox{\Cp N}}
-\newcommand{\Rrr}{\hbox{\Cp R}}
-\newcommand{\Sss}{\hbox{\Cp S}}
-\newcommand{\Zzz}{\hbox{\Cp Z}}
-
-
-
-\numberwithin{equation}{section}
-%\usepackage[bindingoffset=0.2in,
-%            left=1in,right=1in,top=1in,bottom=1in,
-%            footskip=.25in]{geometry}%Sets margins
-%\pagenumbering{gobble}%No page numbers
-
-
-
-\newcommand{\timesdots}{\times \cdots \times}
-\newcommand{\coveredby}{\prec}
-
-\newcommand{\vanish}[1]{}
-
-
-\DeclareMathOperator{\inv}{inv}
-\DeclareMathOperator{\frst}{frst}
-\DeclareMathOperator{\er}{er}
-\DeclareMathOperator{\asc}{asc}
-\DeclareMathOperator{\odd}{odd}
-
-\newcommand{\ascodd}{\asc_{\odd}}
-
-\newcommand{\doubleprime}{\prime\prime}
-
-
-
-
-\newcommand{\SSSS}{\mathfrak{S}}
-
-\newcommand{\Gaussian}[2]{\genfrac{[}{]}{0pt}{}{#1}{#2}_q}
-
-\begin{document}
-%\begin{landscape}
-
-
-\title{Pythagorean Quintuples and Quaternions}
-
-
-\author{\sc Theodore EHRENBORG%\thanks{Corresponding author:
-%Department of Mathematics,
-%University of Kentucky,
-%Lexington, KY 40506-0027,
-%USA,
-%{\tt theodore.ehrenborg@gmail.com}.}
-%\:\: 
-%\:\:
-}
-
-
-
-\date{}
-%%%\date{Last edited on \today}
-
-\maketitle
-
-
-
-\begin{abstract}
-
-
-This paper, which is in number theory, explores 
-the  
-connections between quaternions and primitive Pythagorean quintuples. 
-It is known that the square of a Gaussian integer
-(a complex number) is a Pythagorean triple $a^2 + b^2 = c^2$.
-Less is 
-known about the relationship between quaternions, an extension 
-of complex numbers, and Pythagorean quintuples
-$a^2 + b^2 + c^2 + d^2 = e^2$.
-We show that squaring a quaternion produces a subfamily
-of Pythagorean quintuples.
-Motivated by Conway and Smith's unique
-factorization theorem for the
-Hurwitz integers,
-we present a more general version of
-squaring a quaternion which
-generates a larger subfamily of Pythagorean quintuples.
-Using a counting argument and Jacobi's Four Square Theorem,
-we show that unlike the characterization for Pythagorean triples,
-the preceding characterization for Pythagorean quintuples is sparse.
-Finally, we use a geometric approach to 
-characterize 
-all Pythagorean
-quintuples.
-We notice a similarity between the geometric approach
-and the quaternion squaring approach in that they
-differ by a geometrically defined constant.
-\end{abstract}
-
-
-
-
-
-
+bear
 
 
 
