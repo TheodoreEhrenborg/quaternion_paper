@@ -277,7 +277,7 @@ side lengths.
 
 The following theorem characterizes primitive Pythagorean triples.
 It was known by Diophantus~\cite[Page 93]{Heath} and
-probably discovered by Euclid~\cite{Euclid_Explanation}.
+probably discovered by Euclid~\cite{Euclid}.
 
 
 
@@ -560,7 +560,7 @@ of Pythagorean quintuples.
 
 \section{Pythagorean Quintuples via Multiplying two Hurwitz Integers}
 
-John Conway and Derek Smith~\cite{Conway_book}
+John Conway and Derek Smith~\cite{Conway_and_Smith}
 have investigated the relationship of quaternions
 to symmetry groups.  See the review by Baez~\cite{Baez}
 for a synopsis of their work.
@@ -591,7 +591,7 @@ they are suitable for error-correcting codes.
 See the recent paper of G\"uzeltepe~\cite{Guzeltepe}.
 Conway and Smith found that the Hurwitz integers satisfy
 the following unique factorization 
-property~\cite[Ch.\ 5, Theorem 2]{Conway_book}.
+property~\cite[Ch.\ 5, Theorem 2]{Conway_and_Smith}.
 To do this we need one more definition.
 
 
@@ -693,8 +693,8 @@ the elements
 $|x|, |y|, |z|, |w|$ correspond
 to some ordering of the elements
 $|x'|, |y'|, |z'|, |w'|$.
-The 57 forms of these Pythagorean quintuples 
-appear in Appendix~\ref{appendix_C}.
+%The 57 forms of these Pythagorean quintuples 
+%appear in Appendix~\ref{appendix_C}.
 \end{theorem}
 \begin{proof}
 Consider the product of the two Hurwitz integers
@@ -820,7 +820,7 @@ be written as a sum of four squares.
 A proof using Hurwitz integers appears in
 Hardy and Wright~\cite[Chapter XX, Theorem 386]{Hardy_and_Wright}.
 This theorem was
-stated in a different way in~\cite{Exciting_Problems}
+stated in a different way in~\cite{Lalin}
 \begin{theorem}[Jacobi]
 \label{theorem_representations}
 The number of solutions to $x_1^2 +  x_2^2 +  x_3^2 +  x_4^2  = n$ is 
@@ -1263,7 +1263,7 @@ We end with two comments.
 First, the approach we give to prove
 Theorem~\ref{theorem_like_Hatcher}
 is similar to the geometric proof given in
-Hatcher's notes~\cite{Hatcher_book}
+Hatcher's notes~\cite{Hatcher}
 for Pythagorean triples and
 quadruples.
 However, it does not appear in the literature.
@@ -1292,7 +1292,7 @@ The original
 goal of this project was to find a parameterization, preferably a polynomial one,  of 
 Pythagorean~quintuples in four parameters.
 Such a parameterization of quintuples
-has been done using $12$ parameters~\cite{Polynomial_parametrization},
+has been done using $12$ parameters~\cite{Frisch_and_Vaserstein},
 but the method involved a
 specific case of sextuples, not a direct relationship between 
 quintuples and quaternions. 
@@ -1346,9 +1346,9 @@ Once I understand
 
 \item
 
-{In the 1930s, B.\ Berggren \cite{Swedish_Tree} discovered a set of
+{In the 1930s, B.\ Berggren \cite{Berggren} discovered a set of
 transformations that iteratively generate all primitive Pythagorean
-triples.  F.\ J.\ M.\ Barning \cite{Dutch_Tree} independently found
+triples.  F.\ J.\ M.\ Barning \cite{Barning} independently found
 this method and reformulated it into a set of matrices, and Conrad 
 \cite{Conrad} provided a geometric interpretation.  Notably,
 these transformations can be shown as the Barning-Hall tree, which
@@ -1454,9 +1454,9 @@ Neither of these possibilities work.
 \section{An Elementary Way to Generate Pythagorean Quintuples}
 \label{appendix_B}
 
-This method was inspired by the method used in \cite{New_Path}, which 
+This method was inspired by the method used in \cite{Halai}, which 
 dealt with Pythagorean Quadruples. I strongly suspect that this concept
-is a consequence of \cite{Formalized_New_Path}.
+is a consequence of \cite{Roy_and_Sonia}.
 
 
 Choose 3 nonnegative integers $a$, $b$, and $c$, excluding the case 
@@ -1907,150 +1907,6 @@ $12.5^2+ 14.5^2+ 18.5^2+ 19.5^2  = 33^2$ \>$48$\\
 
 
 \end{appendices}
-
-
-
-\newpage
-
-\newcommand{\journal}[6]{{\sc #1,} #2, {\it #3} {\bf #4} (#5), #6.}
-\newcommand{\preprint}[3]{{\sc #1,} #2, preprint #3.}
-\newcommand{\book}[4]{{\sc #1,} #2, #3, #4.}
-\newcommand{\collection}[6]{{\sc #1,}  #2, #3, in {\it #4}, #5, #6.}
-\newcommand{\JCTA}{J.\ Combin.\ Theory Ser.\ A}
-\newcommand{\arxiv}[3]{{\sc #1,} #2, {\tt #3}.}
-\newcommand{\article}[3]{{\sc #1,} #2, {\tt #3}.}
-\newcommand{\journalfive}[5]{{\sc #1,} #2, {\it #3}  (#4), #5.}
-
-
-
-\begin{thebibliography}{1}
-
-
-
-\bibitem{Baez}
-\journal{J.\ C.\ Baez}
-        {Review of ``On Quaternions and Octonions: 
-         Their Geometry, Arithmetic and Symmetry''}
-        {Bull.\ Amer.\ Math.\ Soc.}{42}{2005}{229--243}
-
-
-
-\bibitem{Dutch_Tree}
-\journal{F.\  J.\  M.\  Barning} 
-      {On Pythagorean and quasi-Pythagorean triangles and a
-      generation process with the help of unimodular matrices (Dutch)}
-      {Math.\ Centrum Amsterdam Afd.\ Zuivere Wisk.}
-      {ZW-011}{1963}{37 pp}
-
-
-
-\bibitem{Swedish_Tree}
-\journal{B.\ Berggren} 
-        {Pytagoreiska trianglar (Swedish)} 
-        {Elementa: Tidskrift f\"or element\"ar
-        matematik, fysik och kemi.}
-        {17}{1934}{129--139}
-
-\bibitem{Conrad}
-\journal{K.\ Conrad}
-        {Pythagorean descent}
-        {}
-        {}{Preprint}{1-9}
-
-
-
-\bibitem{Conway_book}
-\book{J.\ Conway and D.\ Smith}
-     {On Quaternions and Octonions: 
-      Their Geometry, Arithmetic and Symmetry}
-     {A K Peters, Ltd., Natick MA}
-     {2003}
-
-
-\bibitem{Polynomial_parametrization}
-\journal{S.\ Frisch and L.\ Vaserstein}
-       {Polynomial parametrization of Pythagorean quadruples,
-        quintuples and sextuples}
-       {J.\ Pure Appl.\ Algebra}{216}{2012}{184--191}
-
-
-\bibitem{Guzeltepe}
-\journal{M.\ G\"uzeltepe}
-        {Codes over Hurwitz integers}
-        {Discrete Math.}
-        {313}{2013}{704--714}
-
-
-
-\bibitem{New_Path}
-\article{C.\ Halai}
-      {Triples and Quadruples: From Pythagoras to Fermat}
-      {plus.maths.org/ content/triples-and-quadruples}{}
-
-
-\bibitem{Hamilton}
-\journalfive{W.\ Hamilton}
-        {On Quaternions; or on a new System of Imaginaries in Algebra}
-        {The London, Edinburgh and Dublin Philosophical Magazine
-         and Journal of Science}
-        {1844}{10--13}
-
-
-
-\bibitem{Hardy_and_Wright}
-\book{G.\ H.\ Hardy and E.\ M.\ Wright}
-         {An Introduction to the Theory of Numbers, 6th Edition}
-         {Oxford University Press, Oxford} 
-         {2008}
-
-\bibitem{Hatcher_book}
-\book{A.\ Hatcher}
-         {Topology of Numbers}
-         {Manuscript}
-         {February 2018 version}
-
-
-
-\bibitem{Heath}
-\book{T.\ L.\ Heath}
-     {Diophantus of Alexandria, 2nd Edition}
-     {Cambridge University Press, London}
-     {1910}
-
-\bibitem{Jacobi}
-\journal{C.\ G.\ J.\ Jacobi}
-        {De compositione numerorum e quatuor quadratis}
-        {Journal f\"ur die reine und angewandte Mathematik}
-        {12}{1834}{167--172}
-
-
-\bibitem{Euclid_Explanation}
-\article{D.\ E.\ Joyce}
-        {Euclid's Elements}
-        {Book X, Proposition 29, https://mathcs.
-        clarku.edu/\~{}djoyce/java/elements/elements.html}
-
-
-\bibitem{Exciting_Problems}
-\article{M.\ N.\ Lal\'in}
-      {Every Positive Integer is the Sum of Four Squares! (and other
-      exciting problems)} 
-      {Sophex –- University of Texas at Austin, 6
-      pp}{}
-
-
-\bibitem{Formalized_New_Path}
-\arxiv{T.\ Roy and F.\ J.\ Sonia}
-      {A direct method to generate Pythagorean triples and its
-       generalization to Pythagorean quadruples and $n$-tuples}
-      {arXiv:1201.2145 [math.NT], 11 pp}
-
-
-
-
-
-\end{thebibliography}
-
 
 
 
@@ -3423,7 +3279,7 @@ less than four.
 \newcommand{\JCTA}{J.\ Combin.\ Theory Ser.\ A}
 \newcommand{\arxiv}[3]{{\sc #1,} #2, {\tt #3}.}
 \newcommand{\article}[3]{{\sc #1,} #2, {\tt #3}.}
-\newcommand{\journalfive}[5]{{\sc #1,} #2, {\it #3}  (#4), #5.}
+
 
 
 
@@ -3431,12 +3287,46 @@ less than four.
 
 \begin{thebibliography}{1}
 
-%\bibitem{Hardy_and_Wright}
-%\book{G.\ H.\ Hardy and E.\ M.\ Wright}
-%         {An Introduction to the Theory of Numbers, 6th Edition}
-%         {Oxford University Press, Oxford} 
-%         {2008}
 
+
+\bibitem{Baez}
+\journal{J.\ C.\ Baez}
+        {Review of ``On Quaternions and Octonions: 
+         Their Geometry, Arithmetic and Symmetry''}
+        {Bull.\ Amer.\ Math.\ Soc.}{42}{2005}{229--243}
+        
+
+
+\bibitem{Barning}
+\journal{F.\  J.\  M.\  Barning} 
+      {On Pythagorean and quasi-Pythagorean triangles and a
+      generation process with the help of unimodular matrices (Dutch)}
+      {Math.\ Centrum Amsterdam Afd.\ Zuivere Wisk.}
+      {ZW-011}{1963}{37 pp}
+
+
+
+\bibitem{Berggren}
+\journal{B.\ Berggren} 
+        {Pytagoreiska trianglar (Swedish)} 
+        {Elementa: Tidskrift f\"or element\"ar
+        matematik, fysik och kemi.}
+        {17}{1934}{129--139}
+
+\bibitem{Conrad}
+\journal{K.\ Conrad}
+        {Pythagorean descent}
+        {}
+        {}{Preprint}{1-9}
+
+
+
+\bibitem{Conway_and_Smith}
+\book{J.\ Conway and D.\ Smith}
+     {On Quaternions and Octonions: 
+      Their Geometry, Arithmetic and Symmetry}
+     {A K Peters, Ltd., Natick MA}
+     {2003}
 
 
 \bibitem{Davidoff_Sarnak_Valette}
@@ -3458,11 +3348,7 @@ less than four.
         {Pythagorean Quintuples and Quaternions}
         {2018}
 
-%\bibitem{Jacobi}
-%\journal{C.\ G.\ J.\ Jacobi}
-%        {De compositione numerorum e quatuor quadratis}
-%        {Journal f\"ur die reine und angewandte Mathematik}
-%        {12}{1834}{167--172}
+
 
 
 \bibitem{Ferrari}
@@ -3472,6 +3358,27 @@ less than four.
         {11}{1908}{129--131}
 
 
+
+\bibitem{Frisch_and_Vaserstein}
+\journal{S.\ Frisch and L.\ Vaserstein}
+       {Polynomial parametrization of Pythagorean quadruples,
+        quintuples and sextuples}
+       {J.\ Pure Appl.\ Algebra}{216}{2012}{184--191}
+
+
+\bibitem{Guzeltepe}
+\journal{M.\ G\"uzeltepe}
+        {Codes over Hurwitz integers}
+        {Discrete Math.}
+        {313}{2013}{704--714}
+
+
+
+\bibitem{Halai}
+\article{C.\ Halai}
+      {Triples and Quadruples: From Pythagoras to Fermat}
+      {plus.maths.org/ content/triples-and-quadruples}{}
+
 \bibitem{Hamilton}
 \journal{W.\ Hamilton}
         {On Quaternions; or on a new System of Imaginaries in Algebra}
@@ -3480,18 +3387,55 @@ less than four.
         {25}{1844}{10--13}
 
 
+\bibitem{Hardy_and_Wright}
+\book{G.\ H.\ Hardy and E.\ M.\ Wright}
+         {An Introduction to the Theory of Numbers, 6th Edition}
+         {Oxford University Press, Oxford} 
+         {2008}
+
+
+
+
+\bibitem{Hatcher}
+\book{A.\ Hatcher}
+         {Topology of Numbers}
+         {Manuscript}
+         {February 2018 version}
+
+
+
+\bibitem{Heath}
+\book{T.\ L.\ Heath}
+     {Diophantus of Alexandria, 2nd Edition}
+     {Cambridge University Press, London}
+     {1910}
+
+
 \bibitem{Hurwitz}
 \journal{A.\ Hurwitz}
         {\"Uber die Komposition der quadratischen Formen}
         {Mathematische Annalen}
         {88}{1922}{1--25}
 
-
+\bibitem{Jacobi}
+\journal{C.\ G.\ J.\ Jacobi}
+        {De compositione numerorum e quatuor quadratis}
+        {Journal f\"ur die reine und angewandte Mathematik}
+        {12}{1834}{167--172}
 
 \bibitem{Euclid}
 \article{D.\ E.\ Joyce}
         {Euclid's Elements, Book X, Proposition 29}
         {\\https://mathcs.clarku.edu/\~{}djoyce/java/elements/elements.html}
+
+
+
+\bibitem{Lalin}
+\article{M.\ N.\ Lal\'in}
+      {Every Positive Integer is the Sum of Four Squares! (and other
+      exciting problems)} 
+      {Sophex –-- University of Texas at Austin, 6
+      pp}{}
 
 \bibitem{Mordell}
 \book{L.\ J.\ Mordell}
@@ -3502,8 +3446,15 @@ less than four.
 
 
 
-\end{thebibliography}
+\bibitem{Roy_and_Sonia}
+\arxiv{T.\ Roy and F.\ J.\ Sonia}
+      {A direct method to generate Pythagorean triples and its
+       generalization to Pythagorean quadruples and $n$-tuples}
+      {arXiv:1201.2145 [math.NT], 11 pp}
 
+
+
+\end{thebibliography}
 
 
 
