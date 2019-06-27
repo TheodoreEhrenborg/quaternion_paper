@@ -257,9 +257,9 @@ is exact.
 
 Recall nonnegative integers $a$, $b$ and $c$ are called a
 {\em Pythagorean triple} if
-$$
+\[
     a^2 + b^2 = c^2.
-$$
+\]
 Furthermore, a {\em primitive Pythagorean triple}
 is one where $\gcd(a,b,c) = 1$, that is,
 $a$, $b$, and~$c$ have  no common factor greater than $1$.
@@ -360,11 +360,11 @@ Any primitive Pythagorean triple $(a,b,c)$ with
 $a^2 + b^2 = c^2$, can be represented
 by the square of a Gaussian integer, $x+yi$,
 that is,
-$$
+\[
     a =  \Re{(x+yi)^2},  \:\:\: b = \Im{(x+yi)^2},
     \mbox{   and   }
     c = |(x+yi)^2|,
-$$
+\]
 where $\Re$ and $\Im$ denote the real and imaginary parts of a complex number
 and
 $| \cdot |$ denotes the modulus of a complex number.
@@ -457,13 +457,13 @@ The {\em modulus}
 of a quaternion
 $q =  x+yi+zj+wk$
 is given by 
-$$
+\[
    |q| = \sqrt{x^2 + y^2 + z^2 + w^2}.
-$$
+\]
 The {\em norm} of a quaternion is the modulus squared, that is,
-$$
+\[
      N =  N(q) = x^2 + y^2 + z^2 + w^2.
-$$
+\]
 \end{definition}
 
 
@@ -471,9 +471,9 @@ It is straightforward to check the following property.
 \begin{lemma}
 \label{lemma_norm_multiplicative}
 For two quaternions $q_1$ and $q_2$
-$$
+\[
      N(q_1 \cdot q_2) = N(q_1) \cdot N(q_2).
-$$
+\]
 \end{lemma}
 
 
@@ -505,9 +505,9 @@ There are Pythagorean quintuples
 $a^2 + b^2 +c^2 +d^2 = e^2$ which can be represented
 by the square of a quaternion $x+yi+zj+wk$ where $x, y, z, w \in \Zzz$.
 The form of these Pythagorean quintuples is
-$$
+\[
      (a,b,c,d,e) = (2xy, 2xz, 2xw, x^2 - y^2 - z^2 - w^2, x^2 + y^2 + z^2 +w^2).
-$$
+\]
 \end{theorem}
 \begin{proof}
 The general
@@ -554,6 +554,9 @@ of Pythagorean quintuples.
 
 
 \section{Pythagorean Quintuples via Multiplying two Hurwitz Integers}
+
+\fix{I think the Hurwitz integers are a dead end.} 
+
 
 John Conway and Derek Smith~\cite{Conway_and_Smith}
 have investigated the relationship of quaternions
@@ -605,25 +608,25 @@ $N$.  Suppose $N = p_1 p_2 \cdots p_k$ where
 $p_1, p_2, \ldots, p_k$ are prime numbers.
 Then
 $q$ can be factored as a product of Hurwitz integers
-$$
+\[
    q = P_1 \cdot P_2 \cdots P_k,
-$$
+\]
 where the norm of $P_i$ is
 given by $N(P_i) = p_i$ for $i = 1, \ldots, k$.
 This factorization is unique up to unit migration, that is,
 all other factorizations corresponding to
 the product  $N = p_1 p_2 \cdots p_k$ 
 are of the form
-$$
+\[
    q = (P_1 U_1) \cdot (U_1^{-1} P_2 U_2) \cdots (U_{k-1}^{-1}P_k),
-$$
+\]
 where the $U_i$ are Hurwitz units, that is,
 Hurwitz integers with norm $1$.
 \end{theorem}
 The $24$ Hurwitz units are:
-$$
+\[
   \pm 1, \pm i, \pm j, \pm k, \frac{1}{2}(\pm 1 \pm i \pm j \pm k).
-$$
+\]
 
 
 Just as the square of a Gaussian integer must have
@@ -634,36 +637,36 @@ a quaternion
 built by using  the coefficients of a Pythagorean quintuple can 
 always be factored into two 
 quaternions with the same norm.
-
+\fix{I can also get this result from Sarnak et al.'s book}
 
 
 What does this mean in concrete terms? We give an example.
 
 \begin{example}
 {\rm The quintuple 
-$$
+\[
      1^2+ 1^2+ 3^2+ 5^2= 6^2
-$$
+\]
 cannot be represented by the squaring method
 of Theorem~\ref{theorem_as_squares},
 but it can be translated into 
 a quaternion
-$$
+\[
       1 + i + 3j + 5k.
-$$
+\]
 We can factor out a $2$, leaving us with an 
 primitive Hurwitz integer
-$$
+\[
      h= \frac{1}{2} + \frac{1}{2}i + \frac{3}{2}j + \frac{5}{2}k.
-$$
+\]
 Note the norm of $h$ is $N(h) = 9 = 3 \cdot 3$.
 Since 
-$$
+\[
 \frac{1}{2} + \frac{1}{2}i + \frac{3}{2}j + \frac{5}{2}k
 =
 \left(\frac{1}{2}+\frac{1}{2}i+\frac{3}{2}j-\frac{1}{2}k\right)
 \left(\frac{1}{2}-\frac{3}{2}i+\frac{1}{2}j+\frac{1}{2}k\right) 
-$$
+\]
 then 
 the four half integers $\frac{1}{2}$, $\frac{1}{2}$, $\frac{1}{2}$, 
 and $\frac{3}{2}$ 
@@ -708,21 +711,21 @@ We claim $\varepsilon \in \Zzz$.  If $P_1$ (and hence $P_2$)
 is a Lipschitz integer then 
 the norm $\varepsilon$ is obviously an integer.
 Otherwise, write 
-$$
+\[
   P_1 = \frac{\alpha}{2} + \frac{\beta}{2} i + 
         \frac{\gamma}{2} j + \frac{\delta}{2} k,
-$$
+\]
 where
 $\alpha$, $\beta$, $\gamma$ and $\delta$ are all odd integers.
 The norm of $P_1$ is then
-$$
+\[
      N(P_1) = \frac{1}{4} \cdot 
               (\alpha^2 + \beta^2 + \gamma^2 + \delta^2).
-$$
+\]
 Since
-$$
+\[
   \alpha^2 \equiv \beta^2 \equiv \gamma^2 \equiv \delta^2 \equiv 1 \mod 4,
-$$
+\]
 their sum is divisible by $4$.
 Hence $N(P_1) = \varepsilon \in \Zzz$.
 By Lemma~\ref{lemma_norm_multiplicative},
@@ -753,9 +756,9 @@ is a primitive Pythagorean quintuple which
 cannot be written as the product of two quaternions
 using the same coefficients.
 For example
-$$
+\[
   -2 + 10 i + j + 8k = (2 + 3i) \cdot (2 + 2i + 2j + k).
-$$
+\]
 See Appendix~\ref{appendix_A} for more details.
 Thus Theorem~\ref{theorem_as_products} 
 is a partial characterization of Pythagorean quintuples 
@@ -775,7 +778,7 @@ represented with Hypothesis \ref{as_products}. Still, this is an
 
 \section{An Asymptotic Analysis of Theorem~\ref{theorem_as_products}}
 
-
+\fix{Modify this to avoid Hurwitz integers and not use capital letters}
 
 In this section we would like to analyze the general question
 of finding primitive Pythagorean quintuples of magnitude $E$ using
@@ -819,9 +822,9 @@ stated in a different way in~\cite{Lalin}
 \begin{theorem}[Jacobi]
 \label{theorem_representations}
 The number of solutions to $x_1^2 +  x_2^2 +  x_3^2 +  x_4^2  = n$ is 
-$$
+\[
 8\sum_{d|n,4\nmid d}{d}
-$$
+\]
 This is eight times the sum of all positive integers that divide $n$ but are not multiples of $4$. Note that 
 the order and sign of a solution $(x_1,x_2,x_3,x_4)$ matter. 
 \end{theorem}
@@ -841,9 +844,9 @@ generates Pythagorean quintuples
 
 \item[(ii)]
 Their squares give the sum
-$$
+\[
      x_1^2 + x_2^2 + x_3^2 + x_4^2 = E
-$$
+\]
 
 \item[(iii)]
 $x_1, x_2, x_3, x_4$ are either all integers or
@@ -889,9 +892,9 @@ where order and sign do matter.
 The only divisors of $E^2$ are
 $E^2$, $E$, and $1$. Using 
 Jacobi's Four Square Theorem~\ref{theorem_representations}, 
-$$
+\[
      Q = 8(1 + E + E^2).
-$$
+\]
 However, we are interested in the number of Pythagorean quintuples,
 where the order and sign do not matter. Since $Q$ counts at least one
 solution where one of $x_1,x_2,x_3,x_4$ is negative, $Q > N$.
@@ -918,13 +921,13 @@ is overcounted by $24*16 = 384$ times in $Q$.
 This is the maximum amount that such a Pythagorean
 quintuples could be overcounted.
 Thus,
-$$
+\[
      N \geq \frac{Q}{384}.
-$$ 
+\] 
 Since we know the value of $Q$ when $E$ is prime,
-$$
+\[
      N \geq \frac{ 8(1+E+E^2) }{384}.
-$$ 
+\] 
 
 In the case of
 finding parameterizations for the primitive Pythagorean
@@ -970,9 +973,9 @@ Leaving
 out the divisors that are divisible by $4$, 
 the number of solutions to \eqref{quadruple_equation}
 is 
-$$
+\[
      8(1 + 2 + E + 2E) = 8(3 + 3E) = 24(1 + E).
-$$
+\]
 
 
 Assume that there are $K$ parametrizations
@@ -1025,6 +1028,8 @@ number would still evade representation.
 \section{Characterization of Pythagorean Quintuples:  
 A Geometric Approach}
 
+\fix{This was done algebraically in Mordell.}
+
 In this section we derive
 an expression 
 which characterizes {\em all} Pythagorean quintuples.
@@ -1034,13 +1039,13 @@ which characterizes {\em all} Pythagorean quintuples.
 \label{theorem_like_Hatcher}
 All primitive Pythagorean quintuples can
 be written in the form
-$$(
+\[(
 2ad
 ,2bd
 ,2cd
 ,a^2+b^2+c^2-d^2
 ,a^2+b^2+c^2+d^2)/\gamma,
-$$
+\]
 where $\gamma = \gcd(2ad,2bd,2cd,a^2 + b^2 + c^2 -d^2)$
 and $a, b, c, d \in \Zzz$.
 \end{theorem}
@@ -1053,10 +1058,10 @@ Let $A^2 +B^2 +C^2 + D^2 = E^2$ be a primitive Pythagorean quintuple.
 
 
 Since 
-$$
+\[
      \left(\frac{A}{E}\right)^2 +\left(\frac{B}{E}\right)^2+
      \left(\frac{C}{E}\right)^2+\left(\frac{D}{E}\right)^2 = 1,
-$$
+\]
 the point $(\frac{A}{E},\frac{B}{E},\frac{C}{E},\frac{D}{E})$ 
 is on the sphere $\Sss^3$. 
 Note that there exists a bijection between rational 
@@ -1075,15 +1080,15 @@ points on $\Sss^3$ and rational points on $w=0$.
 
 
 The line satisfies the following conditions:
-$$
+\[
      \frac{\partial y}{\partial x} =\frac{n}{m} ,\:\:\: 
      \frac{\partial z}{\partial x}=\frac{p}{m}, \:\:\:
      \frac{\partial w}{\partial x}=-\frac{1}{m}.
-$$
+\]
 Therefore, the line satisfies these conditions as well:
-$$
+\[
       y=\frac{n}{m}x , \:\:\: z=\frac{p}{m}x, \:\:\:w=-\frac{1}{m}x+1.
-$$
+\]
 
 We use these conditions to solve for the intersection
  of the line and the sphere $\Sss^3$, which 
@@ -1128,11 +1133,11 @@ $\left(\frac{A}{E},\frac{B}{E},\frac{C}{E},\frac{D}{E}\right)$.
 We solve for the other coordinates of this point.
 
 
-$$y=\frac{n}{m}x=\frac{n}{m}\cdot\frac{2m}{m^2 + n^2 + p^2 +1}
-=\frac{2n}{m^2 + n^2 + p^2 +1}$$
+\[y=\frac{n}{m}x=\frac{n}{m}\cdot\frac{2m}{m^2 + n^2 + p^2 +1}
+=\frac{2n}{m^2 + n^2 + p^2 +1}\]
 
-$$z=\frac{p}{m}x=\frac{p}{m}\cdot\frac{2m}
-{m^2 + n^2 + p^2 +1}=\frac{2p}{m^2 + n^2 + p^2 +1}$$
+\[z=\frac{p}{m}x=\frac{p}{m}\cdot\frac{2m}
+{m^2 + n^2 + p^2 +1}=\frac{2p}{m^2 + n^2 + p^2 +1}\]
 
 \begin{align*}
     w & = -\frac{1}{m}x+1=-\frac{1}{m}\cdot\frac{2m}{m^2 + n^2 + p^2 +1}+1
@@ -1144,34 +1149,34 @@ $$z=\frac{p}{m}x=\frac{p}{m}\cdot\frac{2m}
 \end{align*}
 
 Since $m$, $n$, and $p$ are rational, we can write the following:
-$$
+\[
      m=\frac{a}{d}, \:\:
      n=\frac{b}{d}, \:\:
      p=\frac{c}{d},
-$$
+\]
 where $a$, $b$, and $c$ 
 are non-negative integers and $d$ is a positive integer.
 
 
 
 Rewriting the coordinates gives:
-$$x=\frac{2m}{m^2 + n^2 + p^2 +1}
+\[x=\frac{2m}{m^2 + n^2 + p^2 +1}
 =\frac{2 \cdot \frac{a}{d}}{\left(\frac{a}{d}\right)^2+\left(\frac{b}{d}\right)^2+\left(\frac{c}{d}\right)^2+1}
-=\frac{2ad}{a^2+b^2+c^2+d^2}$$
+=\frac{2ad}{a^2+b^2+c^2+d^2}\]
 
-$$y=\frac{2n}{m^2 + n^2 + p^2 +1}                    
+\[y=\frac{2n}{m^2 + n^2 + p^2 +1}                    
 =\frac{2\cdot\frac{b}{d}}{\left(\frac{a}{d}\right)^2+\left(\frac{b}{d}\right)^2+\left(\frac{c}{d}\right)^2+1} 
-=\frac{2bd}{a^2+b^2+c^2+d^2}$$
+=\frac{2bd}{a^2+b^2+c^2+d^2}\]
 
-$$z=\frac{2p}{m^2 + n^2 + p^2 +1}                                               
+\[z=\frac{2p}{m^2 + n^2 + p^2 +1}                                               
 =\frac{2\cdot\frac{c}{d}}{\left(\frac{a}{d}\right)^2+\left(\frac{b}{d}\right)^2+\left(\frac{c}{d}\right)^2+1} 
-=\frac{2cd}{a^2+b^2+c^2+d^2}$$
+=\frac{2cd}{a^2+b^2+c^2+d^2}\]
 
 
-$$w=\frac{m^2 + n^2 + p^2 -1}{m^2 + n^2 + p^2 +1}
+\[w=\frac{m^2 + n^2 + p^2 -1}{m^2 + n^2 + p^2 +1}
 =\frac{\left(\frac{a}{d}\right)^2+\left(\frac{b}{d}\right)^2+\left(\frac{c}{d}\right)^2-1} 
 {\left(\frac{a}{d}\right)^2+\left(\frac{b}{d}\right)^2+\left(\frac{c}{d}\right)^2+1} 
-=\frac{a^2+b^2+c^2-d^2}{a^2+b^2+c^2+d^2}$$
+=\frac{a^2+b^2+c^2-d^2}{a^2+b^2+c^2+d^2}\]
 
 
 
@@ -1212,13 +1217,13 @@ This particular $(x,y,z,w)$ is the same point as
 $\left(\frac{A}{E},\frac{B}{E},\frac{C}{E},\frac{D}{E}\right)$. 
 Setting these equal to each other gives
 
-$$x=\frac{2ad}{a^2+b^2+c^2+d^2}=\frac{A}{E}$$
+\[x=\frac{2ad}{a^2+b^2+c^2+d^2}=\frac{A}{E}\]
 
-$$y=\frac{2bd}{a^2+b^2+c^2+d^2}=\frac{B}{E}$$
+\[y=\frac{2bd}{a^2+b^2+c^2+d^2}=\frac{B}{E}\]
 
-$$z=\frac{2cd}{a^2+b^2+c^2+d^2}=\frac{C}{E}$$
+\[z=\frac{2cd}{a^2+b^2+c^2+d^2}=\frac{C}{E}\]
 
-$$w=\frac{a^2+b^2+c^2-d^2}{a^2+b^2+c^2+d^2}=\frac{D}{E}$$
+\[w=\frac{a^2+b^2+c^2-d^2}{a^2+b^2+c^2+d^2}=\frac{D}{E}\]
 Therefore, we can write
 \begin{align*}
      & kA = 2ad     
@@ -1266,11 +1271,11 @@ Secondly,
 the expression in Theorem~\ref{theorem_like_Hatcher}
 looks similar to the square of a quaternion
 from the proof of Theorem~\ref{theorem_as_squares}, namely
-$$
+\[
      q^2 = (x + yi + zj +wk)^2
       = (x^2- y^2 -z^2 - w^2)+
           (2xy)i + (2xz)j + (2xw)k.
-$$
+\]
 The difference is in Theorem~\ref{theorem_like_Hatcher} we
 divide by the gcd of the four terms.
 This projects
@@ -1521,22 +1526,22 @@ Pythagorean quintuple.
 
 \begin{example}
 Example of a generating list: 
-$$ 4, 4, 0, 1
-$$ 
+\[ 4, 4, 0, 1
+\] 
 Example of a form:
-$$
+\[
      (x+yi+zj+wk)(y+zi+wj-xk)
-$$
+\]
 The program applies the form: 
-$$
+\[
      (4+4i+0j+1k)(4+0i+1j-4k)=20+15i+20j-8k
-$$
+\]
 The result:
-$$
+\[
        8, 15, 20, 20
-$$
+\]
 The result is always a Pythagorean quintuple: 
-$$8^2+ 15^2+ 20^2+ 20^2= 33^2$$
+\[8^2+ 15^2+ 20^2+ 20^2= 33^2\]
 \end{example}
 
 
@@ -1544,7 +1549,7 @@ $$8^2+ 15^2+ 20^2+ 20^2= 33^2$$
 
 
 \begin{figure}
-$$
+\[
 \begin{array}{l|c||l|c}
 1.\:\: (x+yi+zj+wk)(x+yi+zj+wk) &283&
 30. \:\: (x+yi+zj+wk)(y+zi+xj-wk) &353\\
@@ -1632,7 +1637,7 @@ $$
 %
 29. \:\: (x+yi+zj+wk)(y+xi+wj-zk) &321
 \end{array}
-$$
+\]
 \caption{The $57$ possible forms of a Pythagorean quintuple in its primitive Hurwitz form as seen in Theorem~\ref{theorem_as_products}. The number next to a form represents the number of times the program used the form to generate a small Pythagorean quintuple.} 
 \label{figure_57}
 \end{figure}
@@ -1752,7 +1757,7 @@ the number of ways to generate them:
 
 
 \begin{figure}
-$$
+\[
 \begin{array}{l|c||l|c}
                   &\mbox{Times}    &   &\mbox{Times}\\ 
 \mbox{Pythagorean Quintuple}     &\mbox{found}
@@ -1832,7 +1837,7 @@ $$
 1.5^2+ 10.5^2+ 15.5^2+ 16.5^2  = 25^2 &0&
 12.5^2+ 14.5^2+ 18.5^2+ 19.5^2  = 33^2 &48
 \end{array}
-$$
+\]
 \caption{Generating program results for some small Pythagorean quintuples,}
 \label{figure_quintuples}
 \end{figure}
