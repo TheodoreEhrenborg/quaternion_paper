@@ -8,7 +8,7 @@
 %
 %
 % 
-% Last edited: July 23, 2019
+% Last edited: July 26, 2019
 %
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -42,7 +42,7 @@
 \usepackage{tikz}
 \usepackage[title]{appendix}
 \usepackage{mathrsfs}
-\usepackage{ gensymb }
+\usepackage{gensymb}
 \usepackage{enumerate}
 \usepackage{caption}
 \usepackage{comment}
@@ -173,7 +173,7 @@
 
 
 
-\date{}
+\date{\today}
 %%%\date{Last edited on \today}
 
 \maketitle
@@ -182,7 +182,7 @@
 
 \begin{abstract}
 This paper, which is in number theory, explores 
-the  
+the 
 connections between quaternions and primitive Pythagorean quintuples. 
 It is known that the square of a Gaussian integer
 (a complex number) is a Pythagorean triple $a^2 + b^2 = c^2$.
@@ -224,8 +224,8 @@ Recall nonnegative integers $a$, $b$ and $c$ are called a
     a^2 + b^2 = c^2.
 \]
 Furthermore, a {\em primitive Pythagorean triple}
-is one where $\gcd(a,b,c) = 1$, that is,
-$a$, $b$, and~$c$ have  no common factor greater than $1$.
+is one where $\gcd(a, b,c) = 1$, that is,
+$a$, $b$, and~$c$ have no common factor greater than $1$.
 Pythagorean triples have the geometric interpretation that
 they are the side lengths of a right triangle having integer
 side lengths.
@@ -253,12 +253,12 @@ Fermat's area of triangle result.}
 
 \begin{theorem}
 Given a primitive
-Pythagorean triple $(a,b,c)$, there are integers
+Pythagorean triple $(a, b,c)$, there are integers
 $x$ and $y$ such that $0 < y < x$, 
 the integers
 $x$ and $y$ are of opposite parity,
 and
-$\gcd(x,y) = 1$
+$\gcd(x, y) = 1$
 so that
 \begin{equation}
 \label{equation_primitive_Pythagorean_triple}
@@ -313,13 +313,13 @@ $0 \leq y < x \leq 4$.}
 There is a well-known connection between primitive Pythagorean triples
 and complex numbers. Consider any {\em Gaussian integer} $x+yi$,
 where $x, y \in \Zzz$.
-If $x + yi$  is squared, the real and imaginary
+If $x + yi$ is squared, the real and imaginary
 parts of the resulting Gaussian integer make up two legs of
 a Pythagorean triangle as follows. 
 
 
 \begin{theorem}
-Any primitive Pythagorean triple $(a,b,c)$ with
+Any primitive Pythagorean triple $(a, b,c)$ with
 $a^2 + b^2 = c^2$, can be represented
 by the square of a Gaussian integer, $x+yi$,
 that is,
@@ -409,7 +409,7 @@ The general
 where $x, y, z, w \in \Rrr$.
 Up to a sign they have $4$ units: $1$, $i$, $j$, and $k$. Their most striking
 property is that multiplication is not commutative. 
-For example, $i*j = k \neq j*i = -k$.
+For example, $i \cdot j = k \neq j \cdot i = -k$.
 See Figure~\ref{figure_multiplication_table} 
 for the multiplication table of the
 quaternions.
@@ -597,7 +597,7 @@ an integer modulus, the square of a Hurwitz integer has an integer modulus
 and therefore a norm that is a perfect square. 
 As a result of Theorem~\ref{theorem_unique_factorization},
 a quaternion
-built by using  the coefficients of a Pythagorean quintuple can 
+built by using the coefficients of a Pythagorean quintuple can 
 always be factored into two 
 quaternions with the same norm.
 \fix{I can also deduce the last sentence from Sarnak et al.'s book}
@@ -617,7 +617,7 @@ a quaternion
 \[
       1 + i + 3j + 5k.
 \]
-We can factor out a $2$, leaving us with an 
+We can factor out a $2$, leaving us with a 
 primitive Hurwitz integer
 \[
      h= \frac{1}{2} + \frac{1}{2}i + \frac{3}{2}j + \frac{5}{2}k.
@@ -665,7 +665,7 @@ Since the second Hurwitz integer $P_2$
 is just a reordering of
 the coefficients $x$, $y$, $z$ and $w$ of $P_1$, 
 with possible sign changes,
-the norms  of these two Hurwitz integers
+the norms of these two Hurwitz integers
 are the same, that is,
 $N(P_1) = N(P_2) = \varepsilon$.
 
@@ -700,10 +700,10 @@ $P_1 \cdot P_2 = a + bi + cj + dk$ has
 coefficients which are either integers or half-integers 
 then
 either
-$(a,b,c,d,e)$ is a Pythagorean quintuple
+$(a, b,c, d,e)$ is a Pythagorean quintuple
 or
 both
-$(a,b,c,d,e)$ and
+$(a, b,c, d,e)$ and
 $(2a,2b,2c,2d,2e)$ are Pythagorean quintuples,
 where
 $e = \varepsilon$.
@@ -768,7 +768,7 @@ quadruple generates, no matter the formula used. As a result, the
 representation found in Theorem \ref{like_Hatcher} does not qualify as
 a formula because dividing by the greatest common factor may change
 the magnitude.  The intent of this paper was to find a
-parameterization for primitive Pythagorean quintuples: to find a list
+parametrization for primitive Pythagorean quintuples: to find a list
 of formulas whose combined output was every primitive Pythagorean
 quintuple.  }
 
@@ -780,8 +780,7 @@ version of Lagrange's theorem that every integer $n$ can
 be written as a sum of four squares.
 A proof using Hurwitz integers appears in
 Hardy and Wright~\cite[Chapter XX, Theorem 386]{Hardy_and_Wright}.
-This theorem was
-stated in a different way in~\cite{Lalin}
+\cite{Lalin} expressed this theorem differently.
 \begin{theorem}[Jacobi]
 \label{theorem_representations}
 The number of solutions to $x_1^2 +  x_2^2 +  x_3^2 +  x_4^2  = n$ is 
@@ -795,7 +794,7 @@ the order and sign of a solution $(x_1,x_2,x_3,x_4)$ matter.
 
 \begin{theorem}
 \label{theorem_analysis}
-For any prime $E >> 0$, the number of primitive  Pythagorean 
+For any prime $E >> 0$, the number of primitive Pythagorean 
 quintuples of magnitude $E$ is greater than the number of 
 Pythagorean quintuples of magnitude $E$ that can be generated using 
 any parametrization in four variables $x_1, x_2, x_3, x_4$ that
@@ -840,7 +839,7 @@ $E$
 where the
 order of $A$, $B$, $C$, and $D$ does not matter.  
 Since $E$ is a prime,
-the integers  $A$, $B$, $C$, and $D$ share no
+the integers $A$, $B$, $C$, and $D$ share no
 common factor other than $1$ or $E$. 
 Thus, $A^2 + B^2 + C^2 + D^2 = E^2$ is a primitive Pythagorean
 quintuple. 
@@ -880,9 +879,9 @@ $(1,2,10,16)$ , $(2,1,-16,10)$, $(-16,1,-2,10)$, etc.
 All are valid solutions to
 $x_1^2 +  x_2^2 +  x_3^2 +  x_4^2 = 19^2$.
 Thus, such a Pythagorean quintuple
-is overcounted by $24*16 = 384$ times in $Q$. 
+is overcounted by $24 \cdot 16 = 384$ times in $Q$. 
 This is the maximum amount that such a Pythagorean
-quintuples could be overcounted.
+quintuple could be overcounted.
 Thus,
 \[
      N \geq \frac{Q}{384}.
@@ -893,7 +892,7 @@ Since we know the value of $Q$ when $E$ is prime,
 \] 
 
 In the case of
-finding parameterizations for the primitive Pythagorean
+finding parametrizations for the primitive Pythagorean
 quintuples whose addends are all squares of half-integers,
 let $M$ be the total  number of 
 primitive Pythagorean quintuples of magnitude $E$. Since $M$ is clearly 
@@ -903,8 +902,7 @@ at least $N$, we know that
 M \geq \frac{ 8(1+E+E^2) }{384}
 \end{equation}
 
-Let us shift our focus to the number of generating quadruples that could 
-possibly generate a Pythagorean quintuple of magnitude $E$.
+Let us shift our focus to the number of generating quadruples that could generate a Pythagorean quintuple of magnitude $E$.
 The quadruple has the form $(a,b,c,d)$, 
 where $a^2 + b^2 + c^2 + d^2 = E$. 
 Here $a$, $b$, $c$, and $d$ are all integers or all half-integers.
@@ -923,7 +921,7 @@ m_1^2 + m_2^2 + m_3^2 + m_4^2 = 4E
 \end{equation}
 Note that this gives 
 a simple bijection between a generating quadruple
- $(a,b,c,d)$ and a quadruple of four integers $(m_1,m_2,m_3,m_4)$ whose norm is $4E$.
+ $(a, b, c, d)$ and a quadruple of four integers $(m_1,m_2,m_3,m_4)$ whose norm is $4E$.
 
 We again refer to
 Jacobi's Theorem to
@@ -970,7 +968,7 @@ for any prime $E$ above a certain bound,
 the number of primitive  Pythagorean 
 quintuples of magnitude $E$ is greater than the number of 
 Pythagorean quintuples of magnitude $E$ that can be generated 
-using parameterizations of this type.
+using parametrizations of this type.
 Since there are an infinite number of primes larger 
 than that bound, there is an 
 infinite number of primitive  Pythagorean 
@@ -1178,7 +1176,7 @@ $A^2~+~B^2~=~C^2$}
 
 This particular $(x,y,z,w)$ is the same point as
 $\left(\frac{A}{E},\frac{B}{E},\frac{C}{E},\frac{D}{E}\right)$. 
-Setting these equal to each other gives
+Setting these equal to each other gives:
 
 \[x=\frac{2ad}{a^2+b^2+c^2+d^2}=\frac{A}{E}\]
 
@@ -1186,7 +1184,7 @@ Setting these equal to each other gives
 
 \[z=\frac{2cd}{a^2+b^2+c^2+d^2}=\frac{C}{E}\]
 
-\[w=\frac{a^2+b^2+c^2-d^2}{a^2+b^2+c^2+d^2}=\frac{D}{E}\]
+\[w=\frac{a^2+b^2+c^2-d^2}{a^2+b^2+c^2+d^2}=\frac{D}{E}.\]
 Therefore, we can write
 \begin{align*}
      & kA = 2ad     
@@ -1252,9 +1250,9 @@ Pythagorean quintuples onto primitive Pythagorean quintuples.
 
 
 The original
-goal of this project was to find a parameterization, preferably a polynomial one,  of 
+goal of this project was to find a parametrization, preferably a polynomial one,  of 
 Pythagorean~quintuples in four parameters.
-Such a parameterization of quintuples
+Such a parametrization of quintuples
 has been done using $12$ parameters~\cite{Frisch_and_Vaserstein},
 but the method involved a
 specific case of sextuples, not a direct relationship between 
@@ -1464,7 +1462,7 @@ be generated in this way.
 
 %\begin{comment}
 
-\fix{I (as of June 27 2019) believe the Heinz 57 result resulted from
+\fix{I (as of June 27, 2019) believe the Heinz 57 result resulted from
 an error in my computer code. I am also suspicious of the other table
 in this section, and I don't see how it is directly relevant.}
 
