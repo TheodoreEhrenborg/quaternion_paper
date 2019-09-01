@@ -8,7 +8,7 @@
 %
 %
 % 
-% Last edited: July 26, 2019
+% Last edited: September 1, 2019
 %
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -164,7 +164,8 @@
 
 
 \author{\sc Theodore EHRENBORG
-\fix{I should thank Professor Leep.}
+  \fix{I should thank Professor Leep, Professor Sarnak,
+    and LAA at HCHS for giving me time.}
 %\thanks{
 %Corresponding author:
 %Department of Mathematics,
@@ -1120,7 +1121,7 @@ in the case where $p = m = 4$.
 
 
 \begin{theorem}
-\label{theorem_8_classes}
+\label{thm:8_classes}
 In the case where  $p = m = 4$ and $n = 2$,
 the following identities 
 arise from 8 different
@@ -1236,7 +1237,7 @@ Finally, Identity~\eqref{Identity_8} follows from taking the norm of the quatern
 \begin{conjecture}
 In the case where  $p = m = 4$ and $n = 2$,
 there are exactly 8 equivalence classes, which have representatives
-given in Theorem~\ref{theorem_8_classes}.
+given in Theorem~\ref{thm:8_classes}.
 \end{conjecture}
 
 \begin{remark}
@@ -1261,11 +1262,11 @@ nodes in the connected subgraphs found by  \emph{symbolic\_comparison}.
 This list is almost the first list
 scaled down by a factor of 384, but the third term is inconsistent
 for reasons involving conjugates that are discussed more fully in
-the proof of Theorem~\ref{theorem_counting_4D}.
+the proof of Theorem~\ref{thm:counting_4D}.
 \end{remark}
 
 \section{Conjecture for $p = m = 4$ and $ n \in \Nnn $}
-The two conjectures in this section were made in collaboration with
+The conjecture in this section was made in collaboration with
 Professor David Leep.
 
 We conjecture that when $p = m = 4$ and $ n \in \Nnn $,
@@ -1279,20 +1280,11 @@ $
 can be written as
 a product of Lipschitz quaternions.
 This is made more precise in
-Conjecture~\ref{conjecture_Ehrenborg-Leep}.
+Conjecture~\ref{conj:Ehrenborg-Leep}.
+
 
 \begin{conjecture}
-Let $ \alpha \in \Lll[x,y,z,w] $.
-If the norm $ \N(\alpha) $ has a nontrivial
-factorization over $ \Zzz[x,y,z,w] $,
-then $ \alpha $ has a nontrivial
-factorization over $ \Lll[x,y,z,w] $.
-\end{conjecture}
-\fix{Is there a counterexample to the previous
-conjecture?}
-The preceding conjecture implies the following conjecture.
-\begin{conjecture}
-\label{conjecture_Ehrenborg-Leep}
+\label{conj:Ehrenborg-Leep}
 Let $ (a, b, c, d) $ be a tuple such that
 \[
 a^2 + b^2 + c^2 + d^2 = (x^2 + y^2 + z^2 + w^2)^n,
@@ -1305,10 +1297,24 @@ Moreover, let $ \beta_u = a' + b'i + c'j + d'k $. Then
 the following tuple equivalence holds: $ (a', b', c', d') \simeq (x, y, z, w) $.
 \end{conjecture}
 
+Conjecture~\ref{conj:Ehrenborg-Leep} would be true if 
+every $ \alpha \in \Lll[x,y,z,w] $ had a nontrivial
+factorization over $ \Lll[x,y,z,w] $ given that
+the norm $ \N(\alpha) $ has a nontrivial
+factorization over $ \Zzz[x,y,z,w] $
 
+However, Beauregard~\cite{Beauregard} provides a counterexample:
+The quaternion
+\[
+x^2 y^2 - 1 + (x^2 - y^2)i + 2xyj
+\]
+is an irreducible in $ \Lll[x, y, z, w],$
+but its norm is not an irreducible in $ \Zzz[x, y, z, w].$
+Thus Conjecture~\ref{conj:Ehrenborg-Leep}
+remains unproven.
 
-\section{Proof of Conjecture~\ref{conjecture_Ehrenborg-Leep} when $n=1$}
-I have proved Conjecture~\ref{conjecture_Ehrenborg-Leep}
+\section{Proof of Conjecture~\ref{conj:Ehrenborg-Leep} when $n=1$}
+I have proved Conjecture~\ref{conj:Ehrenborg-Leep}
 in the case where $n = 1$.
 
 
@@ -1411,11 +1417,11 @@ positive and will not cancel. Thus there can be no such monomial~$ A $, so the o
 in $ S $ are the four desired ones.
 \end{proof}
 
-\section{Enumerative Consequences of Conjecture~\ref{conjecture_Ehrenborg-Leep}} 
+\section{Enumerative Consequences of Conjecture~\ref{conj:Ehrenborg-Leep}} 
 
 \begin{theorem}
-\label{theorem_counting_4D}
-Assuming Conjecture~\ref{conjecture_Ehrenborg-Leep} holds,
+\label{thm:counting_4D}
+Assuming Conjecture~\ref{conj:Ehrenborg-Leep} holds,
 then the number of solutions $ (a, b, c, d) $ to
 \begin{equation}
 \label{equation_4D}
@@ -1430,7 +1436,7 @@ is at most
 \]
 \end{theorem}
 \begin{proof}
-If Conjecture~\ref{conjecture_Ehrenborg-Leep} holds, any
+If Conjecture~\ref{conj:Ehrenborg-Leep} holds, any
 solution
 $ (a, b, c, d) $ can be viewed as a quaternion
 $ a + bi + cj + dk = \beta_1 \beta_2 \dotsm \beta_n $
@@ -1517,7 +1523,7 @@ Summing over all values of $ \gamma $, the number of solutions is
 \end{align*}
 \end{proof}
 \begin{remark}
-Note that the proof of Theorem~\ref{theorem_counting_4D}
+Note that the proof of Theorem~\ref{thm:counting_4D}
 gives an upper bound for the number of solutions.
 \end{remark}
 
@@ -1538,7 +1544,7 @@ $p = m = 4$ and $n=2$. Using the two
 new computational methods discussed
 in Section~\ref{sec:4D}, the upper bound
 has been reduced from $57$ to $8$,
-assuming Conjecture~\ref{conjecture_Ehrenborg-Leep}
+assuming Conjecture~\ref{conj:Ehrenborg-Leep}
 holds.
 
 It is notable that the number of solutions
@@ -1553,12 +1559,12 @@ in $n$.
 Future steps include the following:
 \begin{enumerate}
 \item A proof of
-Conjecture~\ref{conjecture_Ehrenborg-Leep}
-would solidify Theorem~\ref{theorem_counting_4D}
+Conjecture~\ref{conj:Ehrenborg-Leep}
+would solidify Theorem~\ref{thm:counting_4D}
 and provide more theoretical insight
 into the nature of these identities.
 \item Experimental data shows that 
-Theorem~\ref{theorem_counting_4D}
+Theorem~\ref{thm:counting_4D}
 gives the exact number of solutions
 in the cases where $n = 0, 1, 2, 3$.
 This data was collected by applying the
@@ -1580,7 +1586,7 @@ using the octonions,
 although the lack of associativity presents
 new challenges.
 Alternatively, I may be able to adapt
-the proof of Theorem~\ref{theorem_counting_4D} to
+the proof of Theorem~\ref{thm:counting_4D} to
 cases when $p$ and $m$ take on values
 less than four.
 \end{enumerate}
@@ -1619,8 +1625,16 @@ less than four.
       {Math.\ Centrum Amsterdam Afd.\ Zuivere Wisk.}
       {ZW-011}{1963}{37 pp}
 
+\end{comment}
 
+\bibitem{Beauregard}
+\journal{R.\ A.\ Beauregard}
+        {When is $F[x, y]$ a unique factorization domain?}
+        {Proceedings of the American Mathematical Society}
+        {117}{1993}{67--70}
 
+\begin{comment}
+      
 \bibitem{Berggren}
 \journal{B.\ Berggren} 
         {Pytagoreiska trianglar (Swedish)} 
