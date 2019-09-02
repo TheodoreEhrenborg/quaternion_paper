@@ -8,7 +8,7 @@
 %
 %
 % 
-% Last edited: July 26, 2019
+% Last edited: September 1, 2019
 %
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -301,7 +301,7 @@ $5$-$12$-$13$ right triangle.
 \caption{Generating pairs for Pythagorean triples where
 $0 \leq y < x \leq 4$.}
 \end{center}
-\label{figure_triples}
+\label{fig:triples}
 \end{figure}
 
 
@@ -345,8 +345,8 @@ the moduli of the numbers.
 So $(x+yi)^2$ has a modulus of $x^2+y^2$. Thus, the square of a 
 Gaussian integer has integer coordinates and an integer distance
 from the origin, giving a right triangle with integer sides.
-See Figures~\ref{figure_Pythagorean} 
-and~\ref{figure_Pythagorean_squared} for diagrams of this 
+See Figures~\ref{fig:Pythagorean} 
+and~\ref{fig:Pythagorean_squared} for diagrams of this 
 concept.
 
 \begin{figure}
@@ -367,7 +367,7 @@ concept.
 \end{tikzpicture}
 \end{center}
 \caption{Geometric representation of a Gaussian integer.}
-\label{figure_Pythagorean}
+\label{fig:Pythagorean}
 \end{figure}
 
 
@@ -394,7 +394,7 @@ concept.
 \end{tikzpicture}
 \end{center}
 \caption{A Gaussian integer $x+yi$ after squaring.}
-\label{figure_Pythagorean_squared}
+\label{fig:Pythagorean_squared}
 \end{figure}
 
 \section{Pythagorean Quintuples via Squaring Quaternions}
@@ -410,7 +410,7 @@ where $x, y, z, w \in \Rrr$.
 Up to a sign they have $4$ units: $1$, $i$, $j$, and $k$. Their most striking
 property is that multiplication is not commutative. 
 For example, $i \cdot j = k \neq j \cdot i = -k$.
-See Figure~\ref{figure_multiplication_table} 
+See Figure~\ref{fig:multiplication_table} 
 for the multiplication table of the
 quaternions.
 
@@ -457,13 +457,13 @@ $k$ & $k$ & $j$ & $-i$ & $-1$
 \end{tabular}
 \end{center}
 \caption{Multiplication table for the quaternions.}
-\label{figure_multiplication_table}
+\label{fig:multiplication_table}
 \end{figure}
 
 
 
 \begin{theorem}
-\label{theorem_as_squares}
+\label{thm:as_squares}
 There are Pythagorean quintuples 
 $a^2 + b^2 +c^2 +d^2 = e^2$ which can be represented
 by the square of a quaternion $x+yi+zj+wk$ where $x, y, z, w \in \Zzz$.
@@ -510,7 +510,7 @@ that
 $1^2+ 1^2+ 3^2+ 5^2= 6^2$ is a 
 primitive Pythagorean quintuple, but none of the
 legs  $1$, $1$, $3$ and $5$ are even.
-Thus Theorem~\ref{theorem_as_squares} is a partial characterization
+Thus Theorem~\ref{thm:as_squares} is a partial characterization
 of Pythagorean quintuples.
 
 
@@ -518,7 +518,7 @@ of Pythagorean quintuples.
 
 \section{Pythagorean Quintuples via Multiplying two Hurwitz Integers}
 
-\fix{I think the Hurwitz integers do not contribute to the paper.} 
+
 
 
 John Conway and Derek Smith~\cite{Conway_and_Smith}
@@ -526,7 +526,7 @@ have investigated the relationship of quaternions
 to symmetry groups.  See the review by Baez~\cite{Baez}
 for a synopsis of their work.
 Conway and Smith's unique factorization theorem 
-(see Theorem~\ref{theorem_unique_factorization}) suggested to
+(see Theorem~\ref{thm:unique_factorization}) suggested to
 the author a way to extend
 the relationship between Pythagorean quintuples
 and quaternions.
@@ -565,7 +565,7 @@ A Hurwitz integer $q \in \Hhh$ is
 
 
 \begin{theorem}[Conway and Smith]
-\label{theorem_unique_factorization}
+\label{thm:unique_factorization}
 Let $q \in \Hhh$ be a primitive Hurwitz integer with norm
 $N$.  Suppose $N = p_1 p_2 \cdots p_k$ where 
 $p_1, p_2, \ldots, p_k$ are prime numbers.
@@ -595,7 +595,7 @@ The $24$ Hurwitz units are:
 Just as the square of a Gaussian integer must have
 an integer modulus, the square of a Hurwitz integer has an integer modulus
 and therefore a norm that is a perfect square. 
-As a result of Theorem~\ref{theorem_unique_factorization},
+As a result of Theorem~\ref{thm:unique_factorization},
 a quaternion
 built by using the coefficients of a Pythagorean quintuple can 
 always be factored into two 
@@ -611,7 +611,7 @@ What does this mean in concrete terms? We give an example.
      1^2+ 1^2+ 3^2+ 5^2= 6^2
 \]
 cannot be represented by the squaring method
-of Theorem~\ref{theorem_as_squares},
+of Theorem~\ref{thm:as_squares},
 but it can be translated into 
 a quaternion
 \[
@@ -643,7 +643,7 @@ product gives the primitive Hurwitz integer $h$ have the property that
 their coefficients, in absolute value and reordered, coincide.
 
 \begin{theorem}
-\label{theorem_as_products}
+\label{thm:as_products}
 There are Pythagorean quintuples 
 $a^2 + b^2 +c^2 +d^2 = e^2$ which can be represented
 by the product of two Hurwitz integers
@@ -723,7 +723,7 @@ For example
   -2 + 10 i + j + 8k = (2 + 3i) \cdot (2 + 2i + 2j + k).
 \]
 See Appendix~\ref{appendix_A} for more details.
-Thus Theorem~\ref{theorem_as_products} 
+Thus Theorem~\ref{thm:as_products} 
 is a partial characterization of Pythagorean quintuples 
 which arise from products of two related Hurwitz integers.
 
@@ -739,12 +739,12 @@ represented with Hypothesis \ref{as_products}. Still, this is an
 
 
 
-\section{An Asymptotic Analysis of Theorem~\ref{theorem_as_products}}
+\section{An Asymptotic Analysis of Theorem~\ref{thm:as_products}}
 
-\fix{Modify this to avoid Hurwitz integers and not use capital letters}
+
 
 In this section we would like to analyze the general question
-of finding primitive Pythagorean quintuples of magnitude $E$ using
+of finding primitive Pythagorean quintuples of magnitude $\epsilon$ using
 a polynomial parametrization in four parameters.
 
 
@@ -782,7 +782,7 @@ A proof using Hurwitz integers appears in
 Hardy and Wright~\cite[Chapter XX, Theorem 386]{Hardy_and_Wright}.
 \cite{Lalin} expressed this theorem differently.
 \begin{theorem}[Jacobi]
-\label{theorem_representations}
+\label{thm:representations}
 The number of solutions to $x_1^2 +  x_2^2 +  x_3^2 +  x_4^2  = n$ is 
 \[
 8\sum_{d|n,4\nmid d}{d}
@@ -793,10 +793,10 @@ the order and sign of a solution $(x_1,x_2,x_3,x_4)$ matter.
 
 
 \begin{theorem}
-\label{theorem_analysis}
-For any prime $E >> 0$, the number of primitive Pythagorean 
-quintuples of magnitude $E$ is greater than the number of 
-Pythagorean quintuples of magnitude $E$ that can be generated using 
+\label{thm:analysis}
+For any prime $\epsilon >> 0$, the number of primitive Pythagorean 
+quintuples of magnitude $\epsilon$ is greater than the number of 
+Pythagorean quintuples of magnitude $\epsilon$ that can be generated using 
 any parametrization in four variables $x_1, x_2, x_3, x_4$ that
 obeys the following conditions:
 \begin{itemize}
@@ -807,7 +807,7 @@ generates Pythagorean quintuples
 \item[(ii)]
 Their squares give the sum
 \[
-     x_1^2 + x_2^2 + x_3^2 + x_4^2 = E
+     x_1^2 + x_2^2 + x_3^2 + x_4^2 = \epsilon
 \]
 
 \item[(iii)]
@@ -818,54 +818,54 @@ all half-integers.
 
 
 Observe that the 57 representations found as a consequence of
-Theorem~\ref{theorem_as_products} are such parametrizations.
+Theorem~\ref{thm:as_products} are such parametrizations.
 
 
 We now give a 
-proof of Theorem~\ref{theorem_analysis}.
+proof of Theorem~\ref{thm:analysis}.
 
 \begin{proof}
-Let $E$ be a large prime. 
+Let $\epsilon$ be a large prime. 
 By Lagrange's Theorem every integer can be written as the sum of 
 four squares, 
 so
 there must be at least one solution to
-$A^2 + B^2 + C^2 + D^2 = E^2$, where $A$, $B$, $C$, and $D$ are
- nonnegative integers. This is a Pythagorean quintuple of magnitude $E$.
+$\alpha^2 + \beta^2 + \gamma^2 + \delta^2 = \epsilon^2$, where $\alpha$, $\beta$, $\gamma$, and $\delta$ are
+ nonnegative integers. This is a Pythagorean quintuple of magnitude $\epsilon$.
 
 
 We are interested in the number of Pythagorean quintuples of magnitude
-$E$
+$\epsilon$
 where the
-order of $A$, $B$, $C$, and $D$ does not matter.  
-Since $E$ is a prime,
-the integers $A$, $B$, $C$, and $D$ share no
-common factor other than $1$ or $E$. 
-Thus, $A^2 + B^2 + C^2 + D^2 = E^2$ is a primitive Pythagorean
+order of $\alpha$, $\beta$, $\gamma$, and $\delta$ does not matter.  
+Since $\epsilon$ is a prime,
+the integers $\alpha$, $\beta$, $\gamma$, and $\delta$ share no
+common factor other than $1$ or $\epsilon$. 
+Thus, $\alpha^2 + \beta^2 + \gamma^2 + \delta^2 = \epsilon^2$ is a primitive Pythagorean
 quintuple. 
 
 
-Let $N$ be the number of primitive
-Pythagorean quintuples of magnitude $E$. Note that $N$ does not count
+Let $\psi$ be the number of primitive
+Pythagorean quintuples of magnitude $\epsilon$. Note that $\psi$ does not count
 Pythagorean quintuples whose addends  are squares of  half-integers.
-Let $Q$ be the number of solutions to 
-$x_1^2 +  x_2^2 +  x_3^2 +  x_4^2 = E^2$
+Let $\lambda$ be the number of solutions to 
+$x_1^2 +  x_2^2 +  x_3^2 +  x_4^2 = \epsilon^2$
 where order and sign do matter.
-The only divisors of $E^2$ are
-$E^2$, $E$, and $1$. Using 
-Jacobi's Four Square Theorem~\ref{theorem_representations}, 
+The only divisors of $\epsilon^2$ are
+$\epsilon^2$, $\epsilon$, and $1$. Using 
+Jacobi's Four Square Theorem~\ref{thm:representations}, 
 \[
-     Q = 8(1 + E + E^2).
+     \lambda = 8(1 + \epsilon + \epsilon^2).
 \]
 However, we are interested in the number of Pythagorean quintuples,
-where the order and sign do not matter. Since $Q$ counts at least one
-solution where one of $x_1,x_2,x_3,x_4$ is negative, $Q > N$.
+where the order and sign do not matter. Since $\lambda$ counts at least one
+solution where one of $x_1,x_2,x_3,x_4$ is negative, $\lambda > \psi$.
 
 
 
-We next look for a lower bound for $N$.
-In the case that a Pythagorean quintuple counted by $N$ 
-has distinct and positive $A,B,C,D$,
+We next look for a lower bound for $\psi$.
+In the case that a Pythagorean quintuple counted by $\psi$ 
+has distinct and positive $\alpha,\beta,\gamma,\delta$,
 Jacobi's theorem vastly  overestimates the number of
 Pythagorean quintuples. 
 Such a Pythagorean quintuple can have its terms  permuted in 
@@ -879,95 +879,95 @@ $(1,2,10,16)$ , $(2,1,-16,10)$, $(-16,1,-2,10)$, etc.
 All are valid solutions to
 $x_1^2 +  x_2^2 +  x_3^2 +  x_4^2 = 19^2$.
 Thus, such a Pythagorean quintuple
-is overcounted by $24 \cdot 16 = 384$ times in $Q$. 
+is overcounted by $24 \cdot 16 = 384$ times in $\lambda$. 
 This is the maximum amount that such a Pythagorean
 quintuple could be overcounted.
 Thus,
 \[
-     N \geq \frac{Q}{384}.
+     \psi \geq \frac{\lambda}{384}.
 \] 
-Since we know the value of $Q$ when $E$ is prime,
+Since we know the value of $\lambda$ when $\epsilon$ is prime,
 \[
-     N \geq \frac{ 8(1+E+E^2) }{384}.
+     \psi \geq \frac{ 8(1+\epsilon+\epsilon^2) }{384}.
 \] 
 
 In the case of
 finding parametrizations for the primitive Pythagorean
 quintuples whose addends are all squares of half-integers,
-let $M$ be the total  number of 
-primitive Pythagorean quintuples of magnitude $E$. Since $M$ is clearly 
-at least $N$, we know that 
+let $\kappa$ be the total  number of 
+primitive Pythagorean quintuples of magnitude $\epsilon$. Since $\kappa$ is clearly 
+at least $\psi$, we know that 
 \begin{equation}
 \label{lower}
-M \geq \frac{ 8(1+E+E^2) }{384}
+\kappa \geq \frac{ 8(1+\epsilon+\epsilon^2) }{384}
 \end{equation}
 
-Let us shift our focus to the number of generating quadruples that could generate a Pythagorean quintuple of magnitude $E$.
+Let us shift our focus to the number of generating quadruples that could generate a Pythagorean quintuple of magnitude $\epsilon$.
 The quadruple has the form $(a,b,c,d)$, 
-where $a^2 + b^2 + c^2 + d^2 = E$. 
+where $a^2 + b^2 + c^2 + d^2 = \epsilon$. 
 Here $a$, $b$, $c$, and $d$ are all integers or all half-integers.
 
-Since $a^2 + b^2 + c^2 + d^2 = E$, we multiply by $4$ to obtain:
+Since $a^2 + b^2 + c^2 + d^2 = \epsilon$, we multiply by $4$ to obtain:
 \begin{align*}
-     & 4a^2 + 4b^2 + 4c^2 + 4d^2 = 4E\\
-     & (2a)^2 + (2b)^2 + (2c)^2 + (2d)^2 = 4E
+     & 4a^2 + 4b^2 + 4c^2 + 4d^2 = 4\epsilon\\
+     & (2a)^2 + (2b)^2 + (2c)^2 + (2d)^2 = 4\epsilon
 \end{align*}
 Let $m_1 = 2a$, $m_2 = 2b$, $m_3 = 2c$, 
 and $m_4 = 2d$.
 Note $m_i \in \Zzz$ for $i = 1, \ldots, 4$ and
 \begin{equation}
 \label{quadruple_equation}
-m_1^2 + m_2^2 + m_3^2 + m_4^2 = 4E
+m_1^2 + m_2^2 + m_3^2 + m_4^2 = 4\epsilon
 \end{equation}
 Note that this gives 
 a simple bijection between a generating quadruple
- $(a, b, c, d)$ and a quadruple of four integers $(m_1,m_2,m_3,m_4)$ whose norm is $4E$.
+ $(a, b, c, d)$ and a quadruple of four integers $(m_1,m_2,m_3,m_4)$ whose norm is $4\epsilon$.
 
 We again refer to
 Jacobi's Theorem to
 determine how many solutions
 \eqref{quadruple_equation} has.
-Since $E$ is a large
+Since $\epsilon$ is a large
 prime,
-$4E$ is divisible by $1$, $2$, $4$, $E$, $2E$, and $4E$. 
+$4\epsilon$ is divisible by $1$, $2$, $4$, $\epsilon$, $2\epsilon$, and $4\epsilon$. 
 Leaving 
 out the divisors that are divisible by $4$, 
 the number of solutions to \eqref{quadruple_equation}
 is 
 \[
-     8(1 + 2 + E + 2E) = 8(3 + 3E) = 24(1 + E).
+     8(1 + 2 + \epsilon + 2\epsilon) = 8(3 + 3\epsilon) = 24(1 + \epsilon).
 \]
 
 
-Assume that there are $K$ parametrizations
+Assume that there are $\tau$ parametrizations
 that meet the three conditions in the theorem. 
-Let $R$ be the number of Pythagorean quintuples produced by applying
-the $K$ parametrizations to the $24(1+E)$ generating quadruples. 
+Let $\omega$ be the number of Pythagorean quintuples produced by applying
+the $\tau$ parametrizations to the $24(1+\epsilon)$ generating quadruples. 
 We have
-an upper bound for $R$.
+an upper bound for $\omega$.
 \begin{equation}
 \label{upper}
-R \leq 24K(1+E)
+\omega \leq 24\tau(1+\epsilon)
 \end{equation}
 
 
 
-Observe that in \eqref{lower} $M$ grows with the square of $E$, but in 
-\eqref{upper} $R$ grows linear  in $E$.
+Observe that in \eqref{lower} $\kappa$ grows with the square of $\epsilon$, but in 
+\eqref{upper} $\omega$ grows linearly  in $\epsilon$.
 
-For sufficiently large prime $E$, 
+For sufficiently large prime $\epsilon$, 
 \begin{align*}
-   & \frac{ 8(1+E+E^2) }{384} > 24K(1+E) \\
-   & M \geq \frac{ 8(1+E+E^2) }{384} > 24K(1+E) \geq R \\
-   & M > R
+   & \frac{ 8(1+\epsilon+\epsilon^2) }{384} > 24\tau(1+\epsilon) \\
+   & \kappa \geq \frac{ 8(1+\epsilon+\epsilon^2) }{384} > 24\tau(1+\epsilon) \geq \omega \\
+   & \kappa > \omega
 \end{align*}
 where in the second inequality we used
 \eqref{lower} and \eqref{upper}.
 Thus, 
-for any prime $E$ above a certain bound, 
+for any prime $\epsilon$ above a certain bound, 
 the number of primitive  Pythagorean 
-quintuples of magnitude $E$ is greater than the number of 
-Pythagorean quintuples of magnitude $E$ that can be generated 
+quintuples of magnitude $\epsilon$ is greater than the number of 
+Pythagorean quintuples of magnitude $\epsilon$ that can be generated 
 using parametrizations of this type.
 Since there are an infinite number of primes larger 
 than that bound, there is an 
@@ -997,7 +997,7 @@ which characterizes {\em all} Pythagorean quintuples.
 
 
 \begin{theorem}
-\label{theorem_like_Hatcher}
+\label{thm:like_Hatcher}
 All primitive Pythagorean quintuples can
 be written in the form
 \[(
@@ -1005,9 +1005,9 @@ be written in the form
 ,2bd
 ,2cd
 ,a^2+b^2+c^2-d^2
-,a^2+b^2+c^2+d^2)/\gamma,
+,a^2+b^2+c^2+d^2)/k,
 \]
-where $\gamma = \gcd(2ad,2bd,2cd,a^2 + b^2 + c^2 -d^2)$
+where $k = \gcd(2ad,2bd,2cd,a^2 + b^2 + c^2 -d^2)$
 and $a, b, c, d \in \Zzz$.
 \end{theorem}
 \begin{proof}
@@ -1015,20 +1015,20 @@ Consider the $3$-dimensional
 sphere $x^2 + y^2 + z^2 +w^2 =1$
 in four dimensions,
 denoted by $\Sss^3$.
-Let $A^2 +B^2 +C^2 + D^2 = E^2$ be a primitive Pythagorean quintuple.
+Let $\alpha^2 +\beta^2 +\gamma^2 + \delta^2 = \epsilon^2$ be a primitive Pythagorean quintuple.
 
 
 Since 
 \[
-     \left(\frac{A}{E}\right)^2 +\left(\frac{B}{E}\right)^2+
-     \left(\frac{C}{E}\right)^2+\left(\frac{D}{E}\right)^2 = 1,
+     \left(\frac{\alpha}{\epsilon}\right)^2 +\left(\frac{\beta}{\epsilon}\right)^2+
+     \left(\frac{\gamma}{\epsilon}\right)^2+\left(\frac{\delta}{\epsilon}\right)^2 = 1,
 \]
-the point $(\frac{A}{E},\frac{B}{E},\frac{C}{E},\frac{D}{E})$ 
+the point $(\frac{\alpha}{\epsilon},\frac{\beta}{\epsilon},\frac{\gamma}{\epsilon},\frac{\delta}{\epsilon})$ 
 is on the sphere $\Sss^3$. 
 Note that there exists a bijection between rational 
 points on $\Sss^3$ and primitive Pythagorean quintuples.
 If a line is drawn between the points $(0,0,0,1)$ and
-$(\frac{A}{E},\frac{B}{E},\frac{C}{E},\frac{D}{E})$,
+$(\frac{\alpha}{\epsilon},\frac{\beta}{\epsilon},\frac{\gamma}{\epsilon},\frac{\delta}{\epsilon})$,
 it has rational slope.
 Furthermore, 
 this line passes through the three-dimensional 
@@ -1054,7 +1054,7 @@ Therefore, the line satisfies these conditions as well:
 We use these conditions to solve for the intersection
  of the line and the sphere $\Sss^3$, which 
 we already know are the two points $(0,0,0,1)$ and 
- $(\frac{A}{E},\frac{B}{E},\frac{C}{E},\frac{D}{E})$.
+ $(\frac{\alpha}{\epsilon},\frac{\beta}{\epsilon},\frac{\gamma}{\epsilon},\frac{\delta}{\epsilon})$.
 
 
 We have
@@ -1090,7 +1090,7 @@ We continue solving for the other intersection point.
 
 
 This solution is the x-coordinate of the point 
-$\left(\frac{A}{E},\frac{B}{E},\frac{C}{E},\frac{D}{E}\right)$.
+$\left(\frac{\alpha}{\epsilon},\frac{\beta}{\epsilon},\frac{\gamma}{\epsilon},\frac{\delta}{\epsilon}\right)$.
 We solve for the other coordinates of this point.
 
 
@@ -1157,7 +1157,7 @@ Rewriting the coordinates gives:
 \fill (0,3) circle (.1cm);
 \fill (6,0) circle (.1cm);
 \fill (2.4 , 1.8) node[anchor=south west] 
-{$(\frac{A}{C},\frac{B}{C})$} circle (.1cm);
+{$(\frac{\alpha}{\gamma},\frac{\beta}{\gamma})$} circle (.1cm);
 \draw (0,3) node[anchor=south east] {$(0,1)$};
 \draw (0,3) -- (6,0) node[anchor=south west] {$(p,0)$};
 
@@ -1167,7 +1167,7 @@ Rewriting the coordinates gives:
 \end{center}  
 \caption{A two-dimensional version of the geometric argument
 to characterize Pythagorean triples 
-$A^2~+~B^2~=~C^2$}
+$\alpha^2~+~\beta^2~=~\gamma^2$}
 \end{figure}
 
 
@@ -1175,27 +1175,27 @@ $A^2~+~B^2~=~C^2$}
 
 
 This particular $(x,y,z,w)$ is the same point as
-$\left(\frac{A}{E},\frac{B}{E},\frac{C}{E},\frac{D}{E}\right)$. 
+$\left(\frac{\alpha}{\epsilon},\frac{\beta}{\epsilon},\frac{\gamma}{\epsilon},\frac{\delta}{\epsilon}\right)$. 
 Setting these equal to each other gives:
 
-\[x=\frac{2ad}{a^2+b^2+c^2+d^2}=\frac{A}{E}\]
+\[x=\frac{2ad}{a^2+b^2+c^2+d^2}=\frac{\alpha}{\epsilon}\]
 
-\[y=\frac{2bd}{a^2+b^2+c^2+d^2}=\frac{B}{E}\]
+\[y=\frac{2bd}{a^2+b^2+c^2+d^2}=\frac{\beta}{\epsilon}\]
 
-\[z=\frac{2cd}{a^2+b^2+c^2+d^2}=\frac{C}{E}\]
+\[z=\frac{2cd}{a^2+b^2+c^2+d^2}=\frac{\gamma}{\epsilon}\]
 
-\[w=\frac{a^2+b^2+c^2-d^2}{a^2+b^2+c^2+d^2}=\frac{D}{E}.\]
+\[w=\frac{a^2+b^2+c^2-d^2}{a^2+b^2+c^2+d^2}=\frac{\delta}{\epsilon}.\]
 Therefore, we can write
 \begin{align*}
-     & kA = 2ad     
+     & k\alpha = 2ad     
 \\
-     & kB = 2bd     
+     & k\beta = 2bd     
 \\
-     & kC = 2cd     
+     & k\gamma = 2cd     
 \\
-     & kD = a^2 + b^2 + c^2 - d^2     
+     & k\delta = a^2 + b^2 + c^2 - d^2     
 \\
-     & kE = a^2 + b^2 + c^2 + d^2
+     & k\epsilon = a^2 + b^2 + c^2 + d^2
 \end{align*}     
 \noindent
 where $k$ is a positive rational number. 
@@ -1203,9 +1203,9 @@ Write $k$ as $\frac{t}{u}$,
 where $t$ and $u$ are positive integers with no common factor 
 greater than $1$. 
 Thus
-$\frac{A}{u}$, $\frac{B}{u}$, $\frac{C}{u}$,
-$\frac{D}{u}$, and $\frac{E}{u}$ are all positive integers.
- Therefore, $u$ is a common factor of $A$, $B$, $C$, $D$, and $E$. 
+$\frac{\alpha}{u}$, $\frac{\beta}{u}$, $\frac{\gamma}{u}$,
+$\frac{\delta}{u}$, and $\frac{\epsilon}{u}$ are all positive integers.
+ Therefore, $u$ is a common factor of $\alpha$, $\beta$, $\gamma$, $\delta$, and $\epsilon$. 
 Since this Pythagorean quintuple is primitive, $u$ must be $1$.
 %Is it necessary to prove this?
 Therefore, $k$ is a positive integer.
@@ -1222,23 +1222,23 @@ Therefore, $k$ is a positive integer.
 {\rm
 We end with two comments.
 First, the approach we give to prove
-Theorem~\ref{theorem_like_Hatcher}
+Theorem~\ref{thm:like_Hatcher}
 is similar to the geometric proof given in
 Hatcher's notes~\cite{Hatcher}
 for Pythagorean triples and
 quadruples.
 However, it does not appear in the literature.
 Secondly,
-the expression in Theorem~\ref{theorem_like_Hatcher}
+the expression in Theorem~\ref{thm:like_Hatcher}
 looks similar to the square of a quaternion
-from the proof of Theorem~\ref{theorem_as_squares}, namely
+from the proof of Theorem~\ref{thm:as_squares}, namely
 \[
      q^2 = (x + yi + zj +wk)^2
       = (x^2- y^2 -z^2 - w^2)+
           (2xy)i + (2xz)j + (2xw)k.
 \]
-The difference is in Theorem~\ref{theorem_like_Hatcher} we
-divide by the gcd of the four terms.
+The difference is in Theorem~\ref{thm:like_Hatcher} we
+divide by the greatest common divisor of the four terms.
 This projects
 Pythagorean quintuples onto primitive Pythagorean quintuples. 
 }
@@ -1336,7 +1336,7 @@ I plan to explore this path.}
 %%\appendix
 
 \section{Detailed Analysis of a Pythagorean Quintuple That Does Not Arise from
-Theorem~\ref{theorem_as_products}}
+Theorem~\ref{thm:as_products}}
 \label{appendix_A}
 
 
@@ -1345,12 +1345,12 @@ Consider the Pythagorean quintuple
 $1^2 + 2^2 + 8^2 + 10^2 = 13^2$.
 It
 cannot be represented as in
-Theorem~\ref{theorem_as_products}.
+Theorem~\ref{thm:as_products}.
 If it could, it would use one of the following generating lists.
 The
 coefficients are the only Hurwitz integers to have a modulus of 13:
 
-
+\fix{Get rid of the words generating list, generating quadruple, etc.}
 
 \begin{enumerate}
 
@@ -1466,7 +1466,7 @@ be generated in this way.
 an error in my computer code. I am also suspicious of the other table
 in this section, and I don't see how it is directly relevant.}
 
-\section{Testing the formulas from Theorem~\ref{theorem_as_products}}
+\section{Testing the formulas from Theorem~\ref{thm:as_products}}
 \label{appendix_C}
 
 
@@ -1475,7 +1475,7 @@ in this section, and I don't see how it is directly relevant.}
 
 
 The author wrote a Python program to determine the number of
-Pythagorean quintuples that Theorem~\ref{theorem_as_products}
+Pythagorean quintuples that Theorem~\ref{thm:as_products}
 represents.  This program found all primitive Pythagorean quintuples
 with all legs less than or equal to $20$.  The program then takes a
 form, applies it to a set of four integers or half integers, and
@@ -1596,8 +1596,8 @@ The result is always a Pythagorean quintuple:
 29. \:\: (x+yi+zj+wk)(y+xi+wj-zk) &321
 \end{array}
 \]
-\caption{The $57$ possible forms of a Pythagorean quintuple in its primitive Hurwitz form as seen in Theorem~\ref{theorem_as_products}. The number next to a form represents the number of times the program used the form to generate a small Pythagorean quintuple.} 
-\label{figure_57}
+\caption{The $57$ possible forms of a Pythagorean quintuple in its primitive Hurwitz form as seen in Theorem~\ref{thm:as_products}. The number next to a form represents the number of times the program used the form to generate a small Pythagorean quintuple.} 
+\label{fig:57}
 \end{figure}
 
 
@@ -1606,11 +1606,11 @@ The author then
 analyzed the forms to
 see if they
 capture all of the test set of primitive Pythagorean quintuples.
-To select the forms in Figure~\ref{figure_57}
+To select the forms in Figure~\ref{fig:57}
 the author began with the quaternion
 $(x + yi + zj + wk)^2$ with 
  $x$, $y$, $z$ and $w$ all positive.
-Theorem~\ref{theorem_as_products} required 
+Theorem~\ref{thm:as_products} required 
 permutations and sign changes within the factors.
 Without loss of generality, the first factor is
 of the form $(x \pm yi \pm zj \pm wk)$,
@@ -1632,7 +1632,7 @@ characterize roughly the same set of primitive
 Pythagorean quintuples, at least for small examples. Intuitively,
 this redundancy arises because each expression describes a way in which 
 a quaternion can be factored. 
-By Theorem~\ref{theorem_unique_factorization}, a quaternion that 
+By Theorem~\ref{thm:unique_factorization}, a quaternion that 
 represents a primitive Pythagorean quintuple can be factored in many 
 ways, so many of these $57$ expressions characterize it.
 
@@ -1700,8 +1700,8 @@ spacespacespacespacespacespacespacespacespace\=              \kill
 56. $(x+yi+zj-wk)(z+wi+yj-xk)$ \>349\\
 57. $(x+yi+zj-wk)(w+xi+yj-zk)$ \>349
 \end{tabbing}
-\caption{The $57$ possible forms of a Pythagorean quintuple in its primitive Hurwitz form as seen in Theorem~\ref{theorem_as_products}.} 
-\label{figure_57}
+\caption{The $57$ possible forms of a Pythagorean quintuple in its primitive Hurwitz form as seen in Theorem~\ref{thm:as_products}.} 
+\label{fig:57}
 \end{figure}
 }
 
@@ -1709,7 +1709,7 @@ spacespacespacespacespacespacespacespacespace\=              \kill
 
 There are $337$ Pythagorean quintuples 
 with all legs less than or equal to $20$.
-See Figure~\ref{figure_quintuples}
+See Figure~\ref{fig:quintuples}
 for $50$ of those quintuples and
 the number of ways to generate them:
 
@@ -1797,7 +1797,7 @@ the number of ways to generate them:
 \end{array}
 \]
 \caption{Generating program results for some small Pythagorean quintuples,}
-\label{figure_quintuples}
+\label{fig:quintuples}
 \end{figure}
 
 
