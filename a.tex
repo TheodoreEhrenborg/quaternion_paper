@@ -15,7 +15,7 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass[12pt,table]{article}
+\documentclass[14pt,table]{extarticle}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -49,6 +49,7 @@
 \usepackage{xcolor}
 \usepackage{diagbox}
 \usepackage[colorinlistoftodos]{todonotes}
+\usepackage{mwe}
 
 
 
@@ -159,7 +160,7 @@
 \title{Pythagorean Quintuples and Quaternions}
 
 
-\author{\sc Theodore EHRENBORG
+\author{\sc Theodore EHRENBORG\footnote{Clare College, Cambridge, {\tt theodore.ehrenborg@gmail.com}}
 %\thanks{
 %Corresponding author:
 %Department of Mathematics,
@@ -181,14 +182,13 @@
 
 
 \begin{abstract}
-This paper, which is in number theory, explores 
+This paper explores
 the 
 connections between quaternions and primitive Pythagorean quintuples. 
 It is known that the square of a Gaussian integer
-(a complex number) is a Pythagorean triple $a^2 + b^2 = c^2$.
+ is a Pythagorean triple $a^2 + b^2 = c^2$.
 Less is 
-known about the relationship between quaternions, an extension 
-of complex numbers, and Pythagorean quintuples
+known about the relationship between quaternions and Pythagorean quintuples
 $a^2 + b^2 + c^2 + d^2 = e^2$.
 We show that squaring a quaternion produces a subfamily
 of Pythagorean quintuples.
@@ -196,7 +196,7 @@ Motivated by Conway and Smith's unique
 factorization theorem for the
 Hurwitz integers,
 we present a more general version of
-squaring a quaternion which
+squaring a quaternion that
 generates a larger subfamily of Pythagorean quintuples.
 Using a counting argument and Jacobi's Four Square Theorem,
 we show that unlike the characterization for Pythagorean triples,
@@ -218,7 +218,7 @@ differ by a geometrically defined constant.
 
 
 
-Recall nonnegative integers $a$, $b$ and $c$ are called a
+Recall nonnegative integers $a$, $b$ and $c$ form a
 {\em Pythagorean triple} if
 \[
     a^2 + b^2 = c^2.
@@ -236,11 +236,7 @@ side lengths.
 The following theorem characterizes primitive Pythagorean triples.
 It was known by Diophantus~\cite[Page 93]{Heath} and
 probably discovered by Euclid~\cite{Euclid}.
-
-
-
-
-A proof can be found in Hardy and Wright's book; 
+A proof can be found in Hardy and Wright's book;
 see~\cite[XIII, 13.2]{Hardy_and_Wright}.
 
 
@@ -251,7 +247,7 @@ Fermat's area of triangle result.}
 
 
 
-\begin{theorem}
+\begin{theorem}[Euclid-Diophantus]
 Given a primitive
 Pythagorean triple $(a, b,c)$, there are integers
 $x$ and $y$ such that $0 < y < x$, 
@@ -283,7 +279,7 @@ $5$-$12$-$13$ right triangle.
 \end{example}
 
 
-
+\begin{comment}
 \begin{figure}
 \begin{center}
 \begin{tabular}{ c|c|c|c|c|c } 
@@ -306,6 +302,7 @@ $0 \leq y < x \leq 4$.}
 
 
 
+\end{comment}
 
 
 
@@ -320,8 +317,8 @@ a Pythagorean triangle as follows.
 
 \begin{theorem}
 Any primitive Pythagorean triple $(a, b,c)$ with
-$a^2 + b^2 = c^2$, can be represented
-by the square of a Gaussian integer, $x+yi$,
+$a^2 + b^2 = c^2$ can be represented
+by the square of a Gaussian integer $x+yi$,
 that is,
 \[
     a =  \Re{(x+yi)^2},  \:\:\: b = \Im{(x+yi)^2},
@@ -345,57 +342,12 @@ the moduli of the numbers.
 So $(x+yi)^2$ has a modulus of $x^2+y^2$. Thus, the square of a 
 Gaussian integer has integer coordinates and an integer distance
 from the origin, giving a right triangle with integer sides.
-See Figures~\ref{fig:Pythagorean} 
-and~\ref{fig:Pythagorean_squared} for diagrams of this 
-concept.
-
-\begin{figure}
-\begin{center}
-\begin{tikzpicture}
-
-
-\draw[thick,->] (0,0) -- (8,0); 
-\draw[thick,->] (0,0) -- (0,4.5);
-\draw[thick,->] (0,0) -- (-2.5,0); 
-\draw[thick,->] (0,0) -- (0,-2.5);
-\draw[dashed] (6,0) -- (6,2);
-\fill (6,2) circle (.1cm);
-\draw (0,0) -- (6,2) node[anchor=south west] {$x+yi$};
-\draw (4.5,1.5) node[anchor=south east] { $\sqrt{x^2 + y^2}$};
-\draw (6,1) node[anchor=west] {$y$};
-\draw (3,0) node[anchor=north] {$x$};
-\end{tikzpicture}
-\end{center}
-\caption{Geometric representation of a Gaussian integer.}
-\label{fig:Pythagorean}
-\end{figure}
 
 
 
 
 
-\begin{figure}
-\begin{center}
-\begin{tikzpicture}
 
-
-\draw[thick,->] (0,0) -- (8,0); 
-\draw[thick,->] (0,0) -- (0,4.5);
-\draw[thick,->] (0,0) -- (-2.5,0); 
-\draw[thick,->] (0,0) -- (0,-2.5);
-\draw[dashed] (5,0) -- (5,4);
-\fill (5,4) circle (.1cm);
-\draw (0,0) -- (5,4) node[anchor=south west] {$(x+yi)^2$};
-\draw (3.5,2.6) node[anchor=south east ] {$x^2 + y^2$};
-\draw (5,2) node[anchor=west] {$2xy$};
-\draw (2.5,0) node[anchor=north] {$x^2-y^2$};
-
-
-\end{tikzpicture}
-\end{center}
-\caption{A Gaussian integer $x+yi$ after squaring.}
-\label{fig:Pythagorean_squared}
-\end{figure}
 
 \section{Pythagorean Quintuples via Squaring Quaternions}
 
@@ -410,16 +362,13 @@ where $x, y, z, w \in \Rrr$.
 Up to a sign they have $4$ units: $1$, $i$, $j$, and $k$. Their most striking
 property is that multiplication is not commutative. 
 For example, $i \cdot j = k \neq j \cdot i = -k$.
-See Figure~\ref{fig:multiplication_table} 
-for the multiplication table of the
-quaternions.
 
 
 \begin{definition}
 The {\em modulus} 
 of a quaternion
 $q =  x+yi+zj+wk$
-is given by 
+is
 \[
    |q| = \sqrt{x^2 + y^2 + z^2 + w^2}.
 \]
@@ -433,12 +382,15 @@ The {\em norm} of a quaternion is the modulus squared, that is,
 It is straightforward to check the following property.
 \begin{lemma}
 \label{lemma_norm_multiplicative}
-For two quaternions $q_1$ and $q_2$
+For two quaternions $q_1$ and $q_2$ the norm is multiplicative, that is,
 \[
      N(q_1 \cdot q_2) = N(q_1) \cdot N(q_2).
 \]
 \end{lemma}
 
+
+
+\begin{comment}
 
 
 \begin{figure}
@@ -461,6 +413,64 @@ $k$ & $k$ & $j$ & $-i$ & $-1$
 \end{figure}
 
 
+\end{comment}
+
+
+
+
+
+\begin{figure}
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+\begin{tikzpicture}
+
+\tikzmath{
+\scale = .7;
+}
+
+\draw[thick,->] (0,0) -- (\scale*8,0);
+\draw[thick,->] (0,0) -- (0,\scale*4.5);
+\draw[thick,->] (0,0) -- (\scale*-2.5,0);
+\draw[thick,->] (0,0) -- (0,\scale*-2.5);
+\draw[dashed] (\scale*6,0) -- (\scale*6,\scale*2);
+\fill (\scale*6,\scale*2) circle (\scale*.1cm);
+\draw (0,0) -- (\scale*6,\scale*2) node[anchor=south west] {$x+yi$};
+\draw (\scale*4.5,\scale*1.5) node[anchor=south east] { $\sqrt{x^2 + y^2}$};
+\draw (\scale*6,\scale*1) node[anchor=west] {$y$};
+\draw (\scale*3,0) node[anchor=north] {$x$};
+\end{tikzpicture}
+\caption{Geometric representation of a Gaussian integer.}
+\label{fig:Pythagorean}
+    \end{minipage}\hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+\begin{tikzpicture}
+
+
+\tikzmath{
+\scale = .7;
+}
+\draw[thick,->] (0,0) -- (\scale*8,0);
+\draw[thick,->] (0,0) -- (0,\scale*4.5);
+\draw[thick,->] (0,0) -- (\scale*-2.5,0);
+\draw[thick,->] (0,0) -- (0,\scale*-2.5);
+\draw[dashed] (\scale*5,0) -- (\scale*5,\scale*4);
+\fill (\scale*5,\scale*4) circle (\scale*.1cm);
+\draw (0,0) -- (\scale*5,\scale*4) node[anchor=south west] {$(x+yi)^2$};
+\draw (\scale*3.5,\scale*2.6) node[anchor=south east ] {$x^2 + y^2$};
+\draw (\scale*5,\scale*2) node[anchor=west] {$2xy$};
+\draw (\scale*2.5,0) node[anchor=north] {$x^2-y^2$};
+
+
+\end{tikzpicture}
+\caption{A Gaussian integer $x+yi$ after squaring.}
+\label{fig:Pythagorean_squared}
+    \end{minipage}
+  \end{figure}
+
+
+
 
 \begin{theorem}
 \label{thm:as_squares}
@@ -479,15 +489,15 @@ Squaring this gives
 \begin{eqnarray*}
      q^2 = (x + yi + zj +wk)^2
       &=& (x^2- y^2 -z^2 - w^2)+
-          (2xy)i + (2xz)j + (2xw)k
+          (2xy)i + (2xz)j + (2xw)k.
 \end{eqnarray*}
-Since the modulus of $q$ is $|q| = \sqrt{x^2+y^2+z^2+w^2}$, the
-modulus of $q$ squared is 
-\begin{eqnarray*}
-     |q^2| = |q|^2 = (x^2 + y^2 + z^2 +w^2)^2
-      &=& (x^2- y^2 -z^2 - w^2)^2 +
+The
+norm of $q$ squared is
+\begin{align*}
+     N(q^2) &=  (x^2 + y^2 + z^2 +w^2)^2 \\
+      &= (x^2- y^2 -z^2 - w^2)^2 +
           (2xy)^2 + (2xz)^2 + (2xw)^2.
-\end{eqnarray*}
+\end{align*}
 This means that 
 $(2xy, 2xz, 2xw, x^2 - y^2 - z^2 - w^2, x^2 + y^2 + z^2 +w^2)$
 is a Pythagorean quintuple.
@@ -526,13 +536,12 @@ have investigated the relationship of quaternions
 to symmetry groups.  See the review by Baez~\cite{Baez}
 for a synopsis of their work.
 Conway and Smith's unique factorization theorem 
-(see Theorem~\ref{thm:unique_factorization}) suggested to
-the author a way to extend
+(see Theorem~\ref{thm:unique_factorization}) suggests a way to extend
 the relationship between Pythagorean quintuples
 and quaternions.
 
 
-In order to do this, we need to define Hurwitz integers.
+In order to do this, we recall the Hurwitz integers.
 
 \begin{definition}
 A quaternion $q = x+yi+zj+wk$ is a
@@ -564,11 +573,10 @@ A Hurwitz integer $q \in \Hhh$ is
 
 
 
-\begin{theorem}[Conway and Smith]
+\begin{theorem}[Conway-Smith]
 \label{thm:unique_factorization}
-Let $q \in \Hhh$ be a primitive Hurwitz integer with norm
-$N$.  Suppose $N = p_1 p_2 \cdots p_k$ where 
-$p_1, p_2, \ldots, p_k$ are prime numbers.
+Let $q \in \Hhh$ be a primitive Hurwitz integer with norm~$N$.  Suppose $N = p_1 p_2 \cdots p_k$ where
+$p_1, p_2, \ldots, p_k$ are distinct prime numbers.
 Then
 $q$ can be factored as a product of Hurwitz integers
 \[
@@ -601,7 +609,6 @@ built by using the coefficients of a Pythagorean quintuple can
 always be factored into two 
 quaternions with the same norm.
 \fix{I can also deduce the last sentence from Sarnak et al.'s book}
-\fix{Thank Professor Sarnak}
 
 What does this mean in concrete terms? We give an example.
 
@@ -617,7 +624,7 @@ a quaternion
 \[
       1 + i + 3j + 5k.
 \]
-We can factor out a $2$, leaving us with a 
+We can factor out a $2$, leaving us with the
 primitive Hurwitz integer
 \[
      h= \frac{1}{2} + \frac{1}{2}i + \frac{3}{2}j + \frac{5}{2}k.
@@ -645,7 +652,7 @@ their coefficients, in absolute value and reordered, coincide.
 \begin{theorem}
 \label{thm:as_products}
 There are Pythagorean quintuples 
-$a^2 + b^2 +c^2 +d^2 = e^2$ which can be represented
+$a^2 + b^2 +c^2 +d^2 = e^2$ that can be represented
 by the product of two Hurwitz integers
 $x + yi + zj + wk$ and
 $x' + y'i + z'j + w'k$
@@ -658,7 +665,7 @@ $|x'|, |y'|, |z'|, |w'|$.
 %appear in Appendix~\ref{appendix_C}.
 \end{theorem}
 \begin{proof}
-Consider the product of the two Hurwitz integers
+Consider the product of two Hurwitz integers
 $P_1 = x + yi + zj + wk$ and
 $P_2 = x' + y'i + z'j + w'k$.  
 Since the second Hurwitz integer $P_2$ 
@@ -666,7 +673,7 @@ is just a reordering of
 the coefficients $x$, $y$, $z$ and $w$ of $P_1$, 
 with possible sign changes,
 the norms of these two Hurwitz integers
-are the same, that is,
+coincide, that is,
 $N(P_1) = N(P_2) = \varepsilon$.
 
 
@@ -697,7 +704,7 @@ and
 $|P_1 \cdot P_2| = \varepsilon$.
 Since $|P_1 \cdot P_2|$ is an integer and 
 $P_1 \cdot P_2 = a + bi + cj + dk$ has
-coefficients which are either integers or half-integers 
+coefficients that are either integers or half-integers
 then
 either
 $(a, b,c, d,e)$ is a Pythagorean quintuple
@@ -715,7 +722,7 @@ $e = \varepsilon$.
 
 One can check that 
 $1^2+ 2^2+ 8^2+ 10^2  = 13^2$
-is a primitive Pythagorean quintuple which
+is a primitive Pythagorean quintuple that
 cannot be written as the product of two quaternions
 using the same coefficients.
 For example
@@ -743,7 +750,7 @@ represented with Hypothesis \ref{as_products}. Still, this is an
 
 
 
-In this section we would like to analyze the general question
+In this section we analyze the general question
 of finding primitive Pythagorean quintuples of magnitude $\epsilon$ using
 a polynomial parametrization in four parameters.
 
@@ -780,14 +787,14 @@ version of Lagrange's theorem that every integer $n$ can
 be written as a sum of four squares.
 A proof using Hurwitz integers appears in
 Hardy and Wright~\cite[Chapter XX, Theorem 386]{Hardy_and_Wright}.
-\cite{Lalin} expressed this theorem differently.
+\cite{Lalin} expresses this theorem differently.
 \begin{theorem}[Jacobi]
 \label{thm:representations}
 The number of solutions to $x_1^2 +  x_2^2 +  x_3^2 +  x_4^2  = n$ is 
 \[
-8\sum_{d|n,4\nmid d}{d}
+8\sum_{d|n,4\nmid d}{d},
 \]
-This is eight times the sum of all positive integers that divide $n$ but are not multiples of $4$. Note that 
+where
 the order and sign of a solution $(x_1,x_2,x_3,x_4)$ matter. 
 \end{theorem}
 
@@ -802,7 +809,7 @@ obeys the following conditions:
 \begin{itemize}
 \item[(i)]
 The parametrization always 
-generates Pythagorean quintuples
+generates Pythagorean quintuples.
 
 \item[(ii)]
 Their squares give the sum
@@ -811,7 +818,7 @@ Their squares give the sum
 \]
 
 \item[(iii)]
-$x_1, x_2, x_3, x_4$ are either all integers or
+The values of $x_1, x_2, x_3, x_4$ are either all integers or
 all half-integers.
 \end{itemize}
 \end{theorem}
@@ -850,14 +857,14 @@ Pythagorean quintuples of magnitude $\epsilon$. Note that $\psi$ does not count
 Pythagorean quintuples whose addends  are squares of  half-integers.
 Let $\lambda$ be the number of solutions to 
 $x_1^2 +  x_2^2 +  x_3^2 +  x_4^2 = \epsilon^2$
-where order and sign do matter.
+where order and sign matter.
 The only divisors of $\epsilon^2$ are
 $\epsilon^2$, $\epsilon$, and $1$. Using 
 Jacobi's Four Square Theorem~\ref{thm:representations}, 
 \[
      \lambda = 8(1 + \epsilon + \epsilon^2).
 \]
-However, we are interested in the number of Pythagorean quintuples,
+However, we are interested in the number of Pythagorean quintuples
 where the order and sign do not matter. Since $\lambda$ counts at least one
 solution where one of $x_1,x_2,x_3,x_4$ is negative, $\lambda > \psi$.
 
@@ -907,7 +914,7 @@ The quadruple has the form $(a,b,c,d)$,
 where $a^2 + b^2 + c^2 + d^2 = \epsilon$. 
 Here $a$, $b$, $c$, and $d$ are all integers or all half-integers.
 
-Since $a^2 + b^2 + c^2 + d^2 = \epsilon$, we multiply by $4$ to obtain:
+Since $a^2 + b^2 + c^2 + d^2 = \epsilon$, we multiply by $4$ to obtain
 \begin{align*}
      & 4a^2 + 4b^2 + 4c^2 + 4d^2 = 4\epsilon\\
      & (2a)^2 + (2b)^2 + (2c)^2 + (2d)^2 = 4\epsilon
@@ -955,7 +962,7 @@ an upper bound for $\omega$.
 Observe that in \eqref{lower} $\kappa$ grows with the square of $\epsilon$, but in 
 \eqref{upper} $\omega$ grows linearly  in $\epsilon$.
 
-For sufficiently large prime $\epsilon$, 
+When $\epsilon$ is a sufficiently large prime,
 \begin{align*}
    & \frac{ 8(1+\epsilon+\epsilon^2) }{384} > 24\tau(1+\epsilon) \\
    & \kappa \geq \frac{ 8(1+\epsilon+\epsilon^2) }{384} > 24\tau(1+\epsilon) \geq \omega \\
@@ -993,7 +1000,7 @@ A Geometric Approach}
 
 In this section we derive
 an expression 
-which characterizes {\em all} Pythagorean quintuples.
+that characterizes {\em all} Pythagorean quintuples.
 
 
 \begin{theorem}
@@ -1013,7 +1020,7 @@ and $a, b, c, d \in \Zzz$.
 \begin{proof}
 Consider the $3$-dimensional
 sphere $x^2 + y^2 + z^2 +w^2 =1$
-in four dimensions,
+in $\Rrr^{4}$,
 denoted by $\Sss^3$.
 Let $\alpha^2 +\beta^2 +\gamma^2 + \delta^2 = \epsilon^2$ be a primitive Pythagorean quintuple.
 
@@ -1065,12 +1072,12 @@ We have
         \left(\frac{p}{m}x\right)^2 
         +\left(-\frac{1}{m}x+1\right)^2 = 1
 \\
-     & x^2 + \frac{n^2}{m^2}x^2 + \frac{p^2}{m^2}x^2
-        +\frac{1}{m^2}x^2-\frac{2}{m}x+1=1
-\\
-     & x^2\left(1 + \frac{n^2}{m^2} + \frac{p^2}{m^2} 
-       +\frac{1}{m^2}\right)-\frac{2}{m}x = 0
-\\
+%     & x^2 + \frac{n^2}{m^2}x^2 + \frac{p^2}{m^2}x^2
+%        +\frac{1}{m^2}x^2-\frac{2}{m}x+1=1
+%\\
+%     & x^2\left(1 + \frac{n^2}{m^2} + \frac{p^2}{m^2}
+%       +\frac{1}{m^2}\right)-\frac{2}{m}x = 0
+%\\
      & x\left(x\left(1 + \frac{n^2}{m^2} + \frac{p^2}{m^2} 
         +\frac{1}{m^2}\right)-\frac{2}{m}\right) = 0
 \end{align*}
@@ -1079,10 +1086,10 @@ We continue solving for the other intersection point.
 \begin{align*}
      & x\left(1 + \frac{n^2}{m^2} + \frac{p^2}{m^2} 
       +\frac{1}{m^2}\right)-\frac{2}{m}=0     
-\\
-     & x\left(\frac{m^2 + n^2 + p^2 +1}{m^2}\right)-\frac{2}{m}=0     
-\\
-     & x\left(\frac{m^2 + n^2 + p^2 +1}{m^2}\right)=\frac{2}{m}     
+%\\
+%     & x\left(\frac{m^2 + n^2 + p^2 +1}{m^2}\right)-\frac{2}{m}=0
+%\\
+%     & x\left(\frac{m^2 + n^2 + p^2 +1}{m^2}\right)=\frac{2}{m}
 \\
      & x = \frac{2m}{m^2 + n^2 + p^2 +1}     
 \end{align*}
@@ -1101,12 +1108,12 @@ We solve for the other coordinates of this point.
 {m^2 + n^2 + p^2 +1}=\frac{2p}{m^2 + n^2 + p^2 +1}\]
 
 \begin{align*}
-    w & = -\frac{1}{m}x+1=-\frac{1}{m}\cdot\frac{2m}{m^2 + n^2 + p^2 +1}+1
+    w = -\frac{1}{m}x+1 &= -\frac{1}{m}\cdot\frac{2m}{m^2 + n^2 + p^2 +1}+1
 \\
-      & = \frac{-2}{m^2 + n^2 + p^2 +1}
-       + \frac{m^2 + n^2 + p^2 +1}{m^2 + n^2 + p^2 +1}
-\\
-      & = \frac{m^2 + n^2 + p^2 -1}{m^2 + n^2 + p^2 +1}.
+%      & = \frac{-2}{m^2 + n^2 + p^2 +1}
+%       + \frac{m^2 + n^2 + p^2 +1}{m^2 + n^2 + p^2 +1}
+%\\
+      &= \frac{m^2 + n^2 + p^2 -1}{m^2 + n^2 + p^2 +1}.
 \end{align*}
 
 Since $m$, $n$, and $p$ are rational, we can write the following:
@@ -1168,6 +1175,7 @@ Rewriting the coordinates gives:
 \caption{A two-dimensional version of the geometric argument
 to characterize Pythagorean triples 
 $\alpha^2~+~\beta^2~=~\gamma^2$}
+\fix{method?}
 \end{figure}
 
 
@@ -1253,7 +1261,7 @@ The original
 goal of this project was to find a parametrization, preferably a polynomial one,  of 
 Pythagorean~quintuples in four parameters.
 Such a parametrization of quintuples
-has been done using $12$ parameters~\cite{Frisch_and_Vaserstein},
+has been done using $12$ parameters in~\cite{Frisch_and_Vaserstein},
 but the method involved a
 specific case of sextuples, not a direct relationship between 
 quintuples and quaternions. 
@@ -1285,9 +1293,8 @@ There are several paths
 \item
 {Conway and Smith have developed connections between the
  quaternions and 
-orthogonal groups (rotations of space). 
-Once I understand
- more group theory, their ideas may provide an important
+orthogonal groups.
+Their ideas may provide an important
  geometrical interpretation. 
 }
 
@@ -1314,8 +1321,7 @@ this method and reformulated it into a set of matrices, and Conrad
 \cite{Conrad} provided a geometric interpretation.  Notably,
 these transformations can be shown as the Barning-Hall tree, which
 contains all primitive Pythagorean triples.  This approach is 
-completely different from the methods in this paper, but
-I plan to explore this path.}
+completely different from the methods in this paper.}
 
 %Berggren was not just republishing a result by H. Rath.  Rath appears
 %to have compiled every known result on Pythagorean triples and not
@@ -1329,7 +1335,9 @@ I plan to explore this path.}
 
 \end{enumerate}
 
+The author thanks Peter Sarnak for a discussion in summer 2018.
 
+This project was presented at the 2018 Intel International Science and Engineering Fair.
 
 
 \begin{appendices}
@@ -1929,7 +1937,6 @@ $12.5^2+ 14.5^2+ 18.5^2+ 19.5^2  = 33^2$ \>$48$\\
      {A K Peters, Ltd., Natick MA}
      {2003}
 
-\begin{comment}
 
 \bibitem{Davidoff_Sarnak_Valette}
 \book{G.\ Davidoff, P.\ Sarnak, and A.\ Valette}
@@ -1939,6 +1946,7 @@ $12.5^2+ 14.5^2+ 18.5^2+ 19.5^2  = 33^2$ \>$48$\\
          {Cambridge University Press}
          {2003}
 
+\begin{comment}
 
 
 \bibitem{Dickson}
