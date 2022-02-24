@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.9.14)  28 JAN 2022 23:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.9.14)  24 FEB 2022 21:29
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -711,14 +711,14 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 18
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-) (./a.tdo)
+) (./a.tdo
+[1
+
+{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
 \tf@tdo=\write5
 \openout5 = `a.tdo'.
 
 
-[1
-
-{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 Excluding 'comment' comment. [2]
 Overfull \hbox (25.25392pt too wide) in paragraph at lines 352--352
 []\OT1/cmr/bx/n/20.74 Pythagorean Quin-tu-ples via Squar-ing Quater-
@@ -745,76 +745,76 @@ Overfull \hbox (12.47147pt too wide) in paragraph at lines 529--529
  []
 
 [4] [5] [6]
-Overfull \hbox (6.92905pt too wide) in paragraph at lines 753--756
+Overfull \hbox (6.92905pt too wide) in paragraph at lines 761--764
 \OT1/cmr/m/n/14.4 In this sec-tion we an-a-lyze the gen-eral ques-tion of find-
 ing prim-i-tive Pythagorean
  []
 
 [7] [8] [9]
-Overfull \hbox (10.96062pt too wide) in paragraph at lines 928--932
+Overfull \hbox (10.96062pt too wide) in paragraph at lines 936--940
 \OT1/cmr/m/n/14.4 Note that this gives a sim-ple bi-jec-tion be-tween a gen-er-
 at-ing quadru-ple $(\OML/cmm/m/it/14.4 a; b; c; d\OT1/cmr/m/n/14.4 )$
  []
 
-[10] [11] [12] [13] [14] [15]
-Overfull \hbox (29.98056pt too wide) in paragraph at lines 1347--1347
+[10] [11] [12] [13] [14] [15] [16]
+Overfull \hbox (29.98056pt too wide) in paragraph at lines 1356--1356
 []\OT1/cmr/bx/n/20.74 Detailed Anal-y-sis of a Pythagorean
  []
 
-[16] [17] [18]
-Overfull \hbox (127.26979pt too wide) detected at line 1606
+[17] [18] [19]
+Overfull \hbox (127.26979pt too wide) detected at line 1616
 []
  []
 
 
-LaTeX Warning: Float too large for page by 8.02267pt on input line 1609.
+LaTeX Warning: Float too large for page by 8.02267pt on input line 1619.
 
-[19] [20]
-Overfull \hbox (68.01282pt too wide) detected at line 1806
+
+Overfull \hbox (68.01282pt too wide) detected at line 1816
 []
  []
 
-[21] [22] Excluding 'comment' comment.
-Underfull \hbox (badness 2080) in paragraph at lines 1978--1979
+[20] [21] [22] Excluding 'comment' comment.
+Underfull \hbox (badness 2080) in paragraph at lines 1988--1989
 []\OT1/cmr/m/sc/14.4 S. Frisch and L. Vaser-stein, \OT1/cmr/m/n/14.4 Poly-no-mi
 al parametriza-tion of
  []
 
 Excluding 'comment' comment.
-Overfull \hbox (8.10393pt too wide) in paragraph at lines 2045--2046
+Overfull \hbox (8.10393pt too wide) in paragraph at lines 2055--2056
 \OT1/cmtt/m/n/14.4 https://mathcs.clarku.edu/~djoyce/java/elements/elements.htm
 l\OT1/cmr/m/n/14.4 . 
  []
 
-Excluding 'comment' comment. [23] [24] (./a.aux) ) 
+[23] Excluding 'comment' comment. Excluding 'comment' comment. [24] (./a.aux) )
+ 
 Here is how much of TeX's memory you used:
- 16599 strings out of 478994
- 331286 string characters out of 5858184
- 775446 words of memory out of 5000000
- 33730 multiletter control sequences out of 15000+600000
+ 16602 strings out of 478994
+ 331353 string characters out of 5858184
+ 788446 words of memory out of 5000000
+ 33733 multiletter control sequences out of 15000+600000
  418242 words of font info for 87 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
- 113i,12n,116p,410b,1053s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2021/texm
-f-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2021/texmf
--dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2021/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2021/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2021/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2021/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2021/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2021/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2021/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2021/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1
-/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2021/texmf-dist/fonts/t
-ype1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2021/texmf-dist/fonts/typ
-e1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1
-/public/cm-super/sfrm1440.pfb>
-Output written on a.pdf (24 pages, 251784 bytes).
+ 113i,12n,116p,410b,1055s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<
+/usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></
+usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></
+usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
+sr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
+r/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr
+/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/l
+ocal/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loc
+al/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local
+/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/te
+xlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/tex
+live/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texl
+ive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texli
+ve/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texliv
+e/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/te
+xlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texl
+ive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texliv
+e/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb>
+Output written on a.pdf (24 pages, 253703 bytes).
 PDF statistics:
  178 PDF objects out of 1000 (max. 8388607)
  117 compressed objects within 2 object streams

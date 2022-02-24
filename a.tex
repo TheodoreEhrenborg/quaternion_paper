@@ -8,7 +8,7 @@
 %
 %
 % 
-% Last edited: September 1, 2019
+% Last edited: [2022-01-28 Fri]
 %
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -599,16 +599,24 @@ The $24$ Hurwitz units are:
   \pm 1, \pm i, \pm j, \pm k, \frac{1}{2}(\pm 1 \pm i \pm j \pm k).
 \]
 
+A corollary of this is:
+
+\begin{lemma}[G. Davidoff, P. Sarnak, and A. Valette, 2.6.10]
+\label{thm:prime_iff_norm_prime}
+A Hurwitz integer $\alpha$ is irreducible iff its norm $N(\alpha)$ is a prime in $\Nnn$.
+\end{lemma}
+
+\fix{Insert Hurwitz citation, p 321 of the book is where it's proved}
 
 Just as the square of a Gaussian integer must have
 an integer modulus, the square of a Hurwitz integer has an integer modulus
 and therefore a norm that is a perfect square. 
-As a result of Theorem~\ref{thm:unique_factorization},
+As a result of Lemma~\ref{thm:prime_iff_norm_prime},
 a quaternion
 built by using the coefficients of a Pythagorean quintuple can 
 always be factored into two 
 quaternions with the same norm.
-\fix{I can also deduce the last sentence from Sarnak et al.'s book}
+
 
 What does this mean in concrete terms? We give an example.
 
@@ -996,7 +1004,6 @@ number would still evade representation.
 \section{Characterization of Pythagorean Quintuples:  
 A Geometric Approach}
 
-\fix{This was done algebraically in Mordell.}
 
 In this section we derive
 an expression 
@@ -1017,6 +1024,8 @@ be written in the form
 where $k = \gcd(2ad,2bd,2cd,a^2 + b^2 + c^2 -d^2)$
 and $a, b, c, d \in \Zzz$.
 \end{theorem}
+
+
 \begin{proof}
 Consider the $3$-dimensional
 sphere $x^2 + y^2 + z^2 +w^2 =1$
@@ -1175,10 +1184,8 @@ Rewriting the coordinates gives:
 \caption{A two-dimensional version of the geometric argument
 to characterize Pythagorean triples 
 $\alpha^2~+~\beta^2~=~\gamma^2$}
-\fix{method?}
+\fix{What is the name of this type of argument? Diophantus chord method?}
 \end{figure}
-
-
 
 
 
@@ -1221,7 +1228,8 @@ Therefore, $k$ is a positive integer.
 
 
 
-
+An algebraic proof of the general case of a sum of $n$ squares can be found in Mordell, ch 3, thm 1, \fix{Cite it}
+\fix{And mention that Mordell uses Gaussian integers to get Pythagorean quintuples}
 
 
 
@@ -1249,6 +1257,7 @@ The difference is in Theorem~\ref{thm:like_Hatcher} we
 divide by the greatest common divisor of the four terms.
 This projects
 Pythagorean quintuples onto primitive Pythagorean quintuples. 
+
 }
 \end{remarks}
 
@@ -1472,7 +1481,8 @@ be generated in this way.
 
 \fix{I (as of June 27, 2019) believe the Heinz 57 result resulted from
 an error in my computer code. I am also suspicious of the other table
-in this section, and I don't see how it is directly relevant.}
+in this section, and I don't see how it is directly relevant. Compare with
+second paper}
 
 \section{Testing the formulas from Theorem~\ref{thm:as_products}}
 \label{appendix_C}
@@ -2071,6 +2081,16 @@ $12.5^2+ 14.5^2+ 18.5^2+ 19.5^2  = 33^2$ \>$48$\\
       {arXiv:1201.2145 [math.NT], 11 pp}
 
 
+
+\begin{comment}
+        Possible references
+
+In collected works
+
+A. Hurwitz,  ̈Uber die Zahlentheorie der Quaternionen, Nachrichten von
+der k. Gesellschaft der Wissenschaften zu G ̈ottingen, Mathematisch-
+physikalische Klasse, 1896, S. 313-340
+\end{comment}
 
 \end{thebibliography}
 
